@@ -14,17 +14,16 @@ public class PlayerContoller : MonoBehaviour
     [SerializeField] private float gravity;
     [SerializeField] private float jumpHeight;
 
-    private Vector3 moveDirection;
     private Vector3 velocity;
     public Camera camera;
 
-    private CharacterController controller;
     private Animator animator;
+    private Rigidbody rigidbody;
 
     private void Start()
     {
-        controller = GetComponent<CharacterController>();
         animator = GetComponentInChildren<Animator>();
+        rigidbody = GetComponent<Rigidbody>();
     }
 
     private void Update()
@@ -43,36 +42,35 @@ public class PlayerContoller : MonoBehaviour
         }
 
         float moveZ = Input.GetAxis("Vertical");
-        float moveX = Input.GetAxis("Horizontal");
 
-        moveDirection = new Vector3(moveX, 0, moveZ);
-
-        if(isGrounded)
+        if (isGrounded)
         {
-            if (moveDirection != Vector3.zero && !Input.GetKey(KeyCode.LeftShift))
+            if (moveZ != 0 && !Input.GetKey(KeyCode.LeftShift))
             {
                 Walk();
             }
-            else if (moveDirection != Vector3.zero && Input.GetKey(KeyCode.LeftShift))
+            else if (moveZ != 0 && Input.GetKey(KeyCode.LeftShift))
             {
                 Run();
             }
-            else if (moveDirection == Vector3.zero)
+            else if (moveZ == 0)
             {
                 Idle();
             }
 
-            moveDirection *= movementSpeed;
-
-            if(Input.GetKey(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space))
             {
                 Jump();
             }
         }
 
-        controller.Move(moveDirection * Time.deltaTime);
-        velocity.y += gravity * Time.deltaTime;
-        controller.Move(velocity * Time.deltaTime);
+        if(Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            Attack();
+        }
+
+        transform.position += movementSpeed * moveZ * transform.forward * Time.deltaTime;
+
     }
 
     private void Idle()
@@ -95,15 +93,23 @@ public class PlayerContoller : MonoBehaviour
 
     private void Jump()
     {
-        velocity.y = Mathf.Sqrt(jumpHeight * -2 * gravity);
+        animator.SetTrigger("Jump");
+        rigidbody.AddForce(transform.up * jumpHeight, ForceMode.Impulse);
+    }
+
+    private void Attack()
+    {
+        animator.SetTrigger("Attack");
     }
 
     private void RotatePlayer()
     {
         //rotate player to look at the current mouse position
-        //Vector3 point = camera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 1));
-        //float t = camera.transform.position.y / (camera.transform.position.y - point.y);
-        //Vector3 finalPoint = new Vector3(t * (point.x - camera.transform.position.x) + camera.transform.position.x, 1, t * (point.z - camera.transform.position.z) + camera.transform.position.z);
-        //transform.LookAt(new Vector3(finalPoint.x, 0, finalPoint.z), Vector3.up);
+        RaycastHit lookHit;
+
+        Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out lookHit, 100);
+
+        Vector3 finalPoint = new Vector3(lookHit.point.x, 0, lookHit.point.z);
+        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(finalPoint), 10f * Time.deltaTime);
     }
 }
