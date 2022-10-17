@@ -333,7 +333,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: bcaf6dd9652ee65448e105ae8cb78302, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 
@@ -353,8 +353,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 0
-  walkSpeed: 5
-  runSpeed: 10
+  walkSpeed: 3
+  runSpeed: 6
   isGrounded: 0
   groundDistance: 0.02
   groundMask:
@@ -362,6 +362,7 @@ MonoBehaviour:
     m_Bits: 8
   gravity: -9.81
   jumpHeight: 1.3
+  camera: {fileID: 1905501421}
 --- !u!143 &801835916
 CharacterController:
   m_ObjectHideFlags: 0
@@ -371,7 +372,7 @@ CharacterController:
   m_GameObject: {fileID: 801835912}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Height: 1.6
   m_Radius: 0.5
@@ -380,19 +381,6 @@ CharacterController:
   m_SkinWidth: 0.1
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0.9, z: 0}
---- !u!65 &801835918
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 801835912}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 0.60046434, z: 1}
-  m_Center: {x: 0, y: 0.9658034, z: 0}
 --- !u!54 &801835919
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -409,6 +397,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!136 &801835920
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 801835912}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1.7519565
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.88800335, z: 0}
 --- !u!1001 &1030578866
 PrefabInstance:
   m_ObjectHideFlags: 0
