@@ -11,6 +11,7 @@ public class PlayerContoller : MonoBehaviour
     [SerializeField] private bool isGrounded;
     [SerializeField] private float groundDistance;
     [SerializeField] private LayerMask groundMask;
+    [SerializeField] private LayerMask enemyMask;
     [SerializeField] private float gravity;
     [SerializeField] private float jumpHeight;
 
@@ -34,7 +35,7 @@ public class PlayerContoller : MonoBehaviour
 
     private void Move()
     {
-        isGrounded = Physics.CheckSphere(transform.position, groundDistance, groundMask);
+        isGrounded = Physics.CheckSphere(transform.position, groundDistance, groundMask) || Physics.CheckSphere(transform.position, groundDistance, enemyMask);
 
         if(isGrounded && velocity.y < 0)
         {
