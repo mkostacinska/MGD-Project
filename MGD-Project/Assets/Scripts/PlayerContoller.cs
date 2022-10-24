@@ -50,10 +50,26 @@ public class PlayerContoller : MonoBehaviour
             if (moveZ != 0 && !Input.GetKey(KeyCode.LeftShift))
             {
                 Walk();
+                if(moveZ > 0)
+                {
+                    animator.SetFloat("Speed", 0.25f, 0.1f, Time.deltaTime);
+                }
+                else
+                {
+                    animator.SetFloat("Speed", 0, 0.1f, Time.deltaTime);
+                }
             }
             else if (moveZ != 0 && Input.GetKey(KeyCode.LeftShift))
             {
                 Run();
+                if(moveZ > 0)
+                {
+                    animator.SetFloat("Speed", 0.75f, 0.1f, Time.deltaTime);
+                }
+                else
+                {
+                    animator.SetFloat("Speed", 1, 0.1f, Time.deltaTime);
+                }
             }
             else if (moveZ == 0)
             {
@@ -70,6 +86,11 @@ public class PlayerContoller : MonoBehaviour
         {
             Attack();
         }
+        if(Input.GetKeyDown(KeyCode.Mouse1))
+        {
+            print("block!");
+            Shield();
+        }
 
         transform.position += movementSpeed * moveZ * transform.forward * Time.deltaTime;
 
@@ -78,19 +99,17 @@ public class PlayerContoller : MonoBehaviour
     private void Idle()
     {
         //when idle, queue idle animation
-        animator.SetFloat("Speed", 0, 0.1f, Time.deltaTime);
+        animator.SetFloat("Speed", 0.5f, 0.1f, Time.deltaTime);
     }
 
     private void Walk()
     {
         movementSpeed = walkSpeed;
-        animator.SetFloat("Speed", 0.5f, 0.1f, Time.deltaTime);
     }
 
     private void Run()
     {
         movementSpeed = runSpeed;
-        animator.SetFloat("Speed", 1, 0.1f, Time.deltaTime);
     }
 
     private void Jump()
@@ -102,6 +121,11 @@ public class PlayerContoller : MonoBehaviour
     private void Attack()
     {
         animator.SetTrigger("Attack");
+    }
+
+    private void Shield()
+    {
+        animator.SetTrigger("Block");
     }
 
     private void RotatePlayer()
