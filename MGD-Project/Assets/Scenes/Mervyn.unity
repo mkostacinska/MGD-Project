@@ -450,6 +450,23 @@ MonoBehaviour:
   rb: {fileID: 0}
   cooldown: 1
   canJump: 0
+--- !u!1 &825028552 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7870592688196661338, guid: 1c718ac4b0e99214097b97becb92484c, type: 3}
+  m_PrefabInstance: {fileID: 7870592690140177594}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &825028559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 825028552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9357715d23accf34f9b47672a9e4f01b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1810237236
 GameObject:
   m_ObjectHideFlags: 0
@@ -651,6 +668,21 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7630134148879238763, guid: af9ce0d841d50894d92c47deabeb6cc9, type: 3}
   m_PrefabInstance: {fileID: 7287606245499214216}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &919132148976345060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132148976345059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01057f31d0731124e88bc1b786a6477f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 3
+  level: 1
+  name: Player 1
 --- !u!1001 &7287606245499214216
 PrefabInstance:
   m_ObjectHideFlags: 0

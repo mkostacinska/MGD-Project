@@ -113,4 +113,9 @@ public class PlayerContoller : MonoBehaviour
         Vector3 finalPoint = new Vector3(lookHit.point.x, 0, lookHit.point.z);
         transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(finalPoint), 10f * Time.deltaTime);
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        
+    }
 }
