@@ -35,7 +35,8 @@ public class PlayerContoller : MonoBehaviour
 
     private void Move()
     {
-        isGrounded = Physics.CheckSphere(transform.position, groundDistance, groundMask) || Physics.CheckSphere(transform.position, groundDistance, enemyMask);
+        //checks if there is any overlapping colliders
+        isGrounded = Physics.CheckSphere(transform.position, groundDistance, groundMask) || Physics.CheckSphere(transform.position, 0.15f, enemyMask);
 
         if(isGrounded && velocity.y < 0)
         {

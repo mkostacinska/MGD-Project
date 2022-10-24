@@ -329,6 +329,7 @@ GameObject:
   - component: {fileID: 605757546}
   - component: {fileID: 605757541}
   - component: {fileID: 605757547}
+  - component: {fileID: 605757548}
   m_Layer: 6
   m_Name: Walking Enemy
   m_TagString: Untagged
@@ -450,6 +451,21 @@ MonoBehaviour:
   rb: {fileID: 0}
   cooldown: 1
   canJump: 0
+--- !u!114 &605757548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 605757539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85c5cf19f2432d643b8490298952a9d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 2
+  level: 1
+  range: 1
 --- !u!1 &825028552 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7870592688196661338, guid: 1c718ac4b0e99214097b97becb92484c, type: 3}
@@ -464,9 +480,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 825028552}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9357715d23accf34f9b47672a9e4f01b, type: 3}
+  m_Script: {fileID: 11500000, guid: 2f1ff8edc1d9a31428ea60436a0afd93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 2
+  level: 1
+  range: 1
 --- !u!1 &1810237236
 GameObject:
   m_ObjectHideFlags: 0
@@ -705,7 +724,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7109070797602692305, guid: af9ce0d841d50894d92c47deabeb6cc9, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -1.478
       objectReference: {fileID: 0}
     - target: {fileID: 7109070797602692305, guid: af9ce0d841d50894d92c47deabeb6cc9, type: 3}
       propertyPath: m_LocalRotation.w
@@ -739,6 +758,10 @@ PrefabInstance:
       propertyPath: camera
       value: 
       objectReference: {fileID: 1905501421}
+    - target: {fileID: 7287606246107845123, guid: af9ce0d841d50894d92c47deabeb6cc9, type: 3}
+      propertyPath: groundDistance
+      value: 0.02
+      objectReference: {fileID: 0}
     - target: {fileID: 7287606246107845123, guid: af9ce0d841d50894d92c47deabeb6cc9, type: 3}
       propertyPath: enemyMask.m_Bits
       value: 64
