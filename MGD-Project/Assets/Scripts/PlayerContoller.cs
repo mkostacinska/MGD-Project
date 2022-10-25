@@ -11,6 +11,7 @@ public class PlayerContoller : MonoBehaviour
     [SerializeField] private bool isGrounded;
     [SerializeField] private float groundDistance;
     [SerializeField] private LayerMask groundMask;
+    [SerializeField] private LayerMask enemyMask;
     [SerializeField] private float gravity;
     [SerializeField] private float jumpHeight;
 
@@ -34,7 +35,8 @@ public class PlayerContoller : MonoBehaviour
 
     private void Move()
     {
-        isGrounded = Physics.CheckSphere(transform.position, groundDistance, groundMask);
+        //checks if there is any overlapping colliders
+        isGrounded = Physics.CheckSphere(transform.position, groundDistance, groundMask) || Physics.CheckSphere(transform.position, 0.15f, enemyMask);
 
         if(isGrounded && velocity.y < 0)
         {
@@ -135,5 +137,10 @@ public class PlayerContoller : MonoBehaviour
 
         Vector3 finalPoint = new Vector3(lookHit.point.x, 0, lookHit.point.z);
         transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(finalPoint), 10f * Time.deltaTime);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        
     }
 }
