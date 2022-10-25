@@ -43,7 +43,8 @@ public class PlayerContoller : MonoBehaviour
             velocity.y = -2f;
         }
 
-        float moveZ = Input.GetAxis("Vertical");
+        float moveZ = Input.GetAxis("Vertical"); //get keyboard input for up/down
+        float moveX = Input.GetAxis("Horizontal"); //get keyboard input for up/down
 
         if (isGrounded)
         {
@@ -92,7 +93,8 @@ public class PlayerContoller : MonoBehaviour
             Shield();
         }
 
-        transform.position += movementSpeed * moveZ * transform.forward * Time.deltaTime;
+        transform.position += movementSpeed * moveZ * new Vector3(0,0,1) * Time.deltaTime; //up down
+        transform.position += movementSpeed * moveX * new Vector3(1,0,0) * Time.deltaTime; //left right
 
     }
 
@@ -133,10 +135,11 @@ public class PlayerContoller : MonoBehaviour
         //rotate player to look at the current mouse position
         RaycastHit lookHit;
 
-        Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out lookHit, 100);
-
-        Vector3 finalPoint = new Vector3(lookHit.point.x, 0, lookHit.point.z);
-        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(finalPoint), 10f * Time.deltaTime);
+        if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out lookHit, 100)) //only changes direction if 
+        {
+            Vector3 finalPoint = new Vector3(lookHit.point.x, 0, lookHit.point.z);
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(finalPoint), 10f * Time.deltaTime);
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
