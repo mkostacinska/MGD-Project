@@ -950,10 +950,22 @@ PrefabInstance:
       propertyPath: m_Avatar
       value: 
       objectReference: {fileID: 9000000, guid: 75ae78392af58564db725d5b28576e35, type: 3}
+    - target: {fileID: 7287606246107845121, guid: af9ce0d841d50894d92c47deabeb6cc9, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7287606246107845121, guid: af9ce0d841d50894d92c47deabeb6cc9, type: 3}
+      propertyPath: m_UpdateMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7287606246107845123, guid: af9ce0d841d50894d92c47deabeb6cc9, type: 3}
       propertyPath: camera
       value: 
       objectReference: {fileID: 1905501421}
+    - target: {fileID: 7287606246107845123, guid: af9ce0d841d50894d92c47deabeb6cc9, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7287606246107845123, guid: af9ce0d841d50894d92c47deabeb6cc9, type: 3}
       propertyPath: groundDistance
       value: 0.02
