@@ -138,7 +138,8 @@ public class PlayerContoller : MonoBehaviour
         if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out lookHit, 100)) //only changes direction if pointed at a surface
         {
             Vector3 finalPoint = new Vector3(lookHit.point.x, 0, lookHit.point.z);
-            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(finalPoint), 10f * Time.deltaTime);
+            //transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(finalPoint), 10f * Time.deltaTime);
+            transform.forward = finalPoint - transform.position;  //direction is the difference between player pos and point pos
         }
     }
 
