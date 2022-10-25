@@ -17,6 +17,7 @@ public class PlayerInstance : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //this.Update();
         //update health and level if it is changed via unity field
         //thisPlayer.setHealth(health);
         //thisPlayer.setLevel(level);

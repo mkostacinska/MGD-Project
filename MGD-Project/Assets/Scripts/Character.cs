@@ -5,6 +5,7 @@ using UnityEngine;
 public abstract class Character
 {
     protected int health, level, attack;
+    private Object gameObject;
 
     public Character(int health, int level)
     {
@@ -29,6 +30,6 @@ public abstract class Character
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }
