@@ -135,7 +135,7 @@ public class PlayerContoller : MonoBehaviour
         //rotate player to look at the current mouse position
         RaycastHit lookHit;
 
-        if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out lookHit, 100)) //only changes direction if 
+        if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out lookHit, 100)) //only changes direction if pointed at a surface
         {
             Vector3 finalPoint = new Vector3(lookHit.point.x, 0, lookHit.point.z);
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(finalPoint), 10f * Time.deltaTime);
