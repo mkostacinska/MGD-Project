@@ -8,7 +8,7 @@ public class SlimeInstance : MonoBehaviour
     [SerializeField] private int level = 1;
     [SerializeField] private int range = 1;
 
-    public Slime thisSlime;
+    private Slime thisSlime;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,10 +27,6 @@ public class SlimeInstance : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (thisSlime.getHealth() <= 0)
-        {
-            //MonoBehaviour.print("dead");
-            Destroy(gameObject);
-        }
+        
     }
 }

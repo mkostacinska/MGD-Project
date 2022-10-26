@@ -32,7 +32,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.33225405, y: 0.25, z: 4.5}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
-  m_ConstrainProportionsScale: 1
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
@@ -128,7 +128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2209e8d4d21d76943971ce142242adc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 7630134148879238763, guid: af9ce0d841d50894d92c47deabeb6cc9, type: 3}
+  Player: {fileID: 0}
   speed: 1.5
   jumpAmount: 3
   moveAmount: 1.2

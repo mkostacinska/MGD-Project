@@ -8,7 +8,7 @@ public class WalkerInstance : MonoBehaviour
     [SerializeField] private int level = 1;
     [SerializeField] private int range = 1;
 
-    public Walker thisWalker;
+    private Walker thisWalker;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,10 +28,6 @@ public class WalkerInstance : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (thisWalker.getHealth() <= 0)
-        {
-            //MonoBehaviour.print("dead");
-            Destroy(gameObject);
-        }
+
     }
 }

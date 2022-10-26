@@ -18,5 +18,6 @@ abstract public class NPC : Character
     // Update is called once per frame
     void Update()
     {
+        
     }
 }
