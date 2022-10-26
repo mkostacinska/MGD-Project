@@ -15,19 +15,33 @@ public class WeaponInstance : MonoBehaviour
         enemyLayer = LayerMask.NameToLayer("Enemy");
     }
 
+    [SerializeField] private float cooldown = 1;
+    [SerializeField] private float cooldownEnd = 0f;
+    bool cooldownCheck()
+    {
+        if (Time.time > cooldownEnd)
+        {
+            cooldownEnd = Time.time + cooldown; //acknowledge and reset cooldown
+            return true;
+        }
+        return false;
+    }
     private void OnTriggerEnter(Collider other)
     {
         //MonoBehaviour.print("hit something"));
         //player can only deal damage when they are in the attack animation
-        if (other.gameObject.layer == enemyLayer && GameObject.Find("Player").GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Attack"))
-        {    
-            MonoBehaviour.print("hit enemy");
-            NPC enemy = null;
-            if (other.gameObject.TryGetComponent(out SlimeInstance slime))
-            { enemy = other.gameObject.GetComponent<SlimeInstance>().thisSlime; }      //sets enemy to slime if it exists
-            if (other.gameObject.TryGetComponent(out WalkerInstance walker))
-            { enemy = other.gameObject.GetComponent<WalkerInstance>().thisWalker; }    //sets enemy to walker if it exists
-            enemy.setHealth(enemy.getHealth() - 1);
+        if (cooldownCheck())
+        {
+            if (other.gameObject.layer == enemyLayer && GameObject.Find("Player").GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Attack"))
+            {
+                MonoBehaviour.print("hit enemy");
+                NPC enemy = null;
+                if (other.gameObject.TryGetComponent(out SlimeInstance slime))
+                { enemy = other.gameObject.GetComponent<SlimeInstance>().thisSlime; }      //sets enemy to slime if it exists
+                if (other.gameObject.TryGetComponent(out WalkerInstance walker))
+                { enemy = other.gameObject.GetComponent<WalkerInstance>().thisWalker; }    //sets enemy to walker if it exists
+                enemy.setHealth(enemy.getHealth() - 1);
+            }
         }
     }
 
