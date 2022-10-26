@@ -140,7 +140,9 @@ public class PlayerContoller : MonoBehaviour
         {
             Vector3 finalPoint = new Vector3(lookHit.point.x, 0, lookHit.point.z);
             //transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(finalPoint), 10f * Time.deltaTime);
-            transform.forward = finalPoint - transform.position;  //direction is the difference between player pos and point pos
+            Vector3 difference = finalPoint - transform.position;  //direction is the difference between player pos and point pos
+            Vector3 direction = difference.normalized;
+            transform.forward = new Vector3(direction.x, 0, direction.z);
         }
     }
 
