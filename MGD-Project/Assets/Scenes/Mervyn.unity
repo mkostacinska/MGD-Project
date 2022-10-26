@@ -2997,7 +2997,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7287606246107845123, guid: af9ce0d841d50894d92c47deabeb6cc9, type: 3}
       propertyPath: jumpHeight
-      value: 10
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7287606246107845123, guid: af9ce0d841d50894d92c47deabeb6cc9, type: 3}
       propertyPath: groundDistance
