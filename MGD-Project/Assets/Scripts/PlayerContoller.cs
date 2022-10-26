@@ -48,10 +48,11 @@ public class PlayerContoller : MonoBehaviour
 
         if (isGrounded)
         {
-            if (moveZ != 0 && !Input.GetKey(KeyCode.LeftShift))
+
+            if ((moveZ != 0 || moveX != 0) && !Input.GetKey(KeyCode.LeftShift))
             {
                 Walk();
-                if(moveZ > 0)
+                if(moveZ > 0 || moveX > 0)
                 {
                     animator.SetFloat("Speed", 0.25f, 0.1f, Time.deltaTime);
                 }
@@ -60,10 +61,10 @@ public class PlayerContoller : MonoBehaviour
                     animator.SetFloat("Speed", 0, 0.1f, Time.deltaTime);
                 }
             }
-            else if (moveZ != 0 && Input.GetKey(KeyCode.LeftShift))
+            else if ((moveZ != 0 || moveX != 0) && Input.GetKey(KeyCode.LeftShift))
             {
                 Run();
-                if(moveZ > 0)
+                if(moveZ > 0 || moveX > 0)
                 {
                     animator.SetFloat("Speed", 0.75f, 0.1f, Time.deltaTime);
                 }
@@ -72,7 +73,7 @@ public class PlayerContoller : MonoBehaviour
                     animator.SetFloat("Speed", 1, 0.1f, Time.deltaTime);
                 }
             }
-            else if (moveZ == 0)
+            else if (moveZ == 0 && moveX == 0)
             {
                 Idle();
             }
