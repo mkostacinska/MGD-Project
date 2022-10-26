@@ -2,13 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-abstract public class NPC : Character
+public class Weapon
 {
-    private int range;
-    public NPC(int health, int level, int range) : base (health, level) //calls constructor of superclass
+    private int attack;
+
+    public Weapon(int attack)
     {
-        this.range = range; //sets range to 0 by default
+        this.attack = attack;
     }
+
+    public int getAttack() { return this.attack; }
+    public void setAttack(int attack) { this.attack = attack; }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,5 +23,6 @@ abstract public class NPC : Character
     // Update is called once per frame
     void Update()
     {
+        
     }
 }
