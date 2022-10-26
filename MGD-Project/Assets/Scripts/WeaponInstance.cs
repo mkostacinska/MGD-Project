@@ -22,7 +22,11 @@ public class WeaponInstance : MonoBehaviour
         if (other.gameObject.layer == enemyLayer && GameObject.Find("Player").GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Attack"))
         {    
             MonoBehaviour.print("hit enemy");
-            NPC enemy = other.gameObject.GetComponent<SlimeInstance>().thisSlime;
+            NPC enemy = null;
+            if (other.gameObject.TryGetComponent(out SlimeInstance slime))
+            { enemy = other.gameObject.GetComponent<SlimeInstance>().thisSlime; }      //sets enemy to slime if it exists
+            if (other.gameObject.TryGetComponent(out WalkerInstance walker))
+            { enemy = other.gameObject.GetComponent<WalkerInstance>().thisWalker; }    //sets enemy to walker if it exists
             enemy.setHealth(enemy.getHealth() - 1);
         }
     }
