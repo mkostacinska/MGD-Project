@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class PickupController : MonoBehaviour
@@ -10,6 +11,7 @@ public class PickupController : MonoBehaviour
 
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject text;
+    [SerializeField] private TextMeshProUGUI canvasLabel;
 
     private int collected = 0;
 
@@ -36,6 +38,7 @@ public class PickupController : MonoBehaviour
             {
                 transform.gameObject.SetActive(false); //disable the pickup and increase the total
                 collected += 1;
+                updateUILabel();
                 text.SetActive(false);
             }
         }
@@ -56,5 +59,10 @@ public class PickupController : MonoBehaviour
         Vector3 current = transform.position;
         float newY = Mathf.Sin(Time.time * heightSpeed);
         transform.position = new Vector3(current.x, (newY * deltaHeight) + offset, current.z); //change y to new position (offset by initial Y position!)
+    }
+
+    void updateUILabel()
+    {
+        canvasLabel.text = "keys: " + collected + "/3";
     }
 }
