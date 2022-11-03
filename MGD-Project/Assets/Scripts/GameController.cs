@@ -52,12 +52,11 @@ public class GameController : MonoBehaviour
                 updateIsland();
             }
         }
-        print(currentIsland);
     }
 
     void updateIsland()
     {
-        Physics.Raycast(player.transform.position, Vector3.down, out var hit);
+        Physics.Raycast(transform.position, Vector3.down, out var hit);
         if (hit.collider.gameObject.layer == groundLayer && hit.collider.gameObject != currentIsland)
         {
             currentIsland = hit.collider.gameObject.transform.parent.gameObject;
