@@ -8,18 +8,19 @@ public class PlayerInstance : MonoBehaviour
     [SerializeField] private int level = 1;
     [SerializeField] private string name = "Player 1";
     public Player thisPlayer;
+    public HealthBar healthBar;
     // Start is called before the first frame update
     void Start()
     {
        thisPlayer = new Player(health, level, name);
+        healthBar.SetMaxHealth(health);
     }
 
     // Update is called once per frame
     void Update()
     {
-        //update health and level if it is changed via unity field
-        //thisPlayer.setHealth(health);
-        //thisPlayer.setLevel(level);
+        //set healthbar to player health
+        healthBar.Sethealth(thisPlayer.getHealth());
 
         //if player has no hp, kill player
         if (thisPlayer.getHealth() <= 0)

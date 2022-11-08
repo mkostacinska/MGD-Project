@@ -48,10 +48,11 @@ public class PlayerContoller : MonoBehaviour
 
         if (isGrounded)
         {
-            if (moveZ != 0 && !Input.GetKey(KeyCode.LeftShift))
+
+            if ((moveZ != 0 || moveX != 0) && !Input.GetKey(KeyCode.LeftShift))
             {
                 Walk();
-                if(moveZ > 0)
+                if(moveZ > 0 || moveX > 0)
                 {
                     animator.SetFloat("Speed", 0.25f, 0.1f, Time.deltaTime);
                 }
@@ -60,10 +61,10 @@ public class PlayerContoller : MonoBehaviour
                     animator.SetFloat("Speed", 0, 0.1f, Time.deltaTime);
                 }
             }
-            else if (moveZ != 0 && Input.GetKey(KeyCode.LeftShift))
+            else if ((moveZ != 0 || moveX != 0) && Input.GetKey(KeyCode.LeftShift))
             {
                 Run();
-                if(moveZ > 0)
+                if(moveZ > 0 || moveX > 0)
                 {
                     animator.SetFloat("Speed", 0.75f, 0.1f, Time.deltaTime);
                 }
@@ -72,7 +73,7 @@ public class PlayerContoller : MonoBehaviour
                     animator.SetFloat("Speed", 1, 0.1f, Time.deltaTime);
                 }
             }
-            else if (moveZ == 0)
+            else if (moveZ == 0 && moveX == 0)
             {
                 Idle();
             }
@@ -139,7 +140,9 @@ public class PlayerContoller : MonoBehaviour
         {
             Vector3 finalPoint = new Vector3(lookHit.point.x, 0, lookHit.point.z);
             //transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(finalPoint), 10f * Time.deltaTime);
-            transform.forward = finalPoint - transform.position;  //direction is the difference between player pos and point pos
+            Vector3 difference = finalPoint - transform.position;  //direction is the difference between player pos and point pos
+            Vector3 direction = difference.normalized;
+            transform.forward = new Vector3(direction.x, 0, direction.z);
         }
     }
 
