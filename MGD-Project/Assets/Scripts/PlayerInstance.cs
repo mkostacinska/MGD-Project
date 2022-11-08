@@ -12,7 +12,7 @@ public class PlayerInstance : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        thisPlayer = new Player(health, level, name);
+       thisPlayer = new Player(health, level, name);
         healthBar.SetMaxHealth(health);
     }
 
