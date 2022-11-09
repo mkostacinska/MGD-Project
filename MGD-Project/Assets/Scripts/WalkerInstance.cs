@@ -9,6 +9,7 @@ public class WalkerInstance : MonoBehaviour
     [SerializeField] private int range = 1;
 
     public Walker thisWalker;
+    [SerializeField] private GameObject Player;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +18,7 @@ public class WalkerInstance : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.name == "Player")
+        if (collision.gameObject == Player)
         {    //for now, it searches by gameObject name
             MonoBehaviour.print("hit player");
             Player p = collision.gameObject.GetComponent<PlayerInstance>().thisPlayer;

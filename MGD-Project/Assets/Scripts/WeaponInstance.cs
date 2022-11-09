@@ -5,8 +5,10 @@ using UnityEngine;
 public class WeaponInstance : MonoBehaviour
 {
     [SerializeField] private int attack;
+    [SerializeField] private GameObject Player;
     private Weapon thisWeapon;
     private int enemyLayer;
+    private bool attacking = false;
 
     // Start is called before the first frame update
     void Start()
@@ -28,11 +30,12 @@ public class WeaponInstance : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        //MonoBehaviour.print("hit something"));
+        //MonoBehaviour.print("hit something");
         //player can only deal damage when they are in the attack animation
         if (cooldownCheck())
         {
-            if (other.gameObject.layer == enemyLayer && GameObject.Find("Player").GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Attack"))
+            Debug.Log(attacking);
+            if (other.gameObject.layer == enemyLayer && attacking == true)
             {
                 MonoBehaviour.print("hit enemy");
                 NPC enemy = null;
@@ -48,6 +51,8 @@ public class WeaponInstance : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Attack")) { //keep checking if the attacking animation is playing
+            attacking = true;
+        }
     }
 }
