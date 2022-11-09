@@ -254,7 +254,7 @@ MonoBehaviour:
   health: 2
   level: 1
   range: 1
-  Player: {fileID: 0}
+  Player: {fileID: 7049634308233331326, guid: 06cc3aaa6b749ee469999fb643dc9e54, type: 3}
   healthBar: {fileID: 4682585595721965164}
 --- !u!1001 &457024958
 PrefabInstance:

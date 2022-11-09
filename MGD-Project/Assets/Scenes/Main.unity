@@ -3173,6 +3173,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 746158829547821012, guid: 1c9722cfefc8f5e4b8f1651a864b7158, type: 3}
+      propertyPath: m_Name
+      value: westwall
+      objectReference: {fileID: 0}
     - target: {fileID: 1584252971466858408, guid: 1c9722cfefc8f5e4b8f1651a864b7158, type: 3}
       propertyPath: m_Name
       value: island2 (2)
@@ -3192,6 +3196,10 @@ PrefabInstance:
     - target: {fileID: 1687727420050980527, guid: 1c9722cfefc8f5e4b8f1651a864b7158, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2737816105195145215, guid: 1c9722cfefc8f5e4b8f1651a864b7158, type: 3}
+      propertyPath: m_Name
+      value: eastwall
       objectReference: {fileID: 0}
     - target: {fileID: 3022694647920055733, guid: 1c9722cfefc8f5e4b8f1651a864b7158, type: 3}
       propertyPath: m_RootOrder
@@ -4107,6 +4115,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 746158829547821012, guid: 1c9722cfefc8f5e4b8f1651a864b7158, type: 3}
+      propertyPath: m_Name
+      value: westwall
+      objectReference: {fileID: 0}
     - target: {fileID: 1584252971466858408, guid: 1c9722cfefc8f5e4b8f1651a864b7158, type: 3}
       propertyPath: m_Name
       value: island2 (3)
@@ -4126,6 +4138,10 @@ PrefabInstance:
     - target: {fileID: 1687727420050980527, guid: 1c9722cfefc8f5e4b8f1651a864b7158, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2737816105195145215, guid: 1c9722cfefc8f5e4b8f1651a864b7158, type: 3}
+      propertyPath: m_Name
+      value: eastwall
       objectReference: {fileID: 0}
     - target: {fileID: 3022694647920055733, guid: 1c9722cfefc8f5e4b8f1651a864b7158, type: 3}
       propertyPath: m_RootOrder
@@ -4801,7 +4817,7 @@ GameObject:
   - component: {fileID: 1830140272}
   - component: {fileID: 1830140271}
   m_Layer: 0
-  m_Name: westwall
+  m_Name: eastwall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5189,7 +5205,7 @@ GameObject:
   - component: {fileID: 1876554298}
   - component: {fileID: 1876554297}
   m_Layer: 0
-  m_Name: eastwall
+  m_Name: westwall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7498,6 +7514,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 746158829547821012, guid: 1c9722cfefc8f5e4b8f1651a864b7158, type: 3}
+      propertyPath: m_Name
+      value: westwall
+      objectReference: {fileID: 0}
     - target: {fileID: 1584252971466858408, guid: 1c9722cfefc8f5e4b8f1651a864b7158, type: 3}
       propertyPath: m_Name
       value: island2
@@ -7517,6 +7537,10 @@ PrefabInstance:
     - target: {fileID: 1687727420050980527, guid: 1c9722cfefc8f5e4b8f1651a864b7158, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2737816105195145215, guid: 1c9722cfefc8f5e4b8f1651a864b7158, type: 3}
+      propertyPath: m_Name
+      value: eastwall
       objectReference: {fileID: 0}
     - target: {fileID: 3022694647920055733, guid: 1c9722cfefc8f5e4b8f1651a864b7158, type: 3}
       propertyPath: m_RootOrder
