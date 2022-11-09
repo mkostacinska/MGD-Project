@@ -20,6 +20,9 @@ public class GameController : MonoBehaviour
     [SerializeField] private GameObject currentIsland;
     private List<string> islandsCleared;
 
+    //needed for spawning the bridge when all keys are collected:
+    [SerializeField] private GameObject bridge;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -102,6 +105,10 @@ public class GameController : MonoBehaviour
 
         keyCount = keyNum - keysChildren.Count;
         updateText();
+        if(keyCount == keyNum)
+        {
+            bridge.SetActive(true);
+        }
     }
     void updateText()
     {
