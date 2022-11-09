@@ -26,7 +26,7 @@ public class GameController : MonoBehaviour
         keyLabel.text = "keys: " + keyCount + "/" + keyNum;
 
         //get the initial island the player is on
-        Physics.Raycast(transform.position, Vector3.down, out var hit);
+        Physics.Raycast(player.transform.position, Vector3.down, out var hit);
         if (hit.collider.gameObject.layer == groundLayer)
         {
             currentIsland = hit.collider.gameObject.transform.parent.gameObject;
@@ -36,6 +36,7 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        var counter = 0;
         transform.position = new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z);
         checkKeyCount();
         if (enemiesKilled())
@@ -43,7 +44,7 @@ public class GameController : MonoBehaviour
             var walls = currentIsland.GetComponentsInChildren<Transform>()
             .Where(child => child.gameObject.name == "walls")
             .FirstOrDefault();
-            if (walls)
+            if(walls)
             {
                 walls.gameObject.SetActive(false);
             }
@@ -52,11 +53,12 @@ public class GameController : MonoBehaviour
                 updateIsland();
             }
         }
+        print(currentIsland.name);
     }
 
     void updateIsland()
     {
-        Physics.Raycast(transform.position, Vector3.down, out var hit);
+        Physics.Raycast(player.transform.position, Vector3.down, out var hit);
         if (hit.collider.gameObject.layer == groundLayer && hit.collider.gameObject != currentIsland)
         {
             currentIsland = hit.collider.gameObject.transform.parent.gameObject;

@@ -36,10 +36,10 @@ public class PickupController : MonoBehaviour
             text.SetActive(true);
             if(Input.GetKeyDown(KeyCode.E))
             {
+                text.SetActive(false);
                 transform.gameObject.SetActive(false); //disable the pickup and increase the total
                 collected += 1;
                 updateUILabel();
-                text.SetActive(false);
             }
         }
         else
