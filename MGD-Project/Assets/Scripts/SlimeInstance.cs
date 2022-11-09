@@ -9,10 +9,12 @@ public class SlimeInstance : MonoBehaviour
     [SerializeField] private int range = 1;
 
     public Slime thisSlime;
+    public HealthBar healthBar;
     // Start is called before the first frame update
     void Start()
     {
         thisSlime = new Slime(health, level, range);
+        healthBar.SetMaxHealth(health);
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -27,6 +29,9 @@ public class SlimeInstance : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //set healthbar to health
+        healthBar.Sethealth(thisSlime.getHealth());
+
         if (thisSlime.getHealth() <= 0)
         {
             //MonoBehaviour.print("dead");

@@ -10,10 +10,12 @@ public class WalkerInstance : MonoBehaviour
 
     public Walker thisWalker;
     [SerializeField] private GameObject Player;
+    public HealthBar healthBar;
     // Start is called before the first frame update
     void Start()
     {
         thisWalker = new Walker(health, level, range);
+        healthBar.SetMaxHealth(health);
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -29,6 +31,9 @@ public class WalkerInstance : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //set healthbar to health
+        healthBar.Sethealth(thisWalker.getHealth());
+
         if (thisWalker.getHealth() <= 0)
         {
             //MonoBehaviour.print("dead");
