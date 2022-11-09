@@ -18,12 +18,13 @@ public class GameController : MonoBehaviour
     [SerializeField] private GameObject player;
     [SerializeField] private int groundLayer = 3;
     [SerializeField] private GameObject currentIsland;
-    RaycastHit hit;
+    private List<string> islandsCleared;
 
     // Start is called before the first frame update
     void Start()
     {
         keyLabel.text = "keys: " + keyCount + "/" + keyNum;
+        islandsCleared = new List<string>();
 
         //get the initial island the player is on
         Physics.Raycast(player.transform.position, Vector3.down, out var hit);
@@ -36,11 +37,11 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        var counter = 0;
         transform.position = new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z);
         checkKeyCount();
         if (enemiesKilled())
         {
+            islandsCleared.Add(currentIsland.name);
             var walls = currentIsland.GetComponentsInChildren<Transform>()
             .Where(child => child.gameObject.name == "walls")
             .FirstOrDefault();
@@ -53,7 +54,6 @@ public class GameController : MonoBehaviour
                 updateIsland();
             }
         }
-        print(currentIsland.name);
     }
 
     void updateIsland()
@@ -62,6 +62,22 @@ public class GameController : MonoBehaviour
         if (hit.collider.gameObject.layer == groundLayer && hit.collider.gameObject != currentIsland)
         {
             currentIsland = hit.collider.gameObject.transform.parent.gameObject;
+            if(!islandsCleared.Contains(currentIsland.name))
+            {
+                print("setting enemies");
+                var enemiesParent = currentIsland.GetComponentsInChildren<Transform>()
+            .Where(child => child.gameObject.name == "enemies")
+            .FirstOrDefault();
+
+                var enemies = enemiesParent.gameObject.GetComponentsInChildren<Transform>(true)
+                    .Where(enemy => enemy.gameObject != enemiesParent.gameObject)
+                    .ToList();
+
+                print(enemies.Count());
+                enemies.ForEach(enemy => print(enemy.gameObject.name));
+
+                enemies.ForEach(enemy => enemy.gameObject.SetActive(true));
+            }
         }
     }
 
