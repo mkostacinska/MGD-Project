@@ -1021,6 +1021,19 @@ MonoBehaviour:
   Player: {fileID: 70802583}
   cooldown: 1
   cooldownEnd: 0
+--- !u!65 &663953955
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 663953948}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.2, y: 2, z: 1.2}
+  m_Center: {x: 0.0000003193106, y: 0, z: -0.00000008940697}
 --- !u!1 &786655039
 GameObject:
   m_ObjectHideFlags: 0
@@ -5363,6 +5376,10 @@ PrefabInstance:
       value: 0.81048006
       objectReference: {fileID: 0}
     - target: {fileID: 7049634308743298292, guid: 06cc3aaa6b749ee469999fb643dc9e54, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.27138
+      objectReference: {fileID: 0}
+    - target: {fileID: 7049634308743298292, guid: 06cc3aaa6b749ee469999fb643dc9e54, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.587
       objectReference: {fileID: 0}
@@ -5396,6 +5413,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7049634308743298292, guid: 06cc3aaa6b749ee469999fb643dc9e54, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7049634308743298295, guid: 06cc3aaa6b749ee469999fb643dc9e54, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7049634308743298295, guid: 06cc3aaa6b749ee469999fb643dc9e54, type: 3}
