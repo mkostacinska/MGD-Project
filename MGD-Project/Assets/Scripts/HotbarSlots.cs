@@ -40,7 +40,6 @@ public class HotbarSlots : MonoBehaviour
                 scrollPos = 3;
             }
         }
-        currentSlot.name = ("Hotbar Slot " + scrollPos);
         Selected();
     }
 
@@ -48,7 +47,7 @@ public class HotbarSlots : MonoBehaviour
     {
        if (currentSlot.name == "Hotbar Slot " + scrollPos)
         {
-            currentSlot.GetComponent<Image>().color = Color.white;
+            currentSlot.GetComponent<Image>().color = Color.grey;
         } else
         {
             currentSlot.GetComponent<Image>().color = Color.black;
