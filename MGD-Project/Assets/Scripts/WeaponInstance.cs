@@ -43,6 +43,8 @@ public class WeaponInstance : MonoBehaviour
                 { enemy = other.gameObject.GetComponent<SlimeInstance>().thisSlime; }      //sets enemy to slime if it exists
                 if (other.gameObject.TryGetComponent(out WalkerInstance walker))
                 { enemy = other.gameObject.GetComponent<WalkerInstance>().thisWalker; }    //sets enemy to walker if it exists
+                if (other.gameObject.TryGetComponent(out TurrentInstance turret))
+                { enemy = other.gameObject.GetComponent<TurrentInstance>().thisTurret; print("hello"); }    //sets enemy to turret if it exists
                 enemy.setHealth(enemy.getHealth() - 1);
             }
         }

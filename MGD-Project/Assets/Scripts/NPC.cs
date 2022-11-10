@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-abstract public class NPC : Character
+public class NPC : Character
 {
     private int range;
     public NPC(int health, int level, int range) : base (health, level) //calls constructor of superclass
