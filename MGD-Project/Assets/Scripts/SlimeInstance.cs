@@ -9,6 +9,7 @@ public class SlimeInstance : MonoBehaviour
     [SerializeField] private int range = 1;
 
     public Slime thisSlime;
+    [SerializeField] private GameObject Player;
     public HealthBar healthBar;
     // Start is called before the first frame update
     void Start()
@@ -19,7 +20,7 @@ public class SlimeInstance : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.name == "Player") {    //for now, it searches by gameObject name
+        if (collision.gameObject == Player) {    //if collide with player
             MonoBehaviour.print("hit player");
             Player p = collision.gameObject.GetComponent<PlayerInstance>().thisPlayer;
             p.setHealth(p.getHealth() - 1);

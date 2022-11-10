@@ -216,8 +216,12 @@ MonoBehaviour:
   health: 2
   level: 1
   range: 1
-  Player: {fileID: 7049634308233331326, guid: 06cc3aaa6b749ee469999fb643dc9e54, type: 3}
+  Player: {fileID: 0}
   healthBar: {fileID: 4682585595110721571}
+  cooldown: 1.5
+  readyTime: 0
+  projectilePrefab: {fileID: 6338071099464284447, guid: 2b0b8cc8b3c8d4247aa02415451ef82a, type: 3}
+  projectileSpeed: 2
 --- !u!1001 &1049392113
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -18,10 +18,39 @@ public class TurrentInstance : MonoBehaviour
         healthBar.SetMaxHealth(health);
     }
 
+    [SerializeField] private float cooldown = 4;
+    [SerializeField] private float readyTime = 0f;
+    bool cooldownCheck()
+    {
+        if (Time.time > readyTime)
+        {
+            readyTime = Time.time + cooldown; //acknowledge and reset cooldown
+            return true;
+        }
+        return false;
+    }
+
+    //projectile variables
+    public GameObject projectilePrefab;
+    public float projectileSpeed = 2;
+
     // Update is called once per frame
     void Update()
     {
-        transform.LookAt(Player.transform);
+        //transform.LookAt(Player.transform);
+        Vector3 difference = Player.transform.position - transform.position;
+        Vector3 direction = difference.normalized;      //gets the unit vector direction
+        transform.forward = direction;
+
+
+        //if player is within range, fire projectile
+        if (cooldownCheck())
+        {
+            //create projectile with offset so its in front of the object not in the object
+            var projectile = Instantiate(projectilePrefab, transform.position +(transform.forward*0.2f), transform.rotation);
+            projectile.GetComponent<Rigidbody>().velocity = transform.forward * projectileSpeed;
+        }
+
         //set healthbar to health
         healthBar.Sethealth(thisTurret.getHealth());
 

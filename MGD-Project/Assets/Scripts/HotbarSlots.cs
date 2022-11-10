@@ -23,7 +23,7 @@ public class HotbarSlots : MonoBehaviour
     // Update is called once per frame
     void Update()
      {
-        print(scrollPos);
+        //print(scrollPos);
         //print(currentSlot.name);
         if (Input.mouseScrollDelta.y >= 1)
         {
