@@ -11,7 +11,7 @@ public class WalkerInstance : MonoBehaviour
     public Walker thisWalker;
     [SerializeField] private GameObject Player;
     public HealthBar healthBar;
-    // Start is called before the first frame update
+
     void Start()
     {
         thisWalker = new Walker(health, level, range);
@@ -21,8 +21,7 @@ public class WalkerInstance : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject == Player)
-        {    //for now, it searches by gameObject name
-            MonoBehaviour.print("hit player");
+        {   
             Player p = collision.gameObject.GetComponent<PlayerInstance>().thisPlayer;
             p.setHealth(p.getHealth() - 1);
         }

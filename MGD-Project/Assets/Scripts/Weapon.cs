@@ -11,18 +11,8 @@ public class Weapon
         this.attack = attack;
     }
 
+    //getters and setters for the weapons
     public int getAttack() { return this.attack; }
     public void setAttack(int attack) { this.attack = attack; }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

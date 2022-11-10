@@ -2,32 +2,25 @@ using UnityEngine;
 
 public class WeaponSwitching : MonoBehaviour {
 
-    public int selectedWeapon = 0;
+    public int selectedWeapon = 0; //initially, the first element of the inventory is selected
     
-    // Start is called before the first frame update
     void Start()
     {
         SelectWeapon();
     }
 
-    // Update is called once per frame
     void Update()
     {
         int previousSelectedWeapon = selectedWeapon;
 
         if (Input.GetAxis("Mouse ScrollWheel") > 0f)
         {
-            if (selectedWeapon >= transform.childCount - 1)
-                selectedWeapon = 0;
-            else
-                selectedWeapon++;
+            //move to the next weapon (modular)
+            selectedWeapon = (selectedWeapon + 1) % transform.childCount;
         }
-        if (Input.GetAxis("Mouse ScrollWheel") < 0f)
+        else if (Input.GetAxis("Mouse ScrollWheel") < 0f)
         {
-            if (selectedWeapon <= 0)
-                selectedWeapon = transform.childCount - 1;
-            else
-                selectedWeapon--;
+            selectedWeapon = (selectedWeapon - 1) % transform.childCount;
         }
 
         if (previousSelectedWeapon != selectedWeapon)
@@ -38,13 +31,18 @@ public class WeaponSwitching : MonoBehaviour {
 
     void SelectWeapon ()
     {
+        //make the weapon that is to be used active in the scene and disable all the other weapons
         int i = 0;
         foreach (Transform weapon in transform) // compare each child to current transform
         {
             if (i == selectedWeapon)
+            {
                 weapon.gameObject.SetActive(true);
+            }
             else
+            {
                 weapon.gameObject.SetActive(false);
+            }
             i++;
         }
     }
