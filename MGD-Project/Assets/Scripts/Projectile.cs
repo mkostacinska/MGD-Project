@@ -12,10 +12,17 @@ public class Projectile : MonoBehaviour
         Destroy(gameObject, life);
     }
 
-    /*void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        Destroy(collision.gameObject);
+        MonoBehaviour.print("projectile hit enemy");
+        NPC enemy = null;
+        if (other.gameObject.TryGetComponent(out SlimeInstance slime))
+        { enemy = other.gameObject.GetComponent<SlimeInstance>().thisSlime; }      //sets enemy to slime if it exists
+        if (other.gameObject.TryGetComponent(out WalkerInstance walker))
+        { enemy = other.gameObject.GetComponent<WalkerInstance>().thisWalker; }    //sets enemy to walker if it exists
+        if (other.gameObject.TryGetComponent(out TurrentInstance turret))
+        { enemy = other.gameObject.GetComponent<TurrentInstance>().thisTurret; }    //sets enemy to turret if it exists
+        enemy.setHealth(enemy.getHealth() - 1);
         Destroy(gameObject);
     }
-    */
 }
