@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerInstance : MonoBehaviour
 {
@@ -26,7 +27,8 @@ public class PlayerInstance : MonoBehaviour
         if (thisPlayer.getHealth() <= 0)
         {
             //MonoBehaviour.print("dead");
-            Destroy(gameObject);
+            //Destroy(gameObject);
+            SceneManager.LoadScene("Restart");
         }
     }
 }
