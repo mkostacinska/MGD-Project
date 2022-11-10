@@ -50,7 +50,10 @@ public class GameController : MonoBehaviour
         //if the island has been cleared, disable the walls around it
         if (enemiesKilled())
         {
-            islandsCleared.Add(currentIsland.name); //add to cleared islands so that the enemies do not get respawned on enter
+            if(!islandsCleared.Contains(currentIsland.name))
+            {
+                islandsCleared.Add(currentIsland.name);
+            }//add to cleared islands so that the enemies do not get respawned on enter
 
             //get the gameObject corresponding to walls
             var walls = currentIsland.GetComponentsInChildren<Transform>()
@@ -68,6 +71,7 @@ public class GameController : MonoBehaviour
                 updateIsland();
             }
 
+            print(islandsCleared.Count());
             if(islandsCleared.Count() == numberOfIslands)
             {
                 SceneManager.LoadScene("Win");
