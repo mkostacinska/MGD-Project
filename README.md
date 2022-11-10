@@ -1,6 +1,6 @@
 # **MULTIPLATFORM GAME DEVELOPMENT PROJECT - GROUP W :)**
 
-## Assets used:
+## Assets used :art: :
 
 The following assets are in the project file for the final game but are NOT used in the prototype:
 
