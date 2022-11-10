@@ -10,10 +10,10 @@ public class PlayerInstance : MonoBehaviour
     [SerializeField] private string name = "Player 1";
     public Player thisPlayer;
     public HealthBar healthBar;
-    // Start is called before the first frame update
+    
     void Start()
     {
-       thisPlayer = new Player(health, level, name);
+        thisPlayer = new Player(health, level, name);
         healthBar.SetMaxHealth(health);
     }
 

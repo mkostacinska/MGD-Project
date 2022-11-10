@@ -5,19 +5,7 @@ using UnityEngine;
 public class Slime : NPC
 {
     private Rigidbody rigidbody;
-    public Slime(int health, int level, int range) : base(health, level, range)
-    { 
-
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   
+    //call to the superclass
+    public Slime(int health, int level, int range) : base(health, level, range) { }
 }

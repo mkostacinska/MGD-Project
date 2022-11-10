@@ -10,6 +10,7 @@ public class RangedWeapon : MonoBehaviour
 
     private void Update()
     {
+        //if the weapon is the ranged weapon, shoot projectiles when the attack button is pressed
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             var projectile = Instantiate(projectilePrefab, projectileSpawnPoint.position, projectileSpawnPoint.rotation);

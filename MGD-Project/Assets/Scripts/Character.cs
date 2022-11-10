@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Abstract class Character, used to model all entities in the game
 public abstract class Character
 {
     protected int health, level, attack;
-    private Object gameObject;
 
     public Character(int health, int level)
     {
@@ -19,17 +19,4 @@ public abstract class Character
     public int getLevel(){return level;}
     public void setHealth(int health){this.health = health;}
     public int getHealth(){return health;}
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 }
