@@ -13,10 +13,6 @@ public class PickupController : MonoBehaviour
     //needed to make the 'press E...' text visible within a certain radius
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject text;
-    [SerializeField] private TextMeshProUGUI canvasLabel;
-
-    //count the total amount of collected items
-    private int collected = 0;
 
     void Start()
     {
@@ -41,8 +37,6 @@ public class PickupController : MonoBehaviour
             {
                 text.SetActive(false);
                 transform.gameObject.SetActive(false); //disable the pickup and increase the total
-                collected += 1;
-                updateUILabel();
             }
         }
         else
@@ -62,11 +56,5 @@ public class PickupController : MonoBehaviour
         Vector3 current = transform.position;
         float newY = Mathf.Sin(Time.time * heightSpeed);
         transform.position = new Vector3(current.x, (newY * deltaHeight) + offset, current.z); //change y to new position (offset by initial Y position!)
-    }
-
-    //update the UI label
-    void updateUILabel()
-    {
-        canvasLabel.text = "keys: " + collected + "/3";
     }
 }

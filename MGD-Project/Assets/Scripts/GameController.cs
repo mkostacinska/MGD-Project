@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
 using TMPro;
-using UnityEditor.Animations;
 using UnityEngine;
 
 public class GameController : MonoBehaviour

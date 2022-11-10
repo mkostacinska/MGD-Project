@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Mervyn.unity
     guid: abbc026c946b0624ba3c1e0a5f37aab4
   - enabled: 1
