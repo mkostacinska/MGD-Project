@@ -46,7 +46,7 @@ public class FollowPlayerWalking : MonoBehaviour
         Vector3 difference = Player.transform.position - transform.position;
         if (difference.magnitude > range)
         {
-            transform.position = Vector3.MoveTowards(transform.position, Player.transform.position, speed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, Player.transform.position, speed * Time.deltaTime); //line from https://www.youtube.com/watch?v=wp8m6xyIPtE
         }
     }
 }
