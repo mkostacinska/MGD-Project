@@ -2,11 +2,16 @@
 
 ## Assets used :art: :
 
-The following assets are in the project file for the final game but are NOT used in the prototype:
+The following assets are used in the prototype submission:
 
 - video tutorial for health bar implementation: https://www.youtube.com/watch?v=BLfNP4Sc_iA
 - video tutorial explaining how to change between scenes for the game over screen: https://www.youtube.com/watch?v=K4uOjb5p3Io
 - lecture videos for scripting player movement
+- video tutorial for hotbar implementation: https://www.youtube.com/watch?v=aUc1Qu9_pBs
+
+The following assets can be found in the repository, but are NOT a part of the prototype submission:
+- player models to be used in the final version of the game: https://www.mixamo.com
+- animations to be used along with player models: https://www.mixamo.com
 
 ## Gameplay Tutorial :video_game: :
 ### Brief Game Introduction:
