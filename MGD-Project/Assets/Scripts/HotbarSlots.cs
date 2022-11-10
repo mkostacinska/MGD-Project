@@ -13,18 +13,9 @@ public class HotbarSlots : MonoBehaviour
 
     [SerializeField] private int slots = 2;
 
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
      {
-        //print(scrollPos);
-        //print(currentSlot.name);
+        //change the inventory slot on mouse scrollbar movement:
         if (Input.mouseScrollDelta.y >= 1)
         {
             scrollPos = (scrollPos + 1) % slots; //scroll loops back if over number of slots
@@ -40,6 +31,7 @@ public class HotbarSlots : MonoBehaviour
         Selected();
     }
 
+    //highlight the currently selected slot
     void Selected()
     {
        if (currentSlot.name == "Hotbar Slot " + scrollPos)

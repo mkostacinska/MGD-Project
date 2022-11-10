@@ -4,22 +4,22 @@ using UnityEngine;
 
 public class turretProjectile : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] private GameObject Player;
     public float life = 3;
 
     void Awake()
     {
-        Destroy(gameObject, life);
+        Destroy(gameObject, life); //destroy the projectile after 3 seconds
     }
 
-    [SerializeField] private GameObject Player;
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.name == "PlayerPrototype")    //for now, it searches by gameObject name
-            {    //if collide with player
+        {    
+            //if the projectile collides with player
             MonoBehaviour.print("hit player");
             Player p = collision.gameObject.GetComponent<PlayerInstance>().thisPlayer;
-            p.setHealth(p.getHealth() - 1);
+            p.setHealth(p.getHealth() - 1); //decrease the player's health
             Destroy(gameObject); //breaks after colliding with player
         }
     }

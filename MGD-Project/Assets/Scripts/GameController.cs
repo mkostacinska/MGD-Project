@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
 using TMPro;
-using UnityEditor.Animations;
 using UnityEngine;
 
 public class GameController : MonoBehaviour
@@ -23,10 +22,12 @@ public class GameController : MonoBehaviour
     //needed for spawning the bridge when all keys are collected:
     [SerializeField] private GameObject bridge;
 
-    // Start is called before the first frame update
     void Start()
     {
+        //initial set of key counter text
         keyLabel.text = "keys: " + keyCount + "/" + keyNum;
+
+        //declare a list for storing the islands that have been completed by the player
         islandsCleared = new List<string>();
 
         //get the initial island the player is on
@@ -37,23 +38,29 @@ public class GameController : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
-        transform.position = new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z);
+        //check the amount of keys collected and upadte the key counter text
         checkKeyCount();
+
+        //if the island has been cleared, disable the walls around it
         if (enemiesKilled())
         {
-            islandsCleared.Add(currentIsland.name);
+            islandsCleared.Add(currentIsland.name); //add to cleared islands so that the enemies do not get respawned on enter
+
+            //get the gameObject corresponding to walls
             var walls = currentIsland.GetComponentsInChildren<Transform>()
             .Where(child => child.gameObject.name == "walls")
             .FirstOrDefault();
+            
             if(walls)
             {
+                //if the walls have not already been disabled, disable
                 walls.gameObject.SetActive(false);
             }
             else
             {
+                //if the walls are already disabled, begin checking for a new island object to repeat the process
                 updateIsland();
             }
         }
@@ -61,29 +68,34 @@ public class GameController : MonoBehaviour
 
     void updateIsland()
     {
+        //raycast from the player straignt down below to get the ground they're on
         Physics.Raycast(player.transform.position, Vector3.down, out var hit);
+
+        //if the object the player is standing on is classified as ground & DOES NOT correspond to the most recent island
         if (hit.collider.gameObject.layer == groundLayer && hit.collider.gameObject != currentIsland)
         {
+            //reset the current island to the new island they are on
             currentIsland = hit.collider.gameObject.transform.parent.gameObject;
+            
+            //if the island has not been cleared before, spawn enemies
             if(!islandsCleared.Contains(currentIsland.name))
             {
-                print("setting enemies");
+                //get the parent 'enemies' object
                 var enemiesParent = currentIsland.GetComponentsInChildren<Transform>()
-            .Where(child => child.gameObject.name == "enemies")
-            .FirstOrDefault();
+                    .Where(child => child.gameObject.name == "enemies")
+                    .FirstOrDefault();
 
-                var enemies = enemiesParent.gameObject.GetComponentsInChildren<Transform>(true)
+                var enemies = enemiesParent.gameObject.GetComponentsInChildren<Transform>(true) //true -> get inactive objects as well
                     .Where(enemy => enemy.gameObject != enemiesParent.gameObject)
                     .ToList();
 
-                print(enemies.Count());
-                enemies.ForEach(enemy => print(enemy.gameObject.name));
-
+                //set the enemies to active to spawn them 
                 enemies.ForEach(enemy => enemy.gameObject.SetActive(true));
             }
         }
     }
 
+    //check if all the enemies on an island have been killed
     bool enemiesKilled()
     {
         var enemiesParent = currentIsland.GetComponentsInChildren<Transform>()
@@ -97,14 +109,18 @@ public class GameController : MonoBehaviour
         return enemies.Count() == 0;
     }
 
+    //check how many keys have been collected (the collected keys become inactive)
     void checkKeyCount()
     {
         List<Transform> keysChildren = pickups.GetComponentsInChildren<Transform>()
             .Where(key => key.gameObject.activeInHierarchy && key != pickups.transform)
             .ToList();
 
+        //the number of keys collected is (total number of keys) - (the ones remaining in the scene)
         keyCount = keyNum - keysChildren.Count;
-        updateText();
+        updateText(); //update the key counter accordinglu
+        
+        //if all keys have been collected, allow access to the final island by spawning a bridge
         if(keyCount == keyNum)
         {
             bridge.SetActive(true);

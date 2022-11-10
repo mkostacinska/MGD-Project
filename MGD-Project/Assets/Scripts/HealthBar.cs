@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-//code from following tutorial: https://www.youtube.com/watch?v=BLfNP4Sc_iA
+//tutorial for this code has been credited in the README
 public class HealthBar : MonoBehaviour
 {
 

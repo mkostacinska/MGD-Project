@@ -7,19 +7,23 @@ public class TurrentInstance : MonoBehaviour
     [SerializeField] private int health = 2;
     [SerializeField] private int level = 1;
     [SerializeField] private int range = 1;
+    [SerializeField] private float cooldown = 4;
+    [SerializeField] private float readyTime = 0f;
 
     public NPC thisTurret;
     [SerializeField] private GameObject Player;
     public HealthBar healthBar;
-    // Start is called before the first frame update
+
+    //projectile variables
+    public GameObject projectilePrefab;
+    public float projectileSpeed = 2;
+
     void Start()
     {
         thisTurret = new NPC(health, level, range);
         healthBar.SetMaxHealth(health);
     }
 
-    [SerializeField] private float cooldown = 4;
-    [SerializeField] private float readyTime = 0f;
     bool cooldownCheck()
     {
         if (Time.time > readyTime)
@@ -30,14 +34,10 @@ public class TurrentInstance : MonoBehaviour
         return false;
     }
 
-    //projectile variables
-    public GameObject projectilePrefab;
-    public float projectileSpeed = 2;
-
     // Update is called once per frame
     void Update()
     {
-        //transform.LookAt(Player.transform);
+        //rotate the turret enemy to face the player
         Vector3 difference = Player.transform.position - transform.position;
         Vector3 direction = difference.normalized;      //gets the unit vector direction
         transform.forward = direction;
@@ -56,7 +56,6 @@ public class TurrentInstance : MonoBehaviour
 
         if (thisTurret.getHealth() <= 0)
         {
-            //MonoBehaviour.print("dead");
             Destroy(gameObject);
         }
     }

@@ -6,13 +6,6 @@ public class CameraController : MonoBehaviour
 {
     [SerializeField] private GameObject player;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
         //set the camera position to follow the player (with offset on z to reflect the angle)
