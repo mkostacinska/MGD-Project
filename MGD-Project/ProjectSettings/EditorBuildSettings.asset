@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Mervyn.unity
     guid: abbc026c946b0624ba3c1e0a5f37aab4
+  - enabled: 1
+    path: Assets/Scenes/Main.unity
+    guid: abf9cdbfe0ebc014a8466e65e0bd9a3a
+  - enabled: 1
+    path: Assets/Scenes/Restart.unity
+    guid: a380dc57341d6e9408a9eb2b405c233f
   m_configObjects: {}

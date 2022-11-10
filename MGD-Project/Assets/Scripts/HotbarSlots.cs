@@ -53,4 +53,5 @@ public class HotbarSlots : MonoBehaviour
             currentSlot.GetComponent<Image>().color = Color.black;
         }
     }
+
 }
