@@ -8,7 +8,7 @@ The following assets are in the project file for the final game but are NOT used
 - video tutorial explaining how to change between scenes for the game over screen: https://www.youtube.com/watch?v=K4uOjb5p3Io
 - lecture videos for scripting player movement
 
-## Gameplay Tutorial:
+## Gameplay Tutorial :video_game: :
 ### Brief Game Introduction:
 The player is spawned on a sky island filled with enemies. The goal of the game is to collect three key objects
 (yellow cubes spread across the map) in order to unlock the bridge to the final island, as well as defeat the final
