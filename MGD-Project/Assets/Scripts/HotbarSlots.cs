@@ -11,6 +11,8 @@ public class HotbarSlots : MonoBehaviour
     public Transform[] Items;
     public int scrollPos;
 
+    [SerializeField] private int slots = 2;
+
 
     // Start is called before the first frame update
     void Start()
@@ -22,22 +24,17 @@ public class HotbarSlots : MonoBehaviour
     void Update()
      {
         print(scrollPos);
-        print(currentSlot.name);
+        //print(currentSlot.name);
         if (Input.mouseScrollDelta.y >= 1)
         {
-            scrollPos++;
-            if (scrollPos >= 4)
-            {
-                scrollPos = 1;
-            }
-           
+            scrollPos = (scrollPos + 1) % slots; //scroll loops back if over number of slots
         }
         else if (Input.mouseScrollDelta.y <= -1)
         {
             scrollPos--;
-            if(scrollPos <= 0)
+            if(scrollPos < 0)
             {
-                scrollPos = 3;
+                scrollPos = slots-1;
             }
         }
         Selected();
