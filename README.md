@@ -18,6 +18,7 @@ enemies located on said island.
 - W/A/S/D for player movement
 - Space for jumping
 - Mouse 1 (left mouse button) for attacking; the player rotates to face the cursor
+- Mouse Scroll to change between weapons
 - E to pick up objects
 
 ### Additional information:
