@@ -1,4 +1,4 @@
-# **MULTIPLATFORM GAME DEVELOPMENT PROJECT - GROUP W :)**
+# **MULTIPLATFORM GAME DEVELOPMENT PROJECT - GROUP W :desktop_computer: **
 
 ## Assets used :art: :
 
