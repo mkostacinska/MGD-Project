@@ -4,6 +4,7 @@ using System.Linq;
 using System.Security.Cryptography;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -21,6 +22,9 @@ public class GameController : MonoBehaviour
 
     //needed for spawning the bridge when all keys are collected:
     [SerializeField] private GameObject bridge;
+
+    //needed for winning
+    [SerializeField] private int numberOfIslands = 4;
 
     void Start()
     {
@@ -62,6 +66,11 @@ public class GameController : MonoBehaviour
             {
                 //if the walls are already disabled, begin checking for a new island object to repeat the process
                 updateIsland();
+            }
+
+            if(islandsCleared.Count() == numberOfIslands)
+            {
+                SceneManager.LoadScene("Win");
             }
         }
     }
