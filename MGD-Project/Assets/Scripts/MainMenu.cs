@@ -7,12 +7,12 @@ public class MainMenu : MonoBehaviour
 {
     public void Play()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("Main");
     }
 
     public void Quit()
     {
         Application.Quit();
         Debug.Log("Quit");
-    }//https://www.youtube.com/watch?v=pcyiub1hz20&list=WL&index=13
+    }//tutorial used:https://www.youtube.com/watch?v=pcyiub1hz20&list=WL&index=13
 }

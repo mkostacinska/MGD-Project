@@ -28,7 +28,7 @@ public class PlayerInstance : MonoBehaviour
         {
             //MonoBehaviour.print("dead");
             //Destroy(gameObject);
-            SceneManager.LoadScene("Restart");
+            SceneManager.LoadScene("DeathMenu");
         }
     }
 }
