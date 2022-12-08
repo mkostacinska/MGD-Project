@@ -23,8 +23,9 @@ public class PlayerInstance : MonoBehaviour
         //set healthbar to player health
         healthBar.Sethealth(thisPlayer.getHealth());
 
+        //if player falls below certain y into the void, kill player
         //if player has no hp, kill player
-        if (thisPlayer.getHealth() <= 0)
+        if (thisPlayer.getHealth() <= 0 || gameObject.transform.position.y < -30)
         {
             //MonoBehaviour.print("dead");
             //Destroy(gameObject);
