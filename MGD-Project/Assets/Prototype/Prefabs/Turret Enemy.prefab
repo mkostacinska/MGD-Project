@@ -213,13 +213,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 077d9e2fde6f6404599fb49a90e6beac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 2
+  health: 10
   level: 1
   range: 1
-  Player: {fileID: 0}
-  healthBar: {fileID: 4682585595110721571}
   cooldown: 1.5
   readyTime: 0
+  Player: {fileID: 0}
+  healthBar: {fileID: 4682585595110721571}
   projectilePrefab: {fileID: 6338071099464284447, guid: 2b0b8cc8b3c8d4247aa02415451ef82a, type: 3}
   projectileSpeed: 2
 --- !u!1001 &1049392113

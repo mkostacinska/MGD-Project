@@ -53,7 +53,7 @@ public class WeaponInstance : MonoBehaviour
                 }    
 
                 //decrease the health of the enemy appropriately
-                enemy.setHealth(enemy.getHealth() - 1);
+                enemy.setHealth(enemy.getHealth() - 3);
             }
         }
     }
