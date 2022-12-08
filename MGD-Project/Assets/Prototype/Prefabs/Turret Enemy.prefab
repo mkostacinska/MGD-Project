@@ -213,7 +213,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 077d9e2fde6f6404599fb49a90e6beac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  health: 8
   level: 1
   range: 1
   cooldown: 1.5

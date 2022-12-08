@@ -27,7 +27,7 @@ public class WeaponInstance : MonoBehaviour
         }
         return false;
     }
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         //player can only deal damage when they are in the attack animation
         if (cooldownCheck())
