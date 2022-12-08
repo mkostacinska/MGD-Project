@@ -20,7 +20,7 @@ public class TurrentInstance : MonoBehaviour
 
     void Start()
     {
-        thisTurret = new NPC(health, level, range);
+        thisTurret = new NPC(gameObject, health, level, range);
         healthBar.SetMaxHealth(health);
     }
 

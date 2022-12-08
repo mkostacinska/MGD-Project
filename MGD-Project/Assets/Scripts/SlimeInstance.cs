@@ -14,7 +14,7 @@ public class SlimeInstance : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        thisSlime = new Slime(health, level, range);
+        thisSlime = new Slime(gameObject, health, level, range);
         healthBar.SetMaxHealth(health);
     }
 

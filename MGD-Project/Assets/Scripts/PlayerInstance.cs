@@ -13,7 +13,7 @@ public class PlayerInstance : MonoBehaviour
     
     void Start()
     {
-        thisPlayer = new Player(health, level, name);
+        thisPlayer = new Player(gameObject, health, level, name);
         healthBar.SetMaxHealth(health);
     }
 

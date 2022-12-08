@@ -6,9 +6,11 @@ using UnityEngine;
 public abstract class Character
 {
     protected int health, level, attack;
+    protected GameObject self; //self is the gameobject for the instance
 
-    public Character(int health, int level)
+    public Character(GameObject self, int health, int level)
     {
+        this.self = self;
         this.health = health;
         this.level = level;
     }

@@ -14,7 +14,7 @@ public class WalkerInstance : MonoBehaviour
 
     void Start()
     {
-        thisWalker = new Walker(health, level, range);
+        thisWalker = new Walker(gameObject, health, level, range);
         healthBar.SetMaxHealth(health);
     }
 

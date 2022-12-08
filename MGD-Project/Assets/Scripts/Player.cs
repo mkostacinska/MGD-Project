@@ -6,7 +6,7 @@ public class Player : Character
 {
     private string name;
 
-    public Player(int health, int level, string name) : base(health, level) //calls superclass's constructor
+    public Player(GameObject self, int health, int level, string name) : base(self, health, level) //calls superclass's constructor
     {
         this.name = name;
     }  

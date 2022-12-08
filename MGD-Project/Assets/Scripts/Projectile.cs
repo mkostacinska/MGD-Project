@@ -6,6 +6,7 @@ public class Projectile : MonoBehaviour
 {
     // Start is called before the first frame update
     public float life = 3;
+    public Element element = new Elements.Pyro(); //set projectile as pyro for now
 
     void Awake()
     {
@@ -24,6 +25,7 @@ public class Projectile : MonoBehaviour
         { enemy = other.gameObject.GetComponent<TurrentInstance>().thisTurret; }    //sets enemy to turret if it exists
         if (enemy is not null) {
             enemy.setHealth(enemy.getHealth() - 1);
+            enemy.setElement(element);
             Destroy(gameObject);
         }
     }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class Walker : NPC
 {
     private Rigidbody rigidbody;
-    public Walker(int health, int level, int range) : base(health, level, range)
+    public Walker(GameObject self, int health, int level, int range) : base(self, health, level, range)
     {
 
     }
