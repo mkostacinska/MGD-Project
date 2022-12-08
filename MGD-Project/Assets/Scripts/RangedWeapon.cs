@@ -8,7 +8,7 @@ public class RangedWeapon : MonoBehaviour
     public GameObject projectilePrefab;
     public float projectileSpeed = 5;
 
-    [SerializeField] private float cooldown = 0.3f;
+    [SerializeField] private float cooldown = 0.2f;
     [SerializeField] private float cooldownEnd = 0f;
     bool cooldownCheck()
     {

@@ -8,7 +8,6 @@ public class PlayerContollerPrototype : MonoBehaviour
     //Serialized so that it can still be seen/modified from the inspector while keeping the scope minimal
     [SerializeField] private float movementSpeed;
     [SerializeField] private float walkSpeed;
-    [SerializeField] private float runSpeed;
     [SerializeField] private bool isGrounded;
     [SerializeField] private float groundDistance;
     [SerializeField] private LayerMask groundMask;

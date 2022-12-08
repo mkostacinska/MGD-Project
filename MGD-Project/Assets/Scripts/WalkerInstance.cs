@@ -18,12 +18,27 @@ public class WalkerInstance : MonoBehaviour
         healthBar.SetMaxHealth(health);
     }
 
-    private void OnCollisionEnter(Collision collision)
+    [SerializeField] private float cooldown = 0.5f;
+    [SerializeField] private float cooldownEnd = 0f;
+    bool cooldownCheck()
+    {
+        if (Time.time > cooldownEnd)
+        {
+            cooldownEnd = Time.time + cooldown; //acknowledge and reset cooldown
+            return true;
+        }
+        return false;
+    }
+
+    private void OnCollisionStay(Collision collision)
     {
         if (collision.gameObject == Player)
-        {   
-            Player p = collision.gameObject.GetComponent<PlayerInstance>().thisPlayer;
-            p.setHealth(p.getHealth() - 1);
+        {
+            if (cooldownCheck())
+            {
+                Player p = collision.gameObject.GetComponent<PlayerInstance>().thisPlayer;
+                p.setHealth(p.getHealth() - 1);
+            }
         }
     }
 

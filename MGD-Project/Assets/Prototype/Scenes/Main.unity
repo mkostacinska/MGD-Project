@@ -284,7 +284,7 @@ GameObject:
   - component: {fileID: 41941700}
   - component: {fileID: 41941699}
   - component: {fileID: 41941698}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Flat Mushroom L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -516,7 +516,7 @@ GameObject:
   - component: {fileID: 59129026}
   - component: {fileID: 59129025}
   - component: {fileID: 59129024}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Flat Mushroom S (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -906,7 +906,7 @@ GameObject:
   - component: {fileID: 142784068}
   - component: {fileID: 142784067}
   - component: {fileID: 142784066}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Flat Mushroom S (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1003,7 +1003,7 @@ GameObject:
   - component: {fileID: 159281767}
   - component: {fileID: 159281766}
   - component: {fileID: 159281765}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Flat Mushroom M (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1100,7 +1100,7 @@ GameObject:
   - component: {fileID: 253382798}
   - component: {fileID: 253382797}
   - component: {fileID: 253382796}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Flat Mushroom M
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1689,7 +1689,7 @@ GameObject:
   - component: {fileID: 351528684}
   - component: {fileID: 351528683}
   - component: {fileID: 351528682}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Flat Mushroom L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1898,7 +1898,7 @@ GameObject:
   - component: {fileID: 438285048}
   - component: {fileID: 438285047}
   - component: {fileID: 438285046}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Flat Mushroom L (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2562,7 +2562,7 @@ GameObject:
   - component: {fileID: 539940727}
   - component: {fileID: 539940726}
   - component: {fileID: 539940725}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Flat Mushroom L (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2828,7 +2828,7 @@ GameObject:
   - component: {fileID: 656768154}
   - component: {fileID: 656768153}
   - component: {fileID: 656768152}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Flat Mushroom M (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3448,7 +3448,7 @@ GameObject:
   - component: {fileID: 839634615}
   - component: {fileID: 839634614}
   - component: {fileID: 839634613}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Flat Mushroom S
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3715,7 +3715,7 @@ GameObject:
   - component: {fileID: 909135671}
   - component: {fileID: 909135670}
   - component: {fileID: 909135669}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Flat Mushroom S
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3969,7 +3969,7 @@ GameObject:
   - component: {fileID: 996959998}
   - component: {fileID: 996959997}
   - component: {fileID: 996959996}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Flat Mushroom S
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4066,7 +4066,7 @@ GameObject:
   - component: {fileID: 1020957364}
   - component: {fileID: 1020957363}
   - component: {fileID: 1020957362}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Flat Mushroom S
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4298,7 +4298,7 @@ GameObject:
   - component: {fileID: 1043654875}
   - component: {fileID: 1043654874}
   - component: {fileID: 1043654873}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Flat Mushroom M
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4395,7 +4395,7 @@ GameObject:
   - component: {fileID: 1046838433}
   - component: {fileID: 1046838432}
   - component: {fileID: 1046838431}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Flat Mushroom M
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4696,7 +4696,7 @@ GameObject:
   - component: {fileID: 1138799509}
   - component: {fileID: 1138799508}
   - component: {fileID: 1138799507}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Flat Mushroom L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4793,7 +4793,7 @@ GameObject:
   - component: {fileID: 1149747859}
   - component: {fileID: 1149747858}
   - component: {fileID: 1149747857}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Flat Mushroom L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5856,7 +5856,7 @@ GameObject:
   - component: {fileID: 1255097278}
   - component: {fileID: 1255097277}
   - component: {fileID: 1255097276}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Flat Mushroom L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6050,7 +6050,7 @@ GameObject:
   - component: {fileID: 1275619976}
   - component: {fileID: 1275619975}
   - component: {fileID: 1275619974}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Flat Mushroom M
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6393,7 +6393,7 @@ GameObject:
   - component: {fileID: 1338550357}
   - component: {fileID: 1338550356}
   - component: {fileID: 1338550355}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Flat Mushroom M
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6685,7 +6685,7 @@ GameObject:
   - component: {fileID: 1350737228}
   - component: {fileID: 1350737227}
   - component: {fileID: 1350737226}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Flat Mushroom S
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6865,7 +6865,7 @@ GameObject:
   - component: {fileID: 1382595217}
   - component: {fileID: 1382595216}
   - component: {fileID: 1382595215}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Flat Mushroom L (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7056,7 +7056,7 @@ GameObject:
   - component: {fileID: 1427431521}
   - component: {fileID: 1427431520}
   - component: {fileID: 1427431519}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Flat Mushroom S (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7627,7 +7627,7 @@ GameObject:
   - component: {fileID: 1464930264}
   - component: {fileID: 1464930263}
   - component: {fileID: 1464930262}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Flat Mushroom M
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7724,7 +7724,7 @@ GameObject:
   - component: {fileID: 1467894134}
   - component: {fileID: 1467894133}
   - component: {fileID: 1467894132}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Flat Mushroom L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8817,7 +8817,7 @@ GameObject:
   - component: {fileID: 1648578563}
   - component: {fileID: 1648578562}
   - component: {fileID: 1648578561}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Flat Mushroom M (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9545,7 +9545,7 @@ GameObject:
   - component: {fileID: 1729888952}
   - component: {fileID: 1729888951}
   - component: {fileID: 1729888950}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Flat Mushroom M
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9642,7 +9642,7 @@ GameObject:
   - component: {fileID: 1735017699}
   - component: {fileID: 1735017698}
   - component: {fileID: 1735017697}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Flat Mushroom S (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10686,7 +10686,7 @@ GameObject:
   - component: {fileID: 1895453304}
   - component: {fileID: 1895453303}
   - component: {fileID: 1895453302}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Flat Mushroom S
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11080,7 +11080,7 @@ GameObject:
   - component: {fileID: 1954983000}
   - component: {fileID: 1954982999}
   - component: {fileID: 1954982998}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Flat Mushroom M (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11182,7 +11182,7 @@ GameObject:
   - component: {fileID: 2015694855}
   - component: {fileID: 2015694854}
   - component: {fileID: 2015694853}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Flat Mushroom S
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11279,7 +11279,7 @@ GameObject:
   - component: {fileID: 2020111048}
   - component: {fileID: 2020111047}
   - component: {fileID: 2020111046}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Flat Mushroom S
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11376,7 +11376,7 @@ GameObject:
   - component: {fileID: 2029398201}
   - component: {fileID: 2029398200}
   - component: {fileID: 2029398199}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Flat Mushroom L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11473,7 +11473,7 @@ GameObject:
   - component: {fileID: 2034944096}
   - component: {fileID: 2034944095}
   - component: {fileID: 2034944094}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Flat Mushroom L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11570,7 +11570,7 @@ GameObject:
   - component: {fileID: 2058394837}
   - component: {fileID: 2058394836}
   - component: {fileID: 2058394835}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Flat Mushroom L (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12246,7 +12246,7 @@ GameObject:
   - component: {fileID: 2121710776}
   - component: {fileID: 2121710775}
   - component: {fileID: 2121710774}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Flat Mushroom M
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12489,6 +12489,10 @@ PrefabInstance:
     - target: {fileID: 1188536322878941097, guid: 06cc3aaa6b749ee469999fb643dc9e54, type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7049634308233331313, guid: 06cc3aaa6b749ee469999fb643dc9e54, type: 3}
+      propertyPath: health
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7049634308233331313, guid: 06cc3aaa6b749ee469999fb643dc9e54, type: 3}
       propertyPath: healthBar
