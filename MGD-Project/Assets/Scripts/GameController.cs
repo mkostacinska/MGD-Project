@@ -26,8 +26,13 @@ public class GameController : MonoBehaviour
     //needed for winning
     [SerializeField] private int numberOfIslands = 4;
 
+    //speed increase when rooms are cleared
+    private float bonusSpeedMultiplyer = 1.8f; //multiplier
+    private float defaultSpeed;
     void Start()
     {
+        //get default speed of player
+        defaultSpeed = player.GetComponent<PlayerContollerPrototype>().walkSpeed;
         //initial set of key counter text
         keyLabel.text = "keys: " + keyCount + "/" + keyNum;
 
@@ -50,6 +55,7 @@ public class GameController : MonoBehaviour
         //if the island has been cleared, disable the walls around it
         if (enemiesKilled())
         {
+            player.GetComponent<PlayerContollerPrototype>().walkSpeed = defaultSpeed * bonusSpeedMultiplyer;
             if(!islandsCleared.Contains(currentIsland.name))
             {
                 islandsCleared.Add(currentIsland.name);
@@ -93,6 +99,7 @@ public class GameController : MonoBehaviour
             //if the island has not been cleared before, spawn enemies
             if(!islandsCleared.Contains(currentIsland.name))
             {
+                player.GetComponent<PlayerContollerPrototype>().walkSpeed = defaultSpeed;
                 //get the parent 'enemies' object
                 var enemiesParent = currentIsland.GetComponentsInChildren<Transform>()
                     .Where(child => child.gameObject.name == "enemies")
