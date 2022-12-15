@@ -14,8 +14,9 @@ public class DeathMenu : MonoBehaviour
 
     public void Quit()
     {
-        Application.Quit();
-        Debug.Log("Quit");
+        //Application.Quit();
+        //Debug.Log("Quit");
+        SceneManager.LoadScene("credits");
     }// tutorial used :https://www.youtube.com/watch?v=pcyiub1hz20&list=WL&index=13
 
     public void Menu()

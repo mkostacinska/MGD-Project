@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Final Game/Scenes/DeathMenu.unity
     guid: 52c12c80a87a716439f143a1f4eb4039
+  - enabled: 1
+    path: Assets/Final Game/Scenes/credits.unity
+    guid: fd06c9720bc2ac049934587b36263912
   m_configObjects: {}
