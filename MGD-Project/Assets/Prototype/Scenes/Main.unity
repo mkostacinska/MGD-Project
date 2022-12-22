@@ -12879,6 +12879,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 1188536322948315886, guid: 06cc3aaa6b749ee469999fb643dc9e54, type: 3}
+      propertyPath: HotbarPanel
+      value: 
+      objectReference: {fileID: 265047523}
     - target: {fileID: 7049634308233331313, guid: 06cc3aaa6b749ee469999fb643dc9e54, type: 3}
       propertyPath: health
       value: 3
