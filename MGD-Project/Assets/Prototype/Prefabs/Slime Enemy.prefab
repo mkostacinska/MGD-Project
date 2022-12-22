@@ -235,9 +235,9 @@ MonoBehaviour:
   speed: 1.5
   jumpAmount: 3
   moveAmount: 1.2
-  rb: {fileID: 0}
   cooldown: 1
   canJump: 0
+  rb: {fileID: 0}
 --- !u!114 &4583449332619259907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -253,7 +253,10 @@ MonoBehaviour:
   health: 2
   level: 1
   range: 1
+  Player: {fileID: 0}
   healthBar: {fileID: 3452564616317410505}
+  cooldown: 0.5
+  cooldownEnd: 0
 --- !u!1001 &8003490222372120347
 PrefabInstance:
   m_ObjectHideFlags: 0

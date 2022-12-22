@@ -13,9 +13,13 @@ public class FollowPlayerWalking : MonoBehaviour
     {
         // stop if enemy is within certain range of player (so that it can attack)
         Vector3 difference = Player.transform.position - transform.position;
+        Vector3 direction = difference.normalized;      //gets the unit vector direction
+        transform.forward = new Vector3(direction.x, 0, direction.z);  //enemy rotates to face player (ignoring y axis)
+
         if (difference.magnitude > range)
         {
-            transform.position = Vector3.MoveTowards(transform.position, Player.transform.position, speed * Time.deltaTime); //line from https://www.youtube.com/watch?v=wp8m6xyIPtE
+            //move to (player.x, original.y, player.z)
+            transform.position = Vector3.MoveTowards(transform.position, new Vector3(Player.transform.position.x,transform.position.y,Player.transform.position.z), speed * Time.deltaTime); //line from https://www.youtube.com/watch?v=wp8m6xyIPtE modified to ignore player heights
         }
     }
 }
