@@ -1,18 +1,21 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class WeaponSwitching : MonoBehaviour {
 
     public int selectedWeapon = 0; //initially, the first element of the inventory is selected
-    
+    int previousSelectedWeapon;
+
     void Start()
     {
         SelectWeapon();
     }
 
+    void OnSlot0(InputValue value) { selectedWeapon = 0; }
+    void OnSlot1(InputValue value) { selectedWeapon = 1; }
+
     void Update()
     {
-        int previousSelectedWeapon = selectedWeapon;
-
         if (Input.GetAxis("Mouse ScrollWheel") > 0f)
         {
             //move to the next weapon (modular)
@@ -52,5 +55,6 @@ public class WeaponSwitching : MonoBehaviour {
             }
             i++;
         }
+        previousSelectedWeapon = selectedWeapon;
     }
 }
