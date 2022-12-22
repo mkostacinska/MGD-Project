@@ -8,13 +8,17 @@ public class CanvasForwardRotation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.forward = new Vector3(0,0,0); //face the front
+        //transform.forward = new Vector3(0,0,0); //face the front
 
-        /*
-        //difference between canvas position (assuming parent is an object) and camera position
-        Vector3 difference = transform.parent.position - Camera.main.transform.position;
-        Vector3 direction = difference.normalized;      //gets the unit vector direction
-        transform.forward = new Vector3(0, direction.y, 0); //face the camera
-        */
+        if (transform.parent)
+        {
+            //difference between canvas position (assuming parent is an object) and camera position
+            Vector3 difference = transform.parent.position - Camera.main.transform.position;
+            Vector3 direction = difference.normalized;      //gets the unit vector direction
+            transform.forward = new Vector3(0, direction.y, direction.z); //face the camera
+        }
+        else {
+            transform.forward = new Vector3(0,0,0); //face the front
+        }
     }
 }
