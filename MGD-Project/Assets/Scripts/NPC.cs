@@ -12,6 +12,7 @@ public class NPC : Character
         this.range = range; //sets range to 0 by default
     }
 
+    public float resistance = 0.0f;
     class damageBonusClass {
         public string type;
         public float amount;
@@ -27,15 +28,26 @@ public class NPC : Character
 
     public void damageCalc()
     {
-        if (damageBonus.type == "NONE" || dmg == 0){ return; }//do nothing
+        float damage = dmg;
+        if (dmg == 0) { return; }
+        else if (damageBonus.type == "NONE"){ } //do nothing
         else if (damageBonus.type == "ADD") {
-            dmg = (int)(dmg + damageBonus.amount);  //float is rounded down
+            damage = dmg + damageBonus.amount;
         }
         else if (damageBonus.type == "MULTIPLY") {
-            dmg = (int)(dmg * damageBonus.amount);  //float is rounded down
+            damage = dmg * damageBonus.amount;
         }
+        //resistance multiplier formula from https://genshin-impact.fandom.com/wiki/Resistance#RES_Multiplier
+        float resistanceMultiplier;
+        if (resistance < 0)
+            resistanceMultiplier = 1 - (resistance / 2);
+        else if (resistance < 0.75)
+            resistanceMultiplier = 1 - resistance;
+        else
+            resistanceMultiplier = 1 / (4 * resistance + 1);
 
-        MonoBehaviour.print("damage: " + dmg);
+        dmg = (int)(damage * resistanceMultiplier); //float is rounded down at the end
+        //MonoBehaviour.print("damage: " + dmg);
         this.setHealth(this.getHealth() - dmg);
 
         //reset damage and damage bonus
@@ -78,6 +90,15 @@ public class NPC : Character
         self.GetComponent<Rigidbody>().AddForce(overloadMagnitude * -self.transform.forward.normalized, ForceMode.Impulse);       //adds an impulse force to move a backwards
     }
 
+    float superConductTime = 0;
+    float cooldown = 12f;   //cooldown in seconds
+
+    private void Superconduct() {
+        //set resistance for a certain amount of time
+        resistance = -0.4f;
+        superConductTime = Time.time + cooldown;    //reset cooldown if superconduct reaction is triggered again
+    }
+
     //Element element;
     //state transition model for elemental reactions
     //the state transition diagram is in the google doc
@@ -113,7 +134,7 @@ public class NPC : Character
                     break;
                     }
                 if (element is Elements.Cryo) {
-                    MonoBehaviour.print("melt");
+                    //MonoBehaviour.print("melt");
                     damageBonus.set("MULTIPLY", 2.0f);
 
                     renderer.material.color = defaultColour;
@@ -134,7 +155,7 @@ public class NPC : Character
             case CRYO:
                 if (element == null) { break; }
                 if (element is Elements.Pyro) {
-                    MonoBehaviour.print("melt");
+                    //MonoBehaviour.print("melt");
                     damageBonus.set("MULTIPLY", 2.0f);
 
                     renderer.material.color = defaultColour;
@@ -151,7 +172,8 @@ public class NPC : Character
                     break;
                 }
                 if (element is Elements.Electro) {
-                    MonoBehaviour.print("superconduct");
+                    //MonoBehaviour.print("superconduct");
+                    Superconduct();
 
                     renderer.material.color = defaultColour;
                     elementState = NONE;
@@ -171,7 +193,8 @@ public class NPC : Character
                     break;
                 }
                 if (element is Elements.Cryo) {
-                    MonoBehaviour.print("superconduct");
+                    //MonoBehaviour.print("superconduct");
+                    Superconduct();
 
                     renderer.material.color = defaultColour;
                     elementState = NONE;
@@ -189,6 +212,7 @@ public class NPC : Character
 
         }
         damageCalc();
+        if (Time.time > superConductTime) { resistance = 0.0f; } //reset resistance decrease from superconduct
     }
 }
 

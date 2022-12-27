@@ -259,7 +259,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85c5cf19f2432d643b8490298952a9d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 6
+  health: 600
   level: 1
   range: 1
   Player: {fileID: 7049634308233331326, guid: 06cc3aaa6b749ee469999fb643dc9e54, type: 3}

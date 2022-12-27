@@ -11,7 +11,7 @@ public class WeaponInstance : MonoBehaviour
     private Weapon thisWeapon;
     private int enemyLayer;
     private bool attacking = false;
-    public Element element = new Elements.Cryo(); //set projectile as electro for now
+    public Element element = new Elements.Electro(); //set weapon element here
 
     void Start()
     {
@@ -56,7 +56,7 @@ public class WeaponInstance : MonoBehaviour
                 //decrease the health of the enemy appropriately
                 //enemy.setHealth(enemy.getHealth() - 3);
                 enemy.setElement(element);
-                enemy.dealDamage(3);
+                enemy.dealDamage(300);
             }
         }
     }
