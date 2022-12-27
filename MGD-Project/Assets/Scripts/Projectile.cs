@@ -24,8 +24,9 @@ public class Projectile : MonoBehaviour
         if (other.gameObject.TryGetComponent(out TurrentInstance turret))
         { enemy = other.gameObject.GetComponent<TurrentInstance>().thisTurret; }    //sets enemy to turret if it exists
         if (enemy is not null) {
-            enemy.setHealth(enemy.getHealth() - 1);
+            //enemy.setHealth(enemy.getHealth() - 1);
             enemy.setElement(element);
+            enemy.dealDamage(1);
             Destroy(gameObject);
         }
     }

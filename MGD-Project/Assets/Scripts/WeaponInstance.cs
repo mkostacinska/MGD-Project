@@ -11,6 +11,7 @@ public class WeaponInstance : MonoBehaviour
     private Weapon thisWeapon;
     private int enemyLayer;
     private bool attacking = false;
+    public Element element = new Elements.Cryo(); //set projectile as electro for now
 
     void Start()
     {
@@ -50,10 +51,12 @@ public class WeaponInstance : MonoBehaviour
                 {
                     //set the enemy to the turret that has been hit
                     enemy = other.gameObject.GetComponent<TurrentInstance>().thisTurret;
-                }    
+                }
 
                 //decrease the health of the enemy appropriately
-                enemy.setHealth(enemy.getHealth() - 3);
+                //enemy.setHealth(enemy.getHealth() - 3);
+                enemy.setElement(element);
+                enemy.dealDamage(3);
             }
         }
     }
