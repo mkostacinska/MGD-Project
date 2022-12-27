@@ -270,7 +270,7 @@ GameObject:
   - component: {fileID: 180988338}
   - component: {fileID: 180988337}
   m_Layer: 5
-  m_Name: credit1 (1)
+  m_Name: credit1 (MW)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1106,7 +1106,7 @@ GameObject:
   - component: {fileID: 1314049315}
   - component: {fileID: 1314049314}
   m_Layer: 5
-  m_Name: credit1 (4)
+  m_Name: credit1 (TB)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1241,7 +1241,7 @@ GameObject:
   - component: {fileID: 1407744398}
   - component: {fileID: 1407744397}
   m_Layer: 5
-  m_Name: credit1 (2)
+  m_Name: credit1 (MK)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1511,7 +1511,7 @@ GameObject:
   - component: {fileID: 1648440001}
   - component: {fileID: 1648440000}
   m_Layer: 5
-  m_Name: credit1 (3)
+  m_Name: credit1 (KJ)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
