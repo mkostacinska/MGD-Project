@@ -6,6 +6,7 @@ public class NPC : Character
 {
     private int range;
     private Element element;
+    private Renderer renderer;
     public NPC(GameObject self, int health, int level, int range) : base(self, health, level) //calls constructor of superclass
     {
         this.range = range; //sets range to 0 by default
@@ -27,29 +28,31 @@ public class NPC : Character
 
     int elementState = NONE;
     Color defaultColour;
-    void Start()
+    public void Start() //this needs to be called within the instance script: e.g NPC.Start()
     {
-        defaultColour = self.GetComponent<MeshRenderer>().material.color;
-        MonoBehaviour.print("TEST");
+        renderer = self.GetComponent<Renderer>();
+        defaultColour = renderer.material.color;
+        MonoBehaviour.print(defaultColour);
     }
 
     //Element element;
     //state transition model for elemental reactions
     //the state transition diagram is in the google doc
 
-    void Update()
-    { 
+    public void Update() //this needs to be called within the instance script: e.g NPC.Update()
+    {
         //detect element then switch
         //if not in NONE and element detected, cause reaction
         switch (elementState)
         {
             case NONE:
-                MonoBehaviour.print("case none");
+                //MonoBehaviour.print("case none");
                 //change colour to element type, then switch state
                 if (element != null)
                 {
-                    self.GetComponent<MeshRenderer>().material.color = element.colour;
-                    elementState = element.elementNumber;
+                    renderer.material.color = element.getColour();
+                    elementState = element.getElementNumber();
+                    MonoBehaviour.print(element.getElementNumber());
                     this.element = null; //achknowledge element and reset
                 }
                 break;
@@ -58,64 +61,76 @@ public class NPC : Character
                 //if element = pyro, do nothing
                 //if element = cryo, "melt" reaction
                 //if element = electro, "overload" reaction
+                if (element == null) { break; }
                 if (element is Elements.Pyro) {
-                    MonoBehaviour.print("nothing");
-                    self.GetComponent<MeshRenderer>().material.color = defaultColour;
+                    //MonoBehaviour.print("nothing");
+                    //renderer.material.color = defaultColour;
                     elementState = NONE;
+                    this.element = null; //achknowledge element and reset
                     break;
                     }
                 if (element is Elements.Cryo) {
                     MonoBehaviour.print("melt");
-                    self.GetComponent<MeshRenderer>().material.color = defaultColour;
+                    renderer.material.color = defaultColour;
                     elementState = NONE;
+                    this.element = null; //achknowledge element and reset
                     break;
                 }
                 if (element is Elements.Electro) {
                     MonoBehaviour.print("overload");
-                    self.GetComponent<MeshRenderer>().material.color = defaultColour;
+                    renderer.material.color = defaultColour;
                     elementState = NONE;
+                    this.element = null; //achknowledge element and reset
                     break;
                 }
                 break;
 
             case CRYO:
+                if (element == null) { break; }
                 if (element is Elements.Pyro) {
                     MonoBehaviour.print("melt");
-                    self.GetComponent<MeshRenderer>().material.color = defaultColour;
+                    renderer.material.color = defaultColour;
                     elementState = NONE;
+                    this.element = null; //achknowledge element and reset
                     break;
                 }
                 if (element is Elements.Cryo) {
-                    MonoBehaviour.print("nothing");
-                    self.GetComponent<MeshRenderer>().material.color = defaultColour;
+                    //MonoBehaviour.print("nothing");
+                    //renderer.material.color = defaultColour;
                     elementState = NONE;
+                    this.element = null; //achknowledge element and reset
                     break;
                 }
                 if (element is Elements.Electro) {
                     MonoBehaviour.print("superconduct");
-                    self.GetComponent<MeshRenderer>().material.color = defaultColour;
+                    renderer.material.color = defaultColour;
                     elementState = NONE;
+                    this.element = null; //achknowledge element and reset
                     break;
                 }
                 break;
 
             case ELECTRO:
+                if (element == null) { break; }
                 if (element is Elements.Pyro) {
                     MonoBehaviour.print("overload");
-                    self.GetComponent<MeshRenderer>().material.color = defaultColour;
+                    renderer.material.color = defaultColour;
                     elementState = NONE;
+                    this.element = null; //achknowledge element and reset
                     break;
                 }
                 if (element is Elements.Cryo) {
                     MonoBehaviour.print("superconduct");
-                    self.GetComponent<MeshRenderer>().material.color = defaultColour;
+                    renderer.material.color = defaultColour;
                     elementState = NONE;
+                    this.element = null; //achknowledge element and reset
                     break;
                 }
                 if (element is Elements.Electro) {
-                    MonoBehaviour.print("nothing");
-                    self.GetComponent<MeshRenderer>().material.color = defaultColour;
+                    //MonoBehaviour.print("nothing");
+                    //renderer.material.color = defaultColour;
                     elementState = NONE;
+                    this.element = null; //achknowledge element and reset
                     break;
                 }
                 break;

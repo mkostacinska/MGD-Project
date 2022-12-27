@@ -8,14 +8,15 @@ public class WalkerInstance : MonoBehaviour
     [SerializeField] private int level = 1;
     [SerializeField] private int range = 1;
 
-    public Walker thisWalker;
+    public NPC thisWalker;
     [SerializeField] private GameObject Player;
     public HealthBar healthBar;
 
     void Start()
     {
-        thisWalker = new Walker(gameObject, health, level, range);
+        thisWalker = new NPC(gameObject, health, level, range);
         healthBar.SetMaxHealth(health);
+        thisWalker.Start();
     }
 
     [SerializeField] private float cooldown = 0.5f;
@@ -45,6 +46,7 @@ public class WalkerInstance : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        thisWalker.Update();
         //set healthbar to health
         healthBar.Sethealth(thisWalker.getHealth());
 
