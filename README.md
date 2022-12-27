@@ -13,6 +13,17 @@ The following assets can be found in the repository, but are NOT a part of the p
 - player models to be used in the final version of the game: https://www.mixamo.com
 - animations to be used along with player models: https://www.mixamo.com
 
+-• https://www.youtube.com/watch?v=CE9VOZivb3I&list=WL&index=2&t=614s - Accessed 12/2022, published 1/2020, used for scene transistions, brackeys on YouTube.
+• https://www.youtube.com/watch?v=pcyiub1hz20&list=WL&index=14 - Accessed 11/2022, published 6/2022, used for menus, DB Dev on YouTube.
+-https://www.youtube.com/watch?v=bxKEftSIGiQ&list=WL&index=10&t=604s- Accessed 11/2022, published 10/2022, used for pause menu, DB Dev on YouTube.
+-https://www.youtube.com/watch?v=k2vOeTK0z2g&list=WL&index=2- Accessed 11/2022, published 6/2021, used for volume slider and volume controller , SpeedTutor on YouTube.
+
+rebinding-https://www.youtube.com/watch?v=csqVa2Vimao&list=WL&index=10&t=745s , https://www.youtube.com/watch?v=dUCcZrPhwSo&list=WL&index=11
+https://www.youtube.com/watch?v=FfaG9TvCe5g&list=WL&index=16
+
+
+
+
 ## Gameplay Tutorial :video_game: :
 ### Brief Game Introduction:
 The player is spawned on a sky island filled with enemies. The goal of the game is to collect three key objects
