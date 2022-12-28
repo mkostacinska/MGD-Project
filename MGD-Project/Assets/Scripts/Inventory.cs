@@ -4,12 +4,13 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
 
-public class HotbarSlots : MonoBehaviour
+//this is the inventory
+public class Inventory : MonoBehaviour
 {
-    public Transform original;
-    public Transform hotbarSlot;
-    public Transform currentSlot;
-    public Transform[] Items;
+    //public Transform original;
+    //public Transform hotbarSlot;
+    //public Transform currentSlot;
+    //public Transform[] Items;
     public int scrollPos;
 
     [SerializeField] private int slots = 2;
@@ -18,7 +19,7 @@ public class HotbarSlots : MonoBehaviour
     void OnSlot1(InputValue value) { scrollPos = 1; }
 
     void Update()
-     {
+    {
         //change the inventory slot on mouse scrollbar movement:
         if (Input.mouseScrollDelta.y >= 1)
         {
@@ -27,9 +28,9 @@ public class HotbarSlots : MonoBehaviour
         else if (Input.mouseScrollDelta.y <= -1)
         {
             scrollPos--;
-            if(scrollPos < 0)
+            if (scrollPos < 0)
             {
-                scrollPos = slots-1;
+                scrollPos = slots - 1;
             }
         }
         Selected();
@@ -38,12 +39,19 @@ public class HotbarSlots : MonoBehaviour
     //highlight the currently selected slot
     void Selected()
     {
-       if (currentSlot.name == "Hotbar Slot " + scrollPos)
+        //make the slot active and disable all the other slots
+        int i = 0;
+        foreach (Transform item in transform) // compare each child to current transform
         {
-            currentSlot.GetComponent<Image>().color = Color.grey;
-        } else
-        {
-            currentSlot.GetComponent<Image>().color = Color.black;
+            if (i == scrollPos)
+            {
+                item.GetComponent<Image>().color = Color.grey;
+            }
+            else
+            {
+                item.GetComponent<Image>().color = Color.black;
+            }
+            i++;
         }
     }
 

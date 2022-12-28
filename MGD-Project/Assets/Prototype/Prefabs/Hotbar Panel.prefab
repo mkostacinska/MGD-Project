@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2809264153098998152}
   - component: {fileID: 2809264153098998153}
   - component: {fileID: 2809264153098998157}
-  - component: {fileID: 1258711086066484486}
+  - component: {fileID: 1730842911909787178}
   m_Layer: 5
   m_Name: Hotbar Slot 1
   m_TagString: Untagged
@@ -139,7 +139,7 @@ MonoBehaviour:
   _data:
     _json: '{"declarations":{"Kind":"Object","collection":{"$content":[],"$version":"A"},"$version":"A"}}'
     _objectReferences: []
---- !u!114 &1258711086066484486
+--- !u!114 &1730842911909787178
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -148,15 +148,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 2809264153098998199}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 801151074c8bc484e95329f18210d2e2, type: 3}
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  original: {fileID: 7224837478588731234, guid: 0714a006669f48b4bb147c08cb8b2df6, type: 3}
-  hotbarSlot: {fileID: 2809264153098998198}
-  currentSlot: {fileID: 2809264153098998198}
-  Items: []
-  scrollPos: 0
-  slots: 2
+  m_Actions: {fileID: -944628639613478452, guid: ac5567f9615cc624a984a7ea0e4df1d6, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Player Slots
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &2809264153111306122
 GameObject:
   m_ObjectHideFlags: 0
@@ -169,7 +181,7 @@ GameObject:
   - component: {fileID: 2809264153111306127}
   - component: {fileID: 2809264153111306124}
   - component: {fileID: 2809264153111306113}
-  - component: {fileID: 2809264153111306126}
+  - component: {fileID: 1730842912409163671}
   m_Layer: 5
   m_Name: Hotbar Panel
   m_TagString: Untagged
@@ -252,7 +264,7 @@ MonoBehaviour:
   _data:
     _json: '{"declarations":{"Kind":"Object","collection":{"$content":[],"$version":"A"},"$version":"A"}}'
     _objectReferences: []
---- !u!114 &2809264153111306126
+--- !u!114 &1730842912409163671
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -261,12 +273,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2809264153111306122}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2fe5546f775c47d2820aa5e8a715f53, type: 3}
+  m_Script: {fileID: 11500000, guid: 66359d1c847d6a64bb5092141ec08d6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _data:
-    _json: '{"nest":{"source":"Macro","macro":null,"embed":null}}'
-    _objectReferences: []
+  scrollPos: 0
+  slots: 2
 --- !u!1 &6754449641460023824
 GameObject:
   m_ObjectHideFlags: 0
@@ -550,6 +561,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7224837478588731234, guid: 0714a006669f48b4bb147c08cb8b2df6, type: 3}
     - target: {fileID: 6037236537007496146, guid: 0714a006669f48b4bb147c08cb8b2df6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6037236537007496146, guid: 0714a006669f48b4bb147c08cb8b2df6, type: 3}
       propertyPath: hotbarSlot
       value: 
       objectReference: {fileID: 6754449642143649840}
@@ -667,6 +682,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7224837478588731230, guid: 0714a006669f48b4bb147c08cb8b2df6, type: 3}
+    - {fileID: 6037236537007496146, guid: 0714a006669f48b4bb147c08cb8b2df6, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 7224837478588731234, guid: 0714a006669f48b4bb147c08cb8b2df6, type: 3}
       insertIndex: -1
@@ -677,3 +693,38 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7224837478588731234, guid: 0714a006669f48b4bb147c08cb8b2df6, type: 3}
   m_PrefabInstance: {fileID: 4179172511751692114}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &6754449642143649841 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7224837478588731235, guid: 0714a006669f48b4bb147c08cb8b2df6, type: 3}
+  m_PrefabInstance: {fileID: 4179172511751692114}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1730842911503101829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6754449642143649841}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: ac5567f9615cc624a984a7ea0e4df1d6, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Player Slots
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
