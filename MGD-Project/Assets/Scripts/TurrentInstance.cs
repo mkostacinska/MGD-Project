@@ -22,6 +22,7 @@ public class TurrentInstance : MonoBehaviour
     {
         thisTurret = new NPC(gameObject, health, level, range);
         healthBar.SetMaxHealth(health);
+        thisTurret.Start();
     }
 
     bool cooldownCheck()
@@ -37,6 +38,7 @@ public class TurrentInstance : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        thisTurret.Update();
         //rotate the turret enemy to face the player
         Vector3 difference = Player.transform.position - transform.position;
         Vector3 direction = difference.normalized;      //gets the unit vector direction

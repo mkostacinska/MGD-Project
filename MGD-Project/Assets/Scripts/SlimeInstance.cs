@@ -16,6 +16,7 @@ public class SlimeInstance : MonoBehaviour
     {
         thisSlime = new NPC(gameObject, health, level, range);
         healthBar.SetMaxHealth(health);
+        thisSlime.Start();
     }
 
     [SerializeField] private float cooldown = 0.5f;
@@ -45,6 +46,7 @@ public class SlimeInstance : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        thisSlime.Update();
         //set healthbar to health
         healthBar.Sethealth(thisSlime.getHealth());
 
