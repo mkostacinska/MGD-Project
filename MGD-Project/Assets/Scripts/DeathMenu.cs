@@ -9,7 +9,7 @@ public class DeathMenu : MonoBehaviour
     public void respawnButton()
     {
         SceneManager.LoadScene("Main");
-    }
+    }//modified from gameOverController script 
 
 
     public void Quit()
