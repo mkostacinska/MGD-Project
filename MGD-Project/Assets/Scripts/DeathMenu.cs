@@ -5,8 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class DeathMenu : MonoBehaviour
 {
-    //when the restartButton is pressed, reload the main scene
-    public void restartButton()
+    //when try again (Button) is pressed, reload main scene
+    public void respawnButton()
     {
         SceneManager.LoadScene("Main");
     }
