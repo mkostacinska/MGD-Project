@@ -129,7 +129,7 @@ public class NPC : Character
                 if (element is Elements.Pyro) {
                     //MonoBehaviour.print("nothing");
                     //renderer.material.color = defaultColour;
-                    elementState = NONE;
+
                     this.element = null; //achknowledge element and reset
                     break;
                     }
@@ -167,7 +167,6 @@ public class NPC : Character
                     //MonoBehaviour.print("nothing");
                     //renderer.material.color = defaultColour;
 
-                    elementState = NONE;
                     this.element = null; //achknowledge element and reset
                     break;
                 }
@@ -204,7 +203,7 @@ public class NPC : Character
                 if (element is Elements.Electro) {
                     //MonoBehaviour.print("nothing");
                     //renderer.material.color = defaultColour;
-                    elementState = NONE;
+
                     this.element = null; //achknowledge element and reset
                     break;
                 }
