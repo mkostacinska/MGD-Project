@@ -38,7 +38,8 @@ public class WalkerInstance : MonoBehaviour
             if (cooldownCheck())
             {
                 Player p = collision.gameObject.GetComponent<PlayerInstance>().thisPlayer;
-                p.setHealth(p.getHealth() - 1);
+                //p.setHealth(p.getHealth() - 1);
+                p.dealDamage("Walker", 1);
             }
         }
     }

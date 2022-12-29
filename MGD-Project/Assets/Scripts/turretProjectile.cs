@@ -19,7 +19,8 @@ public class turretProjectile : MonoBehaviour
             //if the projectile collides with player
             MonoBehaviour.print("hit player");
             Player p = collision.gameObject.GetComponent<PlayerInstance>().thisPlayer;
-            p.setHealth(p.getHealth() - 1); //decrease the player's health
+            //p.setHealth(p.getHealth() - 1); //decrease the player's health
+            p.dealDamage("Turret", 1);
             Destroy(gameObject); //breaks after colliding with player
         }
     }

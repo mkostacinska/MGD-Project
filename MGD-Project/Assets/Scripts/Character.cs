@@ -7,6 +7,7 @@ public abstract class Character
 {
     protected int health, level, attack;
     protected GameObject self; //self is the gameobject for the instance
+    protected string lastHitBy;
 
     public Character(GameObject self, int health, int level)
     {
@@ -21,4 +22,10 @@ public abstract class Character
     public int getLevel(){return level;}
     public void setHealth(int health){this.health = health;}
     public int getHealth(){return health;}
+
+    public void dealDamage(string name, int damage) {
+        setHealth(getHealth() - damage);
+        lastHitBy = name;
+    }
+    public string getLastHitBy() { return lastHitBy; }
 }

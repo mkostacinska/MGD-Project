@@ -29,6 +29,7 @@ public class PlayerInstance : MonoBehaviour
         {
             //MonoBehaviour.print("dead");
             //Destroy(gameObject);
+            PlayerPrefs.SetString("Death by", thisPlayer.getLastHitBy()); //method from: https://stackoverflow.com/questions/32306704/how-to-pass-data-and-references-between-scenes-in-unity
             SceneManager.LoadScene("DeathMenu");
         }
     }
