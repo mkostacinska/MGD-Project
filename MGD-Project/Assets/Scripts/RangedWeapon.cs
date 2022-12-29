@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class RangedWeapon : MonoBehaviour
 {
@@ -19,10 +20,13 @@ public class RangedWeapon : MonoBehaviour
         }
         return false;
     }
+
+    private bool attackKeyDown = false;
+    void OnAttack(InputValue attackValue) { attackKeyDown = true; }
     private void Update()
     {
         //if the weapon is the ranged weapon, shoot projectiles when the attack button is pressed
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (attackKeyDown)
         {
             if (cooldownCheck())
             {
