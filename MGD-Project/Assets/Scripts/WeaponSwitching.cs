@@ -35,6 +35,13 @@ public class WeaponSwitching : MonoBehaviour {
             }
             else
             {
+                //stop the animation before switching
+                if (weapon.gameObject.TryGetComponent(out Animator animator)) {
+                    //print("animation playing " + animator.GetCurrentAnimatorStateInfo(0).IsName("Attack"));
+                    animator.StopPlayback();
+                    weapon.gameObject.transform.localRotation = Quaternion.identity;
+                    weapon.gameObject.transform.localPosition = Vector3.zero;
+                }
                 weapon.gameObject.SetActive(false);
             }
             i++;
