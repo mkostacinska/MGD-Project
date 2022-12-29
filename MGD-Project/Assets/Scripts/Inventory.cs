@@ -15,18 +15,18 @@ public class Inventory : MonoBehaviour
 
     [SerializeField] private int slots = 2;
 
-    void OnSlot0(InputValue value) { scrollPos = 0; }
-    void OnSlot1(InputValue value) { scrollPos = 1; }
+    private void Start() { Selected(); }
 
-    void Update()
+    void OnSlot0(InputValue value) { scrollPos = 0; Selected(); }
+    void OnSlot1(InputValue value) { scrollPos = 1; Selected(); }
+    void OnScroll(InputValue value)
     {
         //change the inventory slot on mouse scrollbar movement:
-        if (Input.mouseScrollDelta.y >= 1)
+        if (value.Get<float>() > 0)
         {
             scrollPos = (scrollPos + 1) % slots; //scroll loops back if over number of slots
         }
-        else if (Input.mouseScrollDelta.y <= -1)
-        {
+        else {
             scrollPos--;
             if (scrollPos < 0)
             {
