@@ -173,7 +173,7 @@ MonoBehaviour:
   player: {fileID: 70802583}
   groundLayer: 3
   currentIsland: {fileID: 841914027}
-  bridge: {fileID: 1342024153}
+  bridge: {fileID: 1550820611}
   numberOfIslands: 4
 --- !u!1 &38363856
 GameObject:
@@ -7673,7 +7673,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1342024154
 Transform:
   m_ObjectHideFlags: 0
@@ -8965,6 +8965,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1539362423}
   m_CullTransparentMesh: 1
+--- !u!1 &1550820611 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 25df3ba2134001f46ae5b2c59275cf0d, type: 3}
+  m_PrefabInstance: {fileID: 1184458505}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1567475320
 PrefabInstance:
   m_ObjectHideFlags: 0
