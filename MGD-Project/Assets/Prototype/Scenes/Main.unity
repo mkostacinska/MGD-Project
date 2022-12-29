@@ -8130,6 +8130,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 115202105}
     m_Modifications:
+    - target: {fileID: 2273910376747417131, guid: 8bc7e6bbea78872418128f457af7204f, type: 3}
+      propertyPath: m_DefaultActionMap
+      value: 3e23cf5a-a2ab-4232-96cf-1ab194bd83bc
+      objectReference: {fileID: 0}
     - target: {fileID: 8153010067211552577, guid: 8bc7e6bbea78872418128f457af7204f, type: 3}
       propertyPath: text
       value: 

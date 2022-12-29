@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PickupController : MonoBehaviour
 {
@@ -27,16 +28,20 @@ public class PickupController : MonoBehaviour
         checkDistance(); //check the distance to the player to decide whether or not to display the prompt
     }
 
+    private bool keyDown = false;
+    void OnPickup(InputValue value) { keyDown = true; }
+
     void checkDistance()
     {
         //if the player is within 1.5 unit from the key, display the prompt 
         if(Vector3.Distance(transform.position, player.transform.position) <= 1.5f)
         {
             text.SetActive(true);
-            if(Input.GetKeyDown(KeyCode.E))
-            {
+            if(keyDown)
+                {
                 text.SetActive(false);
                 transform.gameObject.SetActive(false); //disable the pickup and increase the total
+                keyDown = false; //acknowledge and reset
             }
         }
         else
