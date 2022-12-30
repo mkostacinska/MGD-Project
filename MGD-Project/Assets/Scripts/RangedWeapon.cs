@@ -49,6 +49,7 @@ public class RangedWeapon : MonoBehaviour
                 //projectile.GetComponent<Rigidbody>().velocity = projectileSpawnPoint.forward * projectileSpeed;
                 projectile.GetComponent<Rigidbody>().velocity = direction * projectileSpeed;
             }
+            attackKeyDown = false; //acknowledge and reset
         }
     }
 }
