@@ -7,6 +7,9 @@ using UnityEngine.UI;
 
 ////TODO: deal with composites that have parts bound in different control schemes
 
+
+//edited according to https://www.youtube.com/watch?v=csqVa2Vimao&list=WL&index=10&t=892s
+
 namespace UnityEngine.InputSystem.Samples.RebindUI
 {
     /// <summary>
@@ -256,17 +259,24 @@ namespace UnityEngine.InputSystem.Samples.RebindUI
         {
             m_RebindOperation?.Cancel(); // Will null out m_RebindOperation.
 
+
+
             void CleanUp()
             {
                 m_RebindOperation?.Dispose();
                 m_RebindOperation = null;
             }
 
+                        //https://www.youtube.com/watch?v=csqVa2Vimao&list=WL&index=10&t=892s
+            //disable action before use
+            action.Disable();
+
             // Configure the rebind.
             m_RebindOperation = action.PerformInteractiveRebinding(bindingIndex)
                 .OnCancel(
                     operation =>
                     {
+                        action.Enable();
                         m_RebindStopEvent?.Invoke(this, operation);
                         m_RebindOverlay?.SetActive(false);
                         UpdateBindingDisplay();
@@ -275,6 +285,8 @@ namespace UnityEngine.InputSystem.Samples.RebindUI
                 .OnComplete(
                     operation =>
                     {
+
+                        action.Enable();
                         m_RebindOverlay?.SetActive(false);
                         m_RebindStopEvent?.Invoke(this, operation);
                         UpdateBindingDisplay();
