@@ -36,7 +36,7 @@ enemies located on said island.
 - Mouse 1 (left mouse button) for attacking; the player rotates to face the cursor
 - Mouse Scroll to change between weapons
 - E to pick up objects
--Esc-Pause game (while in main scene)
+-Esc to Pause game (while in main scene)
 
 ### Additional information:
 Upon death, the game can be restarted by pressing the 'RESTART' button. After winning, the game can be 
