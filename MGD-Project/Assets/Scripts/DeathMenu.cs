@@ -5,11 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class DeathMenu : MonoBehaviour
 {
-    //when try again (Button) is pressed, reload main scene
-    public void respawnButton()
+    //when the restartButton is pressed, reload the main scene
+    public void restartButton()
     {
         SceneManager.LoadScene("Main");
-    }//modified from gameOverController script 
+    }
 
 
     public void Quit()
