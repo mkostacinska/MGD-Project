@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -6,16 +8,30 @@ public class WeaponSwitching : MonoBehaviour {
     //public int selectedWeapon = 0; //initially, the first element of the inventory is selected
     public int selectedWeapon;
     int previousSelectedWeapon;
+    private Inventory inventory;
     
     void Start()
     {
-        selectedWeapon = GameObject.Find("Hotbar Panel").GetComponent<Inventory>().scrollPos;
+        inventory = GameObject.Find("Hotbar Panel").GetComponent<Inventory>();
+        selectedWeapon = inventory.scrollPos;
         SelectWeapon();
     }
 
+    private List<GameObject> items = new List<GameObject>(); //Arraylist of items
     void Update()
     {
-        selectedWeapon = GameObject.Find("Hotbar Panel").GetComponent<Inventory>().scrollPos;
+        //for every item the player is holding: send it to the inventory
+        if (transform.childCount != this.items.Count)
+        {
+            items.Clear();
+            foreach (Transform item in transform)
+            {
+                items.Add(item.gameObject);
+            }
+            inventory.items = this.items; //link to inventory
+        }
+
+        selectedWeapon = inventory.scrollPos;
 
         if (previousSelectedWeapon != selectedWeapon)
         {

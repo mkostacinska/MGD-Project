@@ -8,6 +8,8 @@ public class RangedWeapon : MonoBehaviour
     public Transform projectileSpawnPoint;
     public GameObject projectilePrefab;
     public float projectileSpeed = 5;
+    [SerializeField] private string elementName = "NAME"; //set projectile element here, used for quick testing
+    private Element element;
 
     [SerializeField] private float cooldown = 0.2f;
     [SerializeField] private float cooldownEnd = 0f;
@@ -48,6 +50,8 @@ public class RangedWeapon : MonoBehaviour
                 var projectile = Instantiate(projectilePrefab, projectileSpawnPoint.position, projectileSpawnPoint.rotation);
                 //projectile.GetComponent<Rigidbody>().velocity = projectileSpawnPoint.forward * projectileSpeed;
                 projectile.GetComponent<Rigidbody>().velocity = direction * projectileSpeed;
+                element = new Elements().getElement(elementName);
+                projectile.GetComponent<Projectile>().element = this.element;
             }
             attackKeyDown = false; //acknowledge and reset
         }

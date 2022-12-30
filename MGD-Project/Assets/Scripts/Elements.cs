@@ -9,7 +9,21 @@ to access an element: Elements.pyro for pyro type
  */
 //outer class
 public class Elements : MonoBehaviour
-{    
+{
+    public Element getElement(string name) {
+        name = name.ToLower();
+        switch (name)
+        {
+            case "pyro":
+                return new Pyro();
+            case "cryo":
+                return new Cryo();
+            case "electro":
+                return new Electro();
+        }
+        return null;
+    }
+
     //set as a class in case other features require access to element type
     public class Pyro : Element {
         public override Color getColour() { return Color.red; }

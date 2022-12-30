@@ -13,16 +13,22 @@ public class Inventory : MonoBehaviour
     //public Transform[] Items;
     public int scrollPos;
 
-    [SerializeField] private int slots = 2;
+    [SerializeField] private int maxSlots;
+    private int slots;
+    public List<GameObject> items = new List<GameObject>(); //Arraylist of items
 
-    private void Start() { Selected(); }
+    private void Start() {
+        slots = transform.childCount;   //set the initial number of slots
+        matchInventory();
+        Selected();
+    }
 
     void OnSlot0(InputValue value) { scrollPos = 0; Selected(); }
     void OnSlot1(InputValue value) { scrollPos = 1; Selected(); }
     void OnScroll(InputValue value)
     {
         //change the inventory slot on mouse scrollbar movement:
-        if (value.Get<float>() > 0)
+        if (value.Get<float>() < 0)
         {
             scrollPos = (scrollPos + 1) % slots; //scroll loops back if over number of slots
         }
@@ -36,9 +42,30 @@ public class Inventory : MonoBehaviour
         Selected();
     }
 
+    private void Update()
+    {
+        if (slots != items.Count) { matchInventory(); }
+    }
+
+    [SerializeField] GameObject prefab;
+    void matchInventory() {
+        //change the width of the HUD to match number of slots
+        //formula is +13 to width per item
+        GetComponent<RectTransform>().sizeDelta = new Vector2(1 + items.Count * 13, GetComponent<RectTransform>().sizeDelta.y);
+        for (; slots < items.Count; slots++)
+        {
+            //add new item with correct text
+            //copy first slot and move to correct location
+            var copy = Instantiate(transform.GetChild(0).gameObject, transform);
+            copy.GetComponent<Image>().color = Color.black;
+            copy.GetComponent<RectTransform>().localPosition = new Vector2(7 + slots * 13, copy.GetComponent<RectTransform>().localPosition.y);
+        }
+    }
+
     //highlight the currently selected slot
     void Selected()
     {
+        
         //make the slot active and disable all the other slots
         int i = 0;
         foreach (Transform item in transform) // compare each child to current transform
