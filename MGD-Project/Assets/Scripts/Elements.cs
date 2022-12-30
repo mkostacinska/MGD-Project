@@ -8,7 +8,7 @@ using UnityEngine;
 to access an element: Elements.pyro for pyro type
  */
 //outer class
-public class Elements : MonoBehaviour
+public class Elements
 {
     public Element getElement(string name) {
         name = name.ToLower();

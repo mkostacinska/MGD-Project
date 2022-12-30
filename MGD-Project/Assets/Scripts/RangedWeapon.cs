@@ -25,6 +25,10 @@ public class RangedWeapon : MonoBehaviour
 
     private bool attackKeyDown = false;
     void OnAttack(InputValue attackValue) { attackKeyDown = true; }
+    private void Start()
+    {
+        element = new Elements().getElement(elementName);
+    }
     private void Update()
     {
         //if the weapon is the ranged weapon, shoot projectiles when the attack button is pressed
@@ -50,7 +54,6 @@ public class RangedWeapon : MonoBehaviour
                 var projectile = Instantiate(projectilePrefab, projectileSpawnPoint.position, projectileSpawnPoint.rotation);
                 //projectile.GetComponent<Rigidbody>().velocity = projectileSpawnPoint.forward * projectileSpeed;
                 projectile.GetComponent<Rigidbody>().velocity = direction * projectileSpeed;
-                element = new Elements().getElement(elementName);
                 projectile.GetComponent<Projectile>().element = this.element;
             }
             attackKeyDown = false; //acknowledge and reset
