@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class ElementIcon : MonoBehaviour
 {
@@ -9,12 +10,16 @@ public class ElementIcon : MonoBehaviour
     [SerializeField] Sprite pyroSprite;
     [SerializeField] Sprite cryoSprite;
     [SerializeField] Sprite electroSprite;
+    TMP_Text reactionText;
 
     // Start is called before the first frame update
     void Start()
     {
         image = GetComponent<Image>();
         image.color = Color.clear;
+        //reactionText = GetComponentInChildren<TMP_Text>();
+        reactionText = transform.GetChild(0).GetComponent<TMP_Text>();
+        reactionText.text = "";
     }
 
     public void setElementIcon(Element element)
@@ -37,4 +42,16 @@ public class ElementIcon : MonoBehaviour
         image.color = Color.clear;
         return;
     }
+
+    public void setReaction(string name, float seconds)
+    {
+        StartCoroutine(setReactionTimed(name, seconds));
+    }
+        
+    public IEnumerator setReactionTimed(string name, float seconds) {
+        reactionText.text = name;
+        yield return new WaitForSeconds(seconds);
+        reactionText.text = "";
+    }
+        
 }

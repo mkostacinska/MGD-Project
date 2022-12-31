@@ -80,8 +80,11 @@ public class NPC : Character
     The functions for each reaction 
     */
     private float overloadMagnitude = 5.0f; //set this to change the amount of knockback
+    private float reactionTextTime = 0.3f;  //time that the reaction text stays in seconds
     private void Overload()
     {
+        elementIcon.setReaction("Overload", reactionTextTime);
+
         //apply knockback: add a random force for now
         //rb.AddForce(Vector3.back forwardForce Time.deltaTime, ForceMode.VelocityChange);
         //MonoBehaviour.print(-self.transform.forward);
@@ -92,6 +95,8 @@ public class NPC : Character
     float cooldown = 12f;   //cooldown in seconds
 
     private void Superconduct() {
+        elementIcon.setReaction("Superconduct", reactionTextTime);
+
         //set resistance for a certain amount of time
         resistance = -0.4f;
         superConductTime = Time.time + cooldown;    //reset cooldown if superconduct reaction is triggered again
@@ -134,6 +139,7 @@ public class NPC : Character
                 if (element is Elements.Cryo) {
                     //MonoBehaviour.print("melt");
                     damageBonus.set("MULTIPLY", 2.0f);
+                    elementIcon.setReaction("Melt", reactionTextTime);
 
                     elementIcon.setElementIcon(null);
                     elementState = NONE;
@@ -155,6 +161,7 @@ public class NPC : Character
                 if (element is Elements.Pyro) {
                     //MonoBehaviour.print("melt");
                     damageBonus.set("MULTIPLY", 2.0f);
+                    elementIcon.setReaction("Melt", reactionTextTime);
 
                     elementIcon.setElementIcon(null);
                     elementState = NONE;
