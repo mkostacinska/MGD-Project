@@ -71,9 +71,12 @@ public class NPC : Character
 
     int elementState = NONE;
     ElementIcon elementIcon;
+    Color defaultHealthColor;
     public void Start() //this needs to be called within the instance script: e.g NPC.Start()
     {
         elementIcon = self.transform.Find("Canvas/Health Bar/Element Icon").GetComponent<ElementIcon>();      //find child "Element Icon" of "Health bar" of "Canvas"
+        healthbarFill = self.transform.Find("Canvas/Health Bar/Fill").GetComponent<Image>();                  //get the healthbar fill to change the colour
+        defaultHealthColor = healthbarFill.color;
     }
 
     /* 
@@ -93,13 +96,16 @@ public class NPC : Character
 
     float superConductTime = 0;
     float cooldown = 12f;   //cooldown in seconds
-
+    Image healthbarFill;
     private void Superconduct() {
         elementIcon.setReaction("Superconduct", reactionTextTime);
 
         //set resistance for a certain amount of time
         resistance = -0.4f;
         superConductTime = Time.time + cooldown;    //reset cooldown if superconduct reaction is triggered again
+
+        //get the healthbar and change colour to signify superconduct
+        healthbarFill.color = Color.yellow;
     }
 
     //Element element;
@@ -215,7 +221,10 @@ public class NPC : Character
 
         }
         damageCalc();
-        if (Time.time > superConductTime) { resistance = 0.0f; } //reset resistance decrease from superconduct
+        if (Time.time > superConductTime) { 
+            resistance = 0.0f; //reset resistance decrease from superconduct
+            healthbarFill.color = defaultHealthColor;
+        } 
     }
 }
 
