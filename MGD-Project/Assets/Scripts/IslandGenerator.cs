@@ -54,8 +54,10 @@ public class IslandGenerator : MonoBehaviour
     }
 
     Tuple<GameObject, Transform> SpawnNext(GameObject prev, Transform leading)
-    { 
-        GameObject current = Instantiate(island, position: prev.transform.position + locationOffset[leading.gameObject.name], rotation: Quaternion.identity, parent: parentIsland.transform);
+    {
+        //pick a random prefab and spawn it
+        GameObject i = islandPrefabs[UnityEngine.Random.Range(0, islandPrefabs.Count())];
+        GameObject current = Instantiate(i, position: prev.transform.position + locationOffset[leading.gameObject.name], rotation: Quaternion.identity, parent: parentIsland.transform);
         var free = GetBridges(current).Where(b => b.gameObject.name != keys[(keys.IndexOf(leading.gameObject.name) + 2) % 4]).ToList();
 
         Transform b = null;
