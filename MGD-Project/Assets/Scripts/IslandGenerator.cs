@@ -9,6 +9,7 @@ public class IslandGenerator : MonoBehaviour
     [SerializeField] private GameObject island;
     [SerializeField] private GameObject parentIsland;
     [SerializeField] private int numberOfIslands;
+    [SerializeField] private List<GameObject> islandPrefabs;
     private int counter = 0;
     private List<string> keys = new List<string>(){ "BridgeN", "BridgeE", "BridgeS", "BridgeW" };
     private Dictionary<string, Vector3> locationOffset = new Dictionary<string, Vector3>()
@@ -67,6 +68,7 @@ public class IslandGenerator : MonoBehaviour
     Tuple<GameObject, Transform> SpawnNext(GameObject prev, Transform leading)
     {
         //List<string> occupied = GetBridges(prev).Where(b => b.gameObject.active == true).Select(b => b.gameObject.name).ToList();
+        // var 
         GameObject current = Instantiate(island, position: prev.transform.position + locationOffset[leading.gameObject.name], rotation: Quaternion.identity, parent: parentIsland.transform);
         var free = GetBridges(current).Where(b => b.gameObject.name != keys[(keys.IndexOf(leading.gameObject.name) + 2) % 4]).ToList();
 
