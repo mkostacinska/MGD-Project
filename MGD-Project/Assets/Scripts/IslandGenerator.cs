@@ -7,7 +7,6 @@ using UnityEngine;
 public class IslandGenerator : MonoBehaviour
 {
     [SerializeField] private GameObject island;
-    [SerializeField] private GameObject sphere;
     [SerializeField] private GameObject parentIsland;
     [SerializeField] private int numberOfIslands;
     [SerializeField] private List<GameObject> islandPrefabs;
@@ -69,13 +68,11 @@ public class IslandGenerator : MonoBehaviour
             
             //ensure the bridge can be spawned (and will be leading to an empty space in a map)
             Collider[] intersecting = Physics.OverlapSphere(current.transform.position + locationOffset[bridgeG.gameObject.name], 500.0f);
-            Instantiate(sphere, position: current.transform.position + locationOffset[bridgeG.gameObject.name], rotation: Quaternion.identity);
             while(intersecting.Length != 0)
             {
                 free.Remove(bridgeG);
                 bridgeG = free[UnityEngine.Random.Range(0, free.Count())];
                 intersecting = Physics.OverlapSphere(current.transform.position + locationOffset[bridgeG.gameObject.name], 0.2f);
-                Instantiate(sphere, position: current.transform.position + locationOffset[bridgeG.gameObject.name], rotation: Quaternion.identity);
             }
 
             //when a suitable position is found, spawn an island there
