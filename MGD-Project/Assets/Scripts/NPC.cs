@@ -80,7 +80,7 @@ public class NPC : Character
     The functions for each reaction 
     */
     private float overloadMagnitude = 5.0f; //set this to change the amount of knockback
-    private float reactionTextTime = 0.3f;  //time that the reaction text stays in seconds
+    private float reactionTextTime = 0.4f;  //time that the reaction text stays in seconds
     private void Overload()
     {
         elementIcon.setReaction("Overload", reactionTextTime);
