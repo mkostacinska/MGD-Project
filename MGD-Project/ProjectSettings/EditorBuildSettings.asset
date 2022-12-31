@@ -12,13 +12,13 @@ EditorBuildSettings:
     path: Assets/Final Game/Scenes/mainMenu.unity
     guid: 903cf62354e673448a8b87fb9f59c56c
   - enabled: 1
-    path: Assets/Final Game/Prototype/Scenes/Main.unity
+    path: Assets/Prototype/Scenes/Main.unity
     guid: abf9cdbfe0ebc014a8466e65e0bd9a3a
   - enabled: 1
-    path: Assets/Final Game/Prototype/Scenes/Restart.unity
+    path: Assets/Prototype/Scenes/Restart.unity
     guid: a380dc57341d6e9408a9eb2b405c233f
   - enabled: 1
-    path: Assets/Final Game/Prototype/Scenes/Win.unity
+    path: Assets/Prototype/Scenes/Win.unity
     guid: 8a3fc4ad080c10a479b5e226ed6b3d24
   - enabled: 1
     path: Assets/Final Game/Scenes/DeathMenu.unity
