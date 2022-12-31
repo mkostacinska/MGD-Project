@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class NPC : Character
 {
@@ -69,13 +70,10 @@ public class NPC : Character
     //states have to be manually added if new reactions are added
 
     int elementState = NONE;
-    Color defaultColour;
-
+    ElementIcon elementIcon;
     public void Start() //this needs to be called within the instance script: e.g NPC.Start()
     {
-        renderer = self.GetComponent<Renderer>();
-        defaultColour = renderer.material.color;
-        //MonoBehaviour.print(defaultColour);
+        elementIcon = self.transform.Find("Canvas/Health Bar/Element Icon").GetComponent<ElementIcon>();      //find child "Element Icon" of "Health bar" of "Canvas"
     }
 
     /* 
@@ -102,7 +100,6 @@ public class NPC : Character
     //Element element;
     //state transition model for elemental reactions
     //the state transition diagram is in the google doc
-
     public void Update() //this needs to be called within the instance script: e.g NPC.Update()
     {
         //detect element then switch
@@ -114,7 +111,9 @@ public class NPC : Character
                 //change colour to element type, then switch state
                 if (element != null)
                 {
-                    renderer.material.color = element.getColour();
+                    //get element icon and change to element
+                    //var elementIcon = this.self.transform.Find("Element Icon");
+                    elementIcon.setElementIcon(element);
                     elementState = element.getElementNumber();
                     //MonoBehaviour.print(element.getElementNumber());
                     this.element = null; //achknowledge element and reset
@@ -128,7 +127,6 @@ public class NPC : Character
                 if (element == null) { break; }
                 if (element is Elements.Pyro) {
                     //MonoBehaviour.print("nothing");
-                    //renderer.material.color = defaultColour;
 
                     this.element = null; //achknowledge element and reset
                     break;
@@ -137,7 +135,7 @@ public class NPC : Character
                     //MonoBehaviour.print("melt");
                     damageBonus.set("MULTIPLY", 2.0f);
 
-                    renderer.material.color = defaultColour;
+                    elementIcon.setElementIcon(null);
                     elementState = NONE;
                     this.element = null; //achknowledge element and reset
                     break;
@@ -145,7 +143,7 @@ public class NPC : Character
                 if (element is Elements.Electro) {
                     Overload();
 
-                    renderer.material.color = defaultColour;
+                    elementIcon.setElementIcon(null);
                     elementState = NONE;
                     this.element = null; //achknowledge element and reset
                     break;
@@ -158,14 +156,13 @@ public class NPC : Character
                     //MonoBehaviour.print("melt");
                     damageBonus.set("MULTIPLY", 2.0f);
 
-                    renderer.material.color = defaultColour;
+                    elementIcon.setElementIcon(null);
                     elementState = NONE;
                     this.element = null; //achknowledge element and reset
                     break;
                 }
                 if (element is Elements.Cryo) {
                     //MonoBehaviour.print("nothing");
-                    //renderer.material.color = defaultColour;
 
                     this.element = null; //achknowledge element and reset
                     break;
@@ -174,7 +171,8 @@ public class NPC : Character
                     //MonoBehaviour.print("superconduct");
                     Superconduct();
 
-                    renderer.material.color = defaultColour;
+                    elementIcon.setElementIcon(null);
+                    //renderer.material.color = defaultColour;
                     elementState = NONE;
                     this.element = null; //achknowledge element and reset
                     break;
@@ -186,7 +184,7 @@ public class NPC : Character
                 if (element is Elements.Pyro) {
                     Overload();
 
-                    renderer.material.color = defaultColour;
+                    elementIcon.setElementIcon(null);
                     elementState = NONE;
                     this.element = null; //achknowledge element and reset
                     break;
@@ -195,14 +193,13 @@ public class NPC : Character
                     //MonoBehaviour.print("superconduct");
                     Superconduct();
 
-                    renderer.material.color = defaultColour;
+                    elementIcon.setElementIcon(null);
                     elementState = NONE;
                     this.element = null; //achknowledge element and reset
                     break;
                 }
                 if (element is Elements.Electro) {
                     //MonoBehaviour.print("nothing");
-                    //renderer.material.color = defaultColour;
 
                     this.element = null; //achknowledge element and reset
                     break;
