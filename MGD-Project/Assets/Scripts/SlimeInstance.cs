@@ -48,6 +48,12 @@ public class SlimeInstance : MonoBehaviour
     void Update()
     {
         thisSlime.Update();
+
+        //rotate enemy to face player
+        Vector3 difference = Player.transform.position - transform.position;
+        Vector3 direction = difference.normalized;      //gets the unit vector direction
+        transform.forward = direction;
+
         //set healthbar to health
         healthBar.Sethealth(thisSlime.getHealth());
 
