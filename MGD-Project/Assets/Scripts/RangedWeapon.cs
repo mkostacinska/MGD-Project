@@ -28,6 +28,7 @@ public class RangedWeapon : MonoBehaviour
     private void Start()
     {
         element = new Elements().getElement(elementName);
+        gameObject.name = (elementName + " Staff").ToUpper();
     }
     private void Update()
     {

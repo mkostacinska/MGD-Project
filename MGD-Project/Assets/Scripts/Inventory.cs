@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
+using TMPro;
 
 //this is the inventory
 public class Inventory : MonoBehaviour
@@ -25,6 +26,8 @@ public class Inventory : MonoBehaviour
 
     void OnSlot0(InputValue value) { scrollPos = 0; Selected(); }
     void OnSlot1(InputValue value) { scrollPos = 1; Selected(); }
+    void OnSlot2(InputValue value) { scrollPos = 2; Selected(); }
+    void OnSlot3(InputValue value) { scrollPos = 3; Selected(); }
     void OnScroll(InputValue value)
     {
         //change the inventory slot on mouse scrollbar movement:
@@ -59,6 +62,13 @@ public class Inventory : MonoBehaviour
             var copy = Instantiate(transform.GetChild(0).gameObject, transform);
             copy.GetComponent<Image>().color = Color.black;
             copy.GetComponent<RectTransform>().localPosition = new Vector2(7 + slots * 13, copy.GetComponent<RectTransform>().localPosition.y);
+        }
+
+        int i = 0;
+        foreach (Transform item in transform)
+        {
+            item.GetComponentInChildren<TMP_Text>().text = items[i].name;
+            i++;
         }
     }
 

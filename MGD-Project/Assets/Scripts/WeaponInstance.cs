@@ -11,12 +11,15 @@ public class WeaponInstance : MonoBehaviour
     private Weapon thisWeapon;
     private int enemyLayer;
     private bool attacking = false;
-    public Element element = new Elements.Electro(); //set weapon element here
+    [SerializeField] private string elementName = "NAME"; //set projectile element here, used for quick testing
+    public Element element;
 
     void Start()
     {
+        element = new Elements().getElement(elementName);
         thisWeapon = new Weapon(attack);
         enemyLayer = LayerMask.NameToLayer("Enemy");
+        gameObject.name = (elementName + " Sword").ToUpper();
     }
 
     bool cooldownCheck()
