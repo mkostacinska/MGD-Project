@@ -268,9 +268,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   island: {fileID: 7649023750415480442, guid: 2190a5213ba674f479c8b56b88c6f8d7, type: 3}
-  bridge: {fileID: 919132149155446097, guid: 25df3ba2134001f46ae5b2c59275cf0d, type: 3}
   parentIsland: {fileID: 124085037}
-  numberOfIslands: 3
+  numberOfIslands: 6
+  islandPrefabs:
+  - {fileID: 7649023750415480442, guid: ed2872ae6b2203e44a3ba18061a83679, type: 3}
+  - {fileID: 7649023750415480442, guid: 2190a5213ba674f479c8b56b88c6f8d7, type: 3}
+  - {fileID: 7649023750415480442, guid: 12e5d55bc9efd3148bff0cd405963eb6, type: 3}
 --- !u!4 &1487201243
 Transform:
   m_ObjectHideFlags: 0
