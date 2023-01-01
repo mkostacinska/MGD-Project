@@ -29,7 +29,11 @@ public class PickupController : MonoBehaviour
     }
 
     protected bool keyDown = false;
-    void OnPickup(InputValue value) { keyDown = true; }
+    void OnPickup(InputValue value) { 
+        keyDown = true;
+        checkDistance();
+        keyDown = false; //acknowledge and reset
+    }
 
     void checkDistance()
     {
