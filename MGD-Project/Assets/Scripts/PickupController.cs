@@ -12,23 +12,23 @@ public class PickupController : MonoBehaviour
     [SerializeField] private float offset = 0.8f;
 
     //needed to make the 'press E...' text visible within a certain radius
-    [SerializeField] private GameObject player;
-    [SerializeField] private GameObject text;
+    [SerializeField] protected GameObject player;
+    [SerializeField] protected GameObject text;
 
-    void Start()
+    protected void Start()
     {
         //set the 'press E...' text position
         text.transform.position = new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z);
         text.transform.eulerAngles = text.transform.eulerAngles + new Vector3(45, 0, 0); //set the angle of the text so that it faces the camera
     }
 
-    void Update()
+    protected void Update()
     {
         rotateObject(); //periodic key movement (rotation + moving up and down)
         checkDistance(); //check the distance to the player to decide whether or not to display the prompt
     }
 
-    private bool keyDown = false;
+    protected bool keyDown = false;
     void OnPickup(InputValue value) { keyDown = true; }
 
     void checkDistance()
@@ -51,7 +51,7 @@ public class PickupController : MonoBehaviour
     }
 
 
-    void rotateObject()
+    protected void rotateObject()
     {
         //rotate the object around the world y axis
         Vector3 rotation = new Vector3(0, 0.07f, 0);

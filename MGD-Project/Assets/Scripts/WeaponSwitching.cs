@@ -29,6 +29,7 @@ public class WeaponSwitching : MonoBehaviour {
                 items.Add(item.gameObject);
             }
             inventory.items = this.items; //link to inventory
+            SelectWeapon();
         }
 
         selectedWeapon = inventory.scrollPos;
