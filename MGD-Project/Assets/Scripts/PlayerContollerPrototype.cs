@@ -55,11 +55,6 @@ public class PlayerContollerPrototype : MonoBehaviour
         }
     }
 
-    void OnAttack(InputValue attackValue)
-    {
-        weapon.GetComponent<Animator>().SetTrigger("Attack");
-    }
-
     private void RotatePlayer()
     {
         //rotate player to look at the current mouse position

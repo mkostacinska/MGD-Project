@@ -13,7 +13,7 @@ public class PickupItem : PickupController
         base.Start();       //get the start() from superclass
 
         //if there is an animator, disable it so that item can spin
-        //if (TryGetComponent(out Animator animator)) { animator.enabled = false; }
+        if (TryGetComponent(out Animator animator)) { animator.enabled = false; }
     }
 
     new void Update(){
@@ -43,7 +43,7 @@ public class PickupItem : PickupController
                 transform.localRotation = Quaternion.identity;
 
                 //if there is an animator, re-enable it
-                //if (animator != null) { animator.enabled = true; }
+                if (TryGetComponent(out Animator animator)) { animator.enabled = true; }
 
                 Destroy(this);     //destroy this script
             }

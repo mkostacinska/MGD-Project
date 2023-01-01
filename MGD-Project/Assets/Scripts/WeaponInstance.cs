@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class WeaponInstance : MonoBehaviour
 {
@@ -62,6 +63,11 @@ public class WeaponInstance : MonoBehaviour
                 enemy.dealDamage(300);
             }
         }
+    }
+
+    void OnAttack(InputValue attackValue)
+    {
+        GetComponent<Animator>().SetTrigger("Attack");
     }
 
     void Update()

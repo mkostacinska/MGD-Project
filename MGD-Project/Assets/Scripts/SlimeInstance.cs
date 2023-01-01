@@ -14,6 +14,7 @@ public class SlimeInstance : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (Player == null) { this.enabled = false; }   //disable script if player == false, this should never happen outside of testing
         thisSlime = new NPC(gameObject, health, level, range);
         healthBar.SetMaxHealth(health);
         thisSlime.Start();
