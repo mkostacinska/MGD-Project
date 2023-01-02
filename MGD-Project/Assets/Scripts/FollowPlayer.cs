@@ -5,7 +5,6 @@ using UnityEngine;
 public class FollowPlayer : MonoBehaviour
 {
     [SerializeField] private GameObject Player;
-    [SerializeField] private float speed = 1.5f;
     [SerializeField] private float jumpAmount = 1;
     [SerializeField] private float moveAmount = 0.5f;
 

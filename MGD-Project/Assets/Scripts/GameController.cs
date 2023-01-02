@@ -77,7 +77,7 @@ public class GameController : MonoBehaviour
                 updateIsland();
             }
 
-            print(islandsCleared.Count());
+            //print(islandsCleared.Count());
             if(islandsCleared.Count() == numberOfIslands)
             {
                 SceneManager.LoadScene("Win");
@@ -91,6 +91,7 @@ public class GameController : MonoBehaviour
         Physics.Raycast(player.transform.position, Vector3.down, out var hit);
 
         //if the object the player is standing on is classified as ground & DOES NOT correspond to the most recent island
+        if (hit.collider != null) //prevents errors
         if (hit.collider.gameObject.layer == groundLayer && hit.collider.gameObject != currentIsland)
         {
             //reset the current island to the new island they are on

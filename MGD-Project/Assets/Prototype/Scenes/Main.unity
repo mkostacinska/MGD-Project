@@ -13093,6 +13093,10 @@ PrefabInstance:
       propertyPath: elementName
       value: pyro
       objectReference: {fileID: 0}
+    - target: {fileID: 4339759802853994975, guid: 06cc3aaa6b749ee469999fb643dc9e54, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 70802583}
     - target: {fileID: 7049634308233331313, guid: 06cc3aaa6b749ee469999fb643dc9e54, type: 3}
       propertyPath: health
       value: 3

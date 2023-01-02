@@ -214,7 +214,7 @@ MeshCollider:
   m_GameObject: {fileID: 7870592688196661338}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
@@ -261,7 +261,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 7049634308233331326, guid: 06cc3aaa6b749ee469999fb643dc9e54, type: 3}
-  speed: 1.5
   jumpAmount: 3
   moveAmount: 1.2
   cooldown: 1
