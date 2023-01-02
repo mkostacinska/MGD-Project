@@ -14,6 +14,7 @@ public class PickupItem : PickupController
 
         //if there is an animator, disable it so that item can spin
         if (TryGetComponent(out Animator animator)) { animator.enabled = false; }
+        if (transform.parent.name == "WeaponHolder") { Destroy(this); } //weapon already picked up
     }
 
     new void Update(){
