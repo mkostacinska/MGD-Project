@@ -6,7 +6,6 @@ using UnityEngine.InputSystem;
 public class WeaponInstance : MonoBehaviour
 {
     [SerializeField] private int attack;
-    [SerializeField] private GameObject Player;
     [SerializeField] private float cooldown = 1;
     [SerializeField] private float cooldownEnd = 0f;
     private Weapon thisWeapon;

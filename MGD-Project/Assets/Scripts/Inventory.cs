@@ -16,7 +16,7 @@ public class Inventory : MonoBehaviour
 
     [SerializeField] private int maxSlots;
     private int slots;
-    public List<GameObject> items = new List<GameObject>(); //Arraylist of items
+    public List<GameObject> items; //Arraylist of items
 
     private void Start() {
         slots = transform.childCount;   //set the initial number of slots
@@ -64,11 +64,15 @@ public class Inventory : MonoBehaviour
             copy.GetComponent<RectTransform>().localPosition = new Vector2(7 + slots * 13, copy.GetComponent<RectTransform>().localPosition.y);
         }
 
-        int i = 0;
-        foreach (Transform item in transform)
+        //items[] is set by WeaponSwitching.cs but if this script's Start() is faster, items[] is not set fast enough
+        if (items.Count > 0)
         {
-            item.GetComponentInChildren<TMP_Text>().text = items[i].name;
-            i++;
+            int i = 0;
+            foreach (Transform item in transform)
+            {
+                item.GetComponentInChildren<TMP_Text>().text = items[i].name;
+                i++;
+            }
         }
     }
 
