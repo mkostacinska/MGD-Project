@@ -809,41 +809,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 97498807}
   m_CullTransparentMesh: 1
---- !u!1 &99943804 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1188536323724688671, guid: 06cc3aaa6b749ee469999fb643dc9e54, type: 3}
-  m_PrefabInstance: {fileID: 1612699506549831849}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &99943810
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 99943804}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 04fdda8b28ce9ee45abf4d511ad238cc, type: 3}
-  m_NotificationBehavior: 0
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents: []
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: Player
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
 --- !u!1 &112783016 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 653df7d2039203843ae5675b3ec4d68e, type: 3}
@@ -5726,6 +5691,18 @@ PrefabInstance:
     - target: {fileID: 2809264153111306125, guid: a7d1c86a21c1ac941bc35dedc6da8f2e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6754449642143649806, guid: a7d1c86a21c1ac941bc35dedc6da8f2e, type: 3}
+      propertyPath: m_Color.b
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6754449642143649806, guid: a7d1c86a21c1ac941bc35dedc6da8f2e, type: 3}
+      propertyPath: m_Color.g
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6754449642143649806, guid: a7d1c86a21c1ac941bc35dedc6da8f2e, type: 3}
+      propertyPath: m_Color.r
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6754449642143649806, guid: a7d1c86a21c1ac941bc35dedc6da8f2e, type: 3}
       propertyPath: m_Enabled
