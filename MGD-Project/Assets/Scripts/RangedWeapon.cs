@@ -25,6 +25,7 @@ public class RangedWeapon : MonoBehaviour
 
     private bool attackKeyDown = false;
     void OnAttack(InputValue attackValue) {
+        print(name+elementName);
         if (transform.parent != null) {
             if (transform.parent.name == "WeaponHolder") { //only attack if its in weapon holder
                 attackKeyDown = true; 
@@ -41,6 +42,8 @@ public class RangedWeapon : MonoBehaviour
         foreach (Material m in materials) {
             if (m.name.StartsWith("Crystal")) { //StartsWith() is used because "(instance)" is added by unity
                 m.color = element.getColour();
+                m.EnableKeyword("_EMISSION");   //https://stackoverflow.com/a/33671094
+                m.SetColor("_EmissionColor", element.getColour());
             }
         }
     }
