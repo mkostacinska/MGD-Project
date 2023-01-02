@@ -33,6 +33,14 @@ public class RangedWeapon : MonoBehaviour
     {
         element = new Elements().getElement(elementName);
         gameObject.name = (elementName + " Staff").ToUpper();
+
+        //change staff colour to match element
+        Material[] materials = transform.GetComponentInChildren<MeshRenderer>().materials;
+        foreach (Material m in materials) {
+            if (m.name.StartsWith("Crystal")) { //StartsWith() is used because "(instance)" is added by unity
+                m.color = element.getColour();
+            }
+        }
     }
     private void Update()
     {
