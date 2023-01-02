@@ -25,7 +25,6 @@ public class RangedWeapon : MonoBehaviour
 
     private bool attackKeyDown = false;
     void OnAttack(InputValue attackValue) {
-        print(name+elementName);
         if (transform.parent != null) {
             if (transform.parent.name == "WeaponHolder") { //only attack if its in weapon holder
                 attackKeyDown = true; 
