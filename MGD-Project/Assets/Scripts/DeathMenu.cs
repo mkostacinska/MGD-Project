@@ -21,6 +21,6 @@ public class DeathMenu : MonoBehaviour
 
     public void Menu()
     {
-        SceneManager.LoadScene("mainMenu");
+        SceneManager.LoadScene("mainMenu");//reload main menu
     }
 }

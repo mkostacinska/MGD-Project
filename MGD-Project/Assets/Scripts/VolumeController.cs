@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class VolumeController : MonoBehaviour //https://www.youtube.com/watch?v=k2vOeTK0z2g&list=WL&index=1
 {
-    [SerializeField] private Slider VolumeSliderUI=null;
-    [SerializeField] private Text VolumeText=null;
+    [SerializeField] private Slider VolumeSliderUI=null;//UI slider
+    [SerializeField] private Text VolumeText=null;//UI text
 
     private void Start()
     {
@@ -15,13 +15,13 @@ public class VolumeController : MonoBehaviour //https://www.youtube.com/watch?v=
 
     public void VolumeSlider(float volume)
     {
-        VolumeText.text=volume.ToString("0.0");
+        VolumeText.text=volume.ToString("0.0");//UI text
     }
 
     public void SaveVolume()
     {
         //Debug.Log("Saved");
-        float volumeValue=VolumeSliderUI.value;
+        float volumeValue=VolumeSliderUI.value;//slider posistion determines volume
         PlayerPrefs.SetFloat("gameVolume",volumeValue);
         LoadValues();
   
@@ -31,7 +31,7 @@ public class VolumeController : MonoBehaviour //https://www.youtube.com/watch?v=
     {
         float volumeValue=PlayerPrefs.GetFloat("gameValue");
         VolumeSliderUI.value=volumeValue;
-        AudioListener.volume=volumeValue;
+        AudioListener.volume=volumeValue;//audioListener effects/controls game volume 
     }
 
 

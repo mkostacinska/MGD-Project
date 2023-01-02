@@ -8,6 +8,6 @@ public class gameOverController : MonoBehaviour
     //when the restartButton is pressed, reload the main scene
     public void restartButton()
     {
-        SceneManager.LoadScene("Main");
+        SceneManager.LoadScene("Main");//relaod main
     }
 }

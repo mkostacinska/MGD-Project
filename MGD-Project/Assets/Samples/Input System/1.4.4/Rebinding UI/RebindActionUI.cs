@@ -273,6 +273,11 @@ namespace UnityEngine.InputSystem.Samples.RebindUI
 
             // Configure the rebind.
             m_RebindOperation = action.PerformInteractiveRebinding(bindingIndex)
+                .WithControlsExcluding("<Mouse>/leftButton")//https://www.youtube.com/watch?v=csqVa2Vimao&list=WL&index=10&t=892s
+                .WithControlsExcluding("<Mouse>/rightButton")//cant rebind to these 
+                .WithControlsExcluding("<Mouse>/press")
+                .WithControlsExcluding("<Pointer>/position")
+                .WithCancelingThrough("<Keyboard>/escape")//cancel rebind
                 .OnCancel(
                     operation =>
                     {
@@ -285,10 +290,21 @@ namespace UnityEngine.InputSystem.Samples.RebindUI
                 .OnComplete(
                     operation =>
                     {
-
+                        
                         action.Enable();
                         m_RebindOverlay?.SetActive(false);
                         m_RebindStopEvent?.Invoke(this, operation);
+                        UpdateBindingDisplay();
+                        CleanUp();
+                        
+                        // if (DuplicatedBindingsCheck(action,bindingIndex,allCompositeParts)){ //https://www.youtube.com/watch?v=csqVa2Vimao&list=WL&index=10&t=892s , avoid duplicate rebindings 
+                        //     action.RemoveBindingOverride(bindingIndex);
+                        //     CleanUp();
+                        //     PerformInteractiveRebind(action,bindingIndex,allCompositeParts);
+                        //     return;
+
+                        // }
+
                         UpdateBindingDisplay();
                         CleanUp();
 
@@ -328,6 +344,30 @@ namespace UnityEngine.InputSystem.Samples.RebindUI
             m_RebindOperation.Start();
         }
 
+        // private bool DuplicatedBindingsCheck (InputAction action,int bindingIndex,bool allCompositeParts = false){//tutorial used:https://www.youtube.com/watch?v=csqVa2Vimao&list=WL&index=12
+        //         InputBinding checkBinding =action.bindings[bindingIndex];//https://docs.unity3d.com/Packages/com.unity.inputsystem@1.0/api/UnityEngine.InputSystem.InputBinding.html
+        //         foreach(InputBinding binding in action.actionMap.bindings){
+        //             if (binding.effectivePath == checkBinding.action){
+        //                 continue;
+        //             }
+        //             if (binding.effectivePath== checkBinding.effectivePath){
+        //                 Debug.Log("error:Duplicate binding " + checkBinding.effectivePath);
+        //                 return true; //true if duplicate binding found
+        //             }
+        //         }
+        //         //duplicates within composite bindings 
+        //         if (allCompositeParts){
+        //             for (int i=1; i<bindingIndex; ++i){
+        //                 if(action.bindings[i].effectivePath==checkBinding.overridePath){
+        //                     Debug.Log("error:Duplicate binding(composite) "+ checkBinding.effectivePath);
+        //                     return true;//true if duplicate binding found
+        //                 }
+        //             }
+        //         }
+                    
+        //         return false; // no duplicate found
+        // }
+       
         protected void OnEnable()
         {
             if (s_RebindActionUIs == null)
@@ -433,6 +473,13 @@ namespace UnityEngine.InputSystem.Samples.RebindUI
         }
 
         #endif
+
+        //https://www.youtube.com/watch?v=csqVa2Vimao&list=WL&index=12
+
+        private void start(){
+            UpdateActionLabel();
+            UpdateBindingDisplay();
+        }
 
         private void UpdateActionLabel()
         {

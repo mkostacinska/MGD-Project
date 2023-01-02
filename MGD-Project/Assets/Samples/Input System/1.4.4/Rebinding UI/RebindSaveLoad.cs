@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class RebindSaveLoad : MonoBehaviour
+public class RebindSaveLoad : MonoBehaviour//edited according to https://www.youtube.com/watch?v=csqVa2Vimao&list=WL&index=12
 {
     public InputActionAsset actions;
 

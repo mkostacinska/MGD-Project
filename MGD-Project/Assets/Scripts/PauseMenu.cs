@@ -28,22 +28,22 @@ public class PauseMenu : MonoBehaviour //Tutorial used:https://www.youtube.com/w
         }
     }
 
-    void Pause()
+    void Pause()//pause game
     {
         PauseCanvas.SetActive(true);
-        Time.timeScale=0f;
+        Time.timeScale=0f;//freeze time
         Paused=true;
     }
 
-    public void Play()
+    public void Play()//unpause game
     {
         PauseCanvas.SetActive(false);
-        Time.timeScale=1f;
+        Time.timeScale=1f;//standard time flow
         Paused=false;
     }
     
     public void MenuM()
     {
-        SceneManager.LoadScene("mainMenu");
+        SceneManager.LoadScene("mainMenu");//load main menu is main menu buuton is pressed
     }
 }
