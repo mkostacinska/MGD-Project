@@ -17,7 +17,10 @@ public class PickupItem : PickupController
 
         if (transform.parent != null)
         {
-            if (transform.parent.name == "WeaponHolder") { Destroy(this); } //weapon already picked up
+            if (transform.parent.name == "WeaponHolder") {//weapon already picked up
+                Destroy(text);
+                Destroy(this);
+            } 
         }
     }
 
