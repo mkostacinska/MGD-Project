@@ -525,7 +525,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 70802583}
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 0}
 --- !u!54 &70802592
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6119,7 +6119,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 920797f50d5fa9b4580c426056e499c7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.48
+      value: -0.91
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 920797f50d5fa9b4580c426056e499c7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -13118,6 +13118,10 @@ PrefabInstance:
       propertyPath: elementName
       value: pyro
       objectReference: {fileID: 0}
+    - target: {fileID: 1779753879233271950, guid: 06cc3aaa6b749ee469999fb643dc9e54, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8bb52f2498f38534fa08c7d364839943, type: 2}
     - target: {fileID: 4339759802853994975, guid: 06cc3aaa6b749ee469999fb643dc9e54, type: 3}
       propertyPath: player
       value: 
