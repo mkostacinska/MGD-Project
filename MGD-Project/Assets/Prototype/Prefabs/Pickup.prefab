@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8153010067211552636}
   - component: {fileID: 8153010067211552637}
   - component: {fileID: 8153010067211552577}
-  - component: {fileID: 2273910376747417131}
+  - component: {fileID: 6539739015374619618}
   m_Layer: 0
   m_Name: Pickup
   m_TagString: Untagged
@@ -34,7 +34,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 45, y: 45, z: 45}
 --- !u!33 &8153010067211552579
 MeshFilter:
@@ -116,7 +116,7 @@ MonoBehaviour:
   offset: 0.5
   player: {fileID: 7049634308233331326, guid: 06cc3aaa6b749ee469999fb643dc9e54, type: 3}
   text: {fileID: 0}
---- !u!114 &2273910376747417131
+--- !u!114 &6539739015374619618
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -143,6 +143,6 @@ MonoBehaviour:
   m_ActionEvents: []
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: 3e23cf5a-a2ab-4232-96cf-1ab194bd83bc
+  m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
