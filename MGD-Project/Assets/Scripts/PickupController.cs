@@ -17,6 +17,7 @@ public class PickupController : MonoBehaviour
 
     protected void Start()
     {
+        GetComponent<PlayerInput>().ActivateInput();
         //set the 'press E...' text position
         text.transform.position = new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z);
         text.transform.eulerAngles = text.transform.eulerAngles + new Vector3(45, 0, 0); //set the angle of the text so that it faces the camera
@@ -41,8 +42,10 @@ public class PickupController : MonoBehaviour
         if(Vector3.Distance(transform.position, player.transform.position) <= 1.5f)
         {
             text.SetActive(true);
+            print("checking E");
+            //if (Input.GetKeyDown(KeyCode.E))
             if(keyDown)
-                {
+            {
                 text.SetActive(false);
                 transform.gameObject.SetActive(false); //disable the pickup and increase the total
                 keyDown = false; //acknowledge and reset
