@@ -12,6 +12,7 @@ public class IslandGenerator : MonoBehaviour
     [SerializeField] private List<GameObject> islandPrefabs;
     [SerializeField] private List<GameObject> enemies;
     [SerializeField] private GameObject player;
+    [SerializeField] private GameObject parentPickups;
 
     private int counter = 0;
     private List<string> keys = new List<string>(){ "BridgeN", "BridgeE", "BridgeS", "BridgeW" };
