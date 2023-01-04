@@ -144,7 +144,10 @@ public class IslandGenerator : MonoBehaviour
                                         .First();
 
             GameObject e = Instantiate(enemyPrefab, position: island.transform.position + enemyOffset, rotation: Quaternion.identity, parent: parentEnemy.transform);
-            e.SetActive(false);
+            if(counter != 0)
+            {
+                e.SetActive(false);
+            }
         }
 
         return;
@@ -155,7 +158,7 @@ public class IslandGenerator : MonoBehaviour
         int keyIndex = pickupKey[UnityEngine.Random.Range(0, pickupKey.Count())];
         if (keyIndex == 1)
         {
-            var keyOffset = new Vector3(UnityEngine.Random.Range(-6, 6), 2, UnityEngine.Random.Range(-4, 4));
+            var keyOffset = new Vector3(UnityEngine.Random.Range(-6, 6), 20, UnityEngine.Random.Range(-4, 4));
             var k = Instantiate(keyPrefab, position: current.transform.position + keyOffset, rotation: Quaternion.identity, parent: parentPickups.transform);
             k.name = "k";
             var label = Instantiate(pickupLabel, parent: parentLabel.transform);
@@ -167,7 +170,7 @@ public class IslandGenerator : MonoBehaviour
     void SpawnWeapons(GameObject current)
     {
         GameObject weapon = weaponPrefabs[UnityEngine.Random.Range(0, weaponPrefabs.Count())];
-        var weaponOffset = new Vector3(UnityEngine.Random.Range(-6, 6), 2, UnityEngine.Random.Range(-4, 4));
+        var weaponOffset = new Vector3(UnityEngine.Random.Range(-6, 6), 5, UnityEngine.Random.Range(-4, 4));
         Instantiate(weapon, position: current.transform.position + weaponOffset, rotation: Quaternion.identity, parent: parentWeapon.transform);
         weaponPrefabs.Remove(weapon);
     }

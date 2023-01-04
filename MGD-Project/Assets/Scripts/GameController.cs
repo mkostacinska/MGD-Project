@@ -74,6 +74,7 @@ public class GameController : MonoBehaviour
             }
             else
             {
+                print("UPDATING ISLAND");
                 //if the walls are already disabled, begin checking for a new island object to repeat the process
                 updateIsland();
             }
@@ -98,20 +99,23 @@ public class GameController : MonoBehaviour
         if (hit.collider.gameObject.layer == groundLayer && hit.collider.gameObject != currentIsland)
         {
             //reset the current island to the new island they are on
-            currentIsland = hit.collider.gameObject.transform.parent.gameObject;
+            currentIsland = hit.collider.gameObject;
             
             //if the island has not been cleared before, spawn enemies
             if(!islandsCleared.Contains(currentIsland.name))
             {
+
+                print(currentIsland.name);
                 player.GetComponent<PlayerContollerPrototype>().walkSpeed = defaultSpeed;
                 //get the parent 'enemies' object
                 var enemiesParent = currentIsland.GetComponentsInChildren<Transform>()
-                    .Where(child => child.gameObject.name == "enemies")
+                    .Where(child => child.gameObject.name == "Enemies")
                     .FirstOrDefault();
 
-                var enemies = enemiesParent.gameObject.GetComponentsInChildren<Transform>(true) //true -> get inactive objects as well
+                var enemies = enemiesParent.gameObject.GetComponentsInChildren<Transform>(true) //true -> get inactive objects as wellwa
                     .Where(enemy => enemy.gameObject != enemiesParent.gameObject)
                     .ToList();
+                print(enemies);
 
                 //set the enemies to active to spawn them 
                 enemies.ForEach(enemy => enemy.gameObject.SetActive(true));
