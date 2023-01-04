@@ -113,7 +113,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heightSpeed: 4
   deltaHeight: 0.1
-  offset: 0.5
+  offset: 1.5
   player: {fileID: 7049634308233331326, guid: 06cc3aaa6b749ee469999fb643dc9e54, type: 3}
   text: {fileID: 0}
 --- !u!114 &6539739015374619618
