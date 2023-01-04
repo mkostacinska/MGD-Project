@@ -1320,6 +1320,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 1779753879233271950, guid: 06cc3aaa6b749ee469999fb643dc9e54, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8bb52f2498f38534fa08c7d364839943, type: 2}
     - target: {fileID: 2233890233620292383, guid: 06cc3aaa6b749ee469999fb643dc9e54, type: 3}
       propertyPath: m_Layer
       value: 7
@@ -1388,6 +1392,10 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 824194953}
+    - target: {fileID: 7049634308233331314, guid: 06cc3aaa6b749ee469999fb643dc9e54, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8bb52f2498f38534fa08c7d364839943, type: 2}
     - target: {fileID: 7049634308233331316, guid: 06cc3aaa6b749ee469999fb643dc9e54, type: 3}
       propertyPath: m_RootOrder
       value: 4
