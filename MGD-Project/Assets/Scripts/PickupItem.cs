@@ -31,9 +31,12 @@ public class PickupItem : PickupController
 
     void OnPickup(InputValue value)
     {
-        keyDown = true;
-        checkDistance();
-        keyDown = false; //acknowledge and reset
+        if (text)
+        {
+            keyDown = true;
+            checkDistance();
+            keyDown = false; //acknowledge and reset
+        }
     }
 
     void checkDistance()
@@ -44,6 +47,27 @@ public class PickupItem : PickupController
             text.SetActive(true);
             if (keyDown)
             {
+                //if inventory is full, swap with active weapon first
+                Inventory inventory = GameObject.Find("Hotbar Panel").GetComponent<Inventory>();
+                print("count: " + inventory.items.Count);
+                if (inventory.items.Count >= inventory.maxSlots)
+                {
+                    GameObject activeItem = inventory.items[inventory.scrollPos];
+                    print(activeItem.name);
+                    activeItem.transform.SetParent(this.transform.parent);
+                    activeItem.transform.localPosition = this.transform.localPosition;
+                    activeItem.transform.localRotation = this.transform.localRotation;
+
+                    //copying script to new item
+                    var script = activeItem.AddComponent<PickupItem>();
+                    script.player = this.player;
+                    script.labelPrefab = this.labelPrefab;
+                    //var script = activeItem.GetComponent<PickupItem>();
+                    //script.enabled = true;
+                    //script.player = this.player;
+                    //script.Start();
+                }
+
                 Destroy(text);
                 transform.SetParent(player.transform.GetChild(0)); //moves the object to the weapon holder
                 //reset transform
@@ -52,6 +76,7 @@ public class PickupItem : PickupController
 
                 //if there is an animator, re-enable it
                 if (TryGetComponent(out Animator animator)) { animator.enabled = true; }
+                inventory.refreshInventory();
 
                 Destroy(this);     //destroy this script
             }

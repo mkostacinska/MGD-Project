@@ -20,16 +20,9 @@ public class WeaponSwitching : MonoBehaviour {
     private List<GameObject> items = new List<GameObject>(); //Arraylist of items
     void Update()
     {
-        //for every item the player is holding: send it to the inventory
         if (transform.childCount != this.items.Count)
         {
-            items.Clear();
-            foreach (Transform item in transform)
-            {
-                items.Add(item.gameObject);
-            }
-            inventory.items = this.items; //link to inventory
-            SelectWeapon();
+            refreshItems();
         }
 
         selectedWeapon = inventory.scrollPos;
@@ -38,6 +31,19 @@ public class WeaponSwitching : MonoBehaviour {
         {
             SelectWeapon();
         }
+    }
+
+    public void refreshItems()
+    {
+        //for every item the player is holding: send it to the inventory
+        items.Clear();
+        foreach (Transform item in transform)
+        {
+            items.Add(item.gameObject);
+        }
+        inventory.items = this.items; //link to inventory
+        inventory.matchInventory();
+        SelectWeapon();
     }
 
     void SelectWeapon ()

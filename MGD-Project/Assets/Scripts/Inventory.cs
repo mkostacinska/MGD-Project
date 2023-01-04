@@ -14,7 +14,7 @@ public class Inventory : MonoBehaviour
     //public Transform[] Items;
     public int scrollPos;
 
-    [SerializeField] private int maxSlots;
+    public int maxSlots = 5;
     private int slots;
     public List<GameObject> items; //Arraylist of items
 
@@ -45,13 +45,17 @@ public class Inventory : MonoBehaviour
         Selected();
     }
 
+    public void refreshInventory() {
+        GameObject.Find("WeaponHolder").GetComponent<WeaponSwitching>().refreshItems();
+    }
+
     private void Update()
     {
         if (slots != items.Count) { matchInventory(); }
     }
 
     [SerializeField] GameObject prefab;
-    void matchInventory() {
+    public void matchInventory() {
         //change the width of the HUD to match number of slots
         //formula is +13 to width per item
         GetComponent<RectTransform>().sizeDelta = new Vector2(1 + items.Count * 13, GetComponent<RectTransform>().sizeDelta.y);
