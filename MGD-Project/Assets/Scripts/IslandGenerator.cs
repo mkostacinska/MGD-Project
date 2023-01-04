@@ -13,8 +13,13 @@ public class IslandGenerator : MonoBehaviour
     [SerializeField] private List<GameObject> enemies;
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject parentPickups;
+    [SerializeField] private int keyCount;
+    [SerializeField] private GameObject keyPrefab;
+    private List<int> pickupKey = new List<int>();
+    [SerializeField] private GameObject parentWeapon;
+    [SerializeField] private List<GameObject> weaponPrefabs;
 
-    private int counter = 0;
+    private int counter = 1;
     private List<string> keys = new List<string>(){ "BridgeN", "BridgeE", "BridgeS", "BridgeW" };
     private Dictionary<string, Vector3> locationOffset = new Dictionary<string, Vector3>()
     {
@@ -24,9 +29,19 @@ public class IslandGenerator : MonoBehaviour
         { "BridgeW", new Vector3(-38.88f, 0, 0)},
     };
 
+
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
+        for(int i=0; i<numberOfIslands; i++)
+        {
+            if(i<keyCount)
+            {
+                pickupKey.Add(1);
+                continue;
+            }
+            pickupKey.Add(0);
+        }
         SpawnIslands();
     }
 
@@ -34,6 +49,7 @@ public class IslandGenerator : MonoBehaviour
     {
         //Spawns the first island as well as the final island to the north of it
         GameObject initial = Instantiate(island, position: Vector3.zero, rotation: Quaternion.identity, parent: parentIsland.transform);
+        initial.name = "initial";
         List<Transform> bridges = GetBridges(initial);
         Transform finalBridge = bridges.Where(b => b.gameObject.name == "BridgeN").First();
         finalBridge.gameObject.SetActive(true);
@@ -42,11 +58,16 @@ public class IslandGenerator : MonoBehaviour
 
         //randomly generate each of the remaining islands
         GameObject prev = initial;
-        for(counter = 0; counter<=numberOfIslands; counter++)
+        for(counter = 0; counter<numberOfIslands; counter++)
         {
             var spawned = SpawnNext(prev, finalBridge);
             prev = spawned.Item1;
-            finalBridge = spawned.Item2;
+            prev.name = counter.ToString();
+            //check if bridge exists in the tuple?
+            if (spawned.Item2 != new GameObject().transform)
+            {
+                finalBridge = spawned.Item2;
+            }
         }        
     }
 
@@ -67,14 +88,14 @@ public class IslandGenerator : MonoBehaviour
         var free = GetBridges(current).Where(b => b.gameObject.name != keys[(keys.IndexOf(leading.gameObject.name) + 2) % 4]).ToList();
 
 
-        Transform b = null;
+        Transform b = new GameObject().transform;
         if (counter < numberOfIslands)
         {
             var bridgeG = free[UnityEngine.Random.Range(0, free.Count())];
-            
+
             //ensure the bridge can be spawned (and will be leading to an empty space in a map)
             Collider[] intersecting = Physics.OverlapSphere(current.transform.position + locationOffset[bridgeG.gameObject.name], 5.0f);
-            while(intersecting.Length != 0)
+            while (intersecting.Length != 0)
             {
                 free.Remove(bridgeG);
                 bridgeG = free[UnityEngine.Random.Range(0, free.Count())];
@@ -85,12 +106,13 @@ public class IslandGenerator : MonoBehaviour
             bridgeG.gameObject.SetActive(true);
             free.Remove(bridgeG);
             b = bridgeG;
-
-            //(randomly) spawn enemies on the newly created island
-            SpawnEnemies(current);
-       
         }
 
+        //(randomly) spawn enemies on the newly created island
+        SpawnEnemies(current);
+        SpawnKeys(current);
+        SpawnWeapons(current);
+        
         return new Tuple<GameObject, Transform>(current, b);
     }
 
@@ -104,15 +126,39 @@ public class IslandGenerator : MonoBehaviour
             var enemyPrefab = enemies[UnityEngine.Random.Range(0, enemies.Count)];
             //UnityEngine.Random.Range(-10, 10)
             var enemyOffset = new Vector3(UnityEngine.Random.Range(-6,6), 2, UnityEngine.Random.Range(-4, 4));
+            while(enemyOffset.x == 0 && enemyOffset.z == 0)
+            {
+                enemyOffset = new Vector3(UnityEngine.Random.Range(-6, 6), 2, UnityEngine.Random.Range(-4, 4));
+            }
             var parentEnemy = island.GetComponentsInChildren<Transform>(includeInactive: true).ToList()
                                         .Where(b => b.gameObject.name == "Enemies")
                                         .ToList()
                                         .First();
 
             GameObject e = Instantiate(enemyPrefab, position: island.transform.position + enemyOffset, rotation: Quaternion.identity, parent: parentEnemy.transform);
-            
+            e.SetActive(false);
         }
 
         return;
+    }
+
+    void SpawnKeys(GameObject current)
+    {
+        int keyIndex = pickupKey[UnityEngine.Random.Range(0, pickupKey.Count())];
+        if (keyIndex == 1)
+        {
+            var keyOffset = new Vector3(UnityEngine.Random.Range(-6, 6), 2, UnityEngine.Random.Range(-4, 4));
+            var k = Instantiate(keyPrefab, position: current.transform.position + keyOffset, rotation: Quaternion.identity, parent: parentPickups.transform);
+            k.name = "k";
+        }
+        pickupKey.Remove(keyIndex);
+    }
+
+    void SpawnWeapons(GameObject current)
+    {
+        GameObject weapon = weaponPrefabs[UnityEngine.Random.Range(0, weaponPrefabs.Count())];
+        var weaponOffset = new Vector3(UnityEngine.Random.Range(-6, 6), 2, UnityEngine.Random.Range(-4, 4));
+        Instantiate(weapon, position: current.transform.position + weaponOffset, rotation: Quaternion.identity, parent: parentWeapon.transform);
+        weaponPrefabs.Remove(weapon);
     }
 }

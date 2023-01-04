@@ -17,11 +17,12 @@ public class GameController : MonoBehaviour
     //needed for locking the player in an island/enabling/disabling enemies
     [SerializeField] private GameObject player;
     [SerializeField] private int groundLayer = 3;
-    [SerializeField] private GameObject currentIsland;
+    private GameObject currentIsland;
     private List<string> islandsCleared;
+    public LayerMask playerLayer;
 
     //needed for spawning the bridge when all keys are collected:
-    [SerializeField] private GameObject bridge;
+    //[SerializeField] private GameObject bridge;
 
     //needed for winning
     [SerializeField] private int numberOfIslands = 4;
@@ -40,10 +41,10 @@ public class GameController : MonoBehaviour
         islandsCleared = new List<string>();
 
         //get the initial island the player is on
-        Physics.Raycast(player.transform.position, Vector3.down, out var hit);
+        Physics.Raycast(player.transform.position, Vector3.down, out var hit, Mathf.Infinity);
         if (hit.collider.gameObject.layer == groundLayer)
         {
-            currentIsland = hit.collider.gameObject.transform.parent.gameObject;
+            currentIsland = hit.collider.gameObject;
         }
     }
 
@@ -56,7 +57,7 @@ public class GameController : MonoBehaviour
         if (enemiesKilled())
         {
             player.GetComponent<PlayerContollerPrototype>().walkSpeed = defaultSpeed * bonusSpeedMultiplyer;
-            if(!islandsCleared.Contains(currentIsland.name))
+            if (!islandsCleared.Contains(currentIsland.name))
             {
                 islandsCleared.Add(currentIsland.name);
             }//add to cleared islands so that the enemies do not get respawned on enter
@@ -65,8 +66,8 @@ public class GameController : MonoBehaviour
             var walls = currentIsland.GetComponentsInChildren<Transform>()
             .Where(child => child.gameObject.name == "walls")
             .FirstOrDefault();
-            
-            if(walls)
+
+            if (walls)
             {
                 //if the walls have not already been disabled, disable
                 walls.gameObject.SetActive(false);
@@ -78,11 +79,13 @@ public class GameController : MonoBehaviour
             }
 
             //print(islandsCleared.Count());
-            if(islandsCleared.Count() == numberOfIslands)
+            if (islandsCleared.Count() == numberOfIslands)
             {
                 SceneManager.LoadScene("Win");
             }
         }
+     
+     
     }
 
     void updateIsland()
@@ -120,7 +123,7 @@ public class GameController : MonoBehaviour
     bool enemiesKilled()
     {
         var enemiesParent = currentIsland.GetComponentsInChildren<Transform>()
-            .Where(child => child.gameObject.name == "enemies")
+            .Where(child => child.gameObject.name == "Enemies")
             .FirstOrDefault();
 
         var enemies = enemiesParent.gameObject.GetComponentsInChildren<Transform>()
@@ -135,6 +138,7 @@ public class GameController : MonoBehaviour
     {
         List<Transform> keysChildren = pickups.GetComponentsInChildren<Transform>()
             .Where(key => key.gameObject.activeInHierarchy && key != pickups.transform)
+            .Where(key => key.gameObject.name == "k")
             .ToList();
 
         //the number of keys collected is (total number of keys) - (the ones remaining in the scene)
@@ -144,7 +148,7 @@ public class GameController : MonoBehaviour
         //if all keys have been collected, allow access to the final island by spawning a bridge
         if(keyCount == keyNum)
         {
-            bridge.SetActive(true);
+            //bridge.SetActive(true);
         }
     }
     void updateText()

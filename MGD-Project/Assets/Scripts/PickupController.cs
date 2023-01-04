@@ -13,14 +13,14 @@ public class PickupController : MonoBehaviour
 
     //needed to make the 'press E...' text visible within a certain radius
     [SerializeField] protected GameObject player;
-    [SerializeField] protected GameObject text;
+    protected GameObject text = PlayerToFollow.shared.pickupText;
 
     protected void Start()
     {
         GetComponent<PlayerInput>().ActivateInput();
         //set the 'press E...' text position
-        text.transform.position = new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z);
-        text.transform.eulerAngles = text.transform.eulerAngles + new Vector3(45, 0, 0); //set the angle of the text so that it faces the camera
+        PlayerToFollow.shared.pickupText.transform.position = new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z);
+        PlayerToFollow.shared.pickupText.transform.eulerAngles = PlayerToFollow.shared.pickupText.transform.eulerAngles + new Vector3(45, 0, 0); //set the angle of the text so that it faces the camera
     }
 
     protected void Update()

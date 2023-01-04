@@ -6,4 +6,5 @@ public class PlayerToFollow
 {
     public static PlayerToFollow shared = new PlayerToFollow();
     public GameObject player;
+    public GameObject pickupText;
 }
