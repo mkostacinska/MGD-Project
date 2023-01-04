@@ -21,7 +21,8 @@ The following assets can be found in the repository, but are NOT a part of the p
 rebinding-https://www.youtube.com/watch?v=csqVa2Vimao&list=WL&index=10&t=745s , https://www.youtube.com/watch?v=dUCcZrPhwSo&list=WL&index=11
 https://www.youtube.com/watch?v=FfaG9TvCe5g&list=WL&index=16
 
-
+unity documentaion and manual pages used:
+https://docs.unity3d.com/Packages/com.unity.inputsystem@1.0/api/UnityEngine.InputSystem.InputBinding.html
 
 
 ## Gameplay Tutorial :video_game: :
@@ -36,7 +37,7 @@ enemies located on said island.
 - Mouse 1 (left mouse button) for attacking; the player rotates to face the cursor
 - Mouse Scroll to change between weapons
 - E to pick up objects
--Esc to Pause game (while in main scene)
+- Esc to Pause game (while in main scene)
 
 ### Additional information:
 Upon death, the game can be restarted by pressing the 'RESTART' button. After winning, the game can be 
