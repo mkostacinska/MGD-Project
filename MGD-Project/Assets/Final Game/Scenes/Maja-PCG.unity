@@ -1172,10 +1172,11 @@ MonoBehaviour:
   - {fileID: 3745734826326257058, guid: 95200e885b8e48e4d84ea6102ec7779b, type: 3}
   - {fileID: 2629697223445467105, guid: 83cc584b2202c54469c5040aa0a01d2a, type: 3}
   player: {fileID: 7049634308233331326, guid: 06cc3aaa6b749ee469999fb643dc9e54, type: 3}
-  parentPickups: {fileID: 18550995}
+  parentPickups: {fileID: 722620912}
   keyCount: 3
   keyPrefab: {fileID: 8153010067211552638, guid: 8bc7e6bbea78872418128f457af7204f, type: 3}
   pickupLabel: {fileID: 3074103531843657705, guid: c0a37a73a899d9e4b9e54324a6985124, type: 3}
+  parentLabel: {fileID: 18550995}
   parentWeapon: {fileID: 1354271880}
   weaponPrefabs:
   - {fileID: 1127206217810271804, guid: 888fd308fc0ceeb4aa04bc5ba9ac69b2, type: 3}

@@ -42,6 +42,7 @@ public class GameController : MonoBehaviour
 
         //get the initial island the player is on
         Physics.Raycast(player.transform.position, Vector3.down, out var hit, Mathf.Infinity);
+        print(hit.collider.gameObject.name);
         if (hit.collider.gameObject.layer == groundLayer)
         {
             currentIsland = hit.collider.gameObject;
@@ -92,7 +93,8 @@ public class GameController : MonoBehaviour
     void updateIsland()
     {
         //raycast from the player straignt down below to get the ground they're on
-        Physics.Raycast(player.transform.position, Vector3.down, out var hit);
+        Physics.Raycast(player.transform.position, Vector3.down, out var hit, Mathf.Infinity, ~playerLayer);
+        print(hit.collider.gameObject.name);
 
         //if the object the player is standing on is classified as ground & DOES NOT correspond to the most recent island
         if (hit.collider != null) //prevents errors
@@ -126,6 +128,9 @@ public class GameController : MonoBehaviour
     //check if all the enemies on an island have been killed
     bool enemiesKilled()
     {
+
+        print("ENEMIES KILLED");
+        print(currentIsland.name);
         var enemiesParent = currentIsland.GetComponentsInChildren<Transform>()
             .Where(child => child.gameObject.name == "Enemies")
             .FirstOrDefault();
@@ -134,6 +139,7 @@ public class GameController : MonoBehaviour
             .Where(enemy => enemy.gameObject.activeInHierarchy && enemy.gameObject != enemiesParent.gameObject)
             .ToList();
 
+        print(enemies.Count() == 0);
         return enemies.Count() == 0;
     }
 
