@@ -19,10 +19,17 @@ public class PickupController : MonoBehaviour
     {
         GetComponent<PlayerInput>().ActivateInput();
         //set the 'press E...' text position
-        string keyText = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInput>().currentActionMap.FindAction("Pickup").bindings[0].effectivePath;
-        text.GetComponent<TMP_Text>().text = keyText;
+        updateText();
         text.transform.position = new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z);
         text.transform.eulerAngles = text.transform.eulerAngles + new Vector3(45, 0, 0); //set the angle of the text so that it faces the camera
+    }
+
+    //checks if the rebinding has changed and changes text accordingly
+    public void updateText() {
+        string keyText = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInput>().currentActionMap.FindAction("Pickup").bindings[0].effectivePath;
+        var pos = keyText.IndexOf('/');
+        keyText = keyText.Substring(pos + 1).ToUpper();
+        text.GetComponent<TMP_Text>().text = "Press " + keyText + " to collect";
     }
 
     protected void Update()
@@ -51,6 +58,7 @@ public class PickupController : MonoBehaviour
         //if the player is within 1.5 unit from the key, display the prompt 
         if(Vector3.Distance(transform.position, PlayerToFollow.shared.player.transform.position) <= 1.5f)
         {
+            updateText();
             text.SetActive(true);
             if(keyDown)
             {
