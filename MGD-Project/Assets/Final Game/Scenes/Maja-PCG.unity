@@ -156,6 +156,37 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &18550995
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 18550996}
+  m_Layer: 0
+  m_Name: labels
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &18550996
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 18550995}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 31.007072, y: 6.5340896, z: 52.36271}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 722620913}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &124085037
 GameObject:
   m_ObjectHideFlags: 0
@@ -475,7 +506,8 @@ Transform:
   m_LocalPosition: {x: -34.328068, y: 1.7813859, z: -4.19442}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 18550996}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -490,6 +522,7 @@ GameObject:
   - component: {fileID: 739274904}
   - component: {fileID: 739274906}
   - component: {fileID: 739274905}
+  - component: {fileID: 739274907}
   m_Layer: 0
   m_Name: keyText
   m_TagString: Untagged
@@ -614,6 +647,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 739274903}
   m_CullTransparentMesh: 1
+--- !u!114 &739274907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 739274903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 710abc6936b12af4ba3456d8af42de7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &824194953 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4682585595537783762, guid: 3d0203d4100822e42b018232687d008e, type: 3}
@@ -1127,9 +1172,10 @@ MonoBehaviour:
   - {fileID: 3745734826326257058, guid: 95200e885b8e48e4d84ea6102ec7779b, type: 3}
   - {fileID: 2629697223445467105, guid: 83cc584b2202c54469c5040aa0a01d2a, type: 3}
   player: {fileID: 7049634308233331326, guid: 06cc3aaa6b749ee469999fb643dc9e54, type: 3}
-  parentPickups: {fileID: 722620912}
+  parentPickups: {fileID: 18550995}
   keyCount: 3
   keyPrefab: {fileID: 8153010067211552638, guid: 8bc7e6bbea78872418128f457af7204f, type: 3}
+  pickupLabel: {fileID: 3074103531843657705, guid: c0a37a73a899d9e4b9e54324a6985124, type: 3}
   parentWeapon: {fileID: 1354271880}
   weaponPrefabs:
   - {fileID: 1127206217810271804, guid: 888fd308fc0ceeb4aa04bc5ba9ac69b2, type: 3}

@@ -15,6 +15,8 @@ public class IslandGenerator : MonoBehaviour
     [SerializeField] private GameObject parentPickups;
     [SerializeField] private int keyCount;
     [SerializeField] private GameObject keyPrefab;
+    [SerializeField] private GameObject pickupLabel;
+    [SerializeField] private GameObject parentLabel;
     private List<int> pickupKey = new List<int>();
     [SerializeField] private GameObject parentWeapon;
     [SerializeField] private List<GameObject> weaponPrefabs;
@@ -61,9 +63,9 @@ public class IslandGenerator : MonoBehaviour
         for(counter = 0; counter<numberOfIslands; counter++)
         {
             var spawned = SpawnNext(prev, finalBridge);
+            print(spawned);
             prev = spawned.Item1;
             prev.name = counter.ToString();
-            //check if bridge exists in the tuple?
             if (spawned.Item2 != new GameObject().transform)
             {
                 finalBridge = spawned.Item2;
@@ -108,11 +110,17 @@ public class IslandGenerator : MonoBehaviour
             b = bridgeG;
         }
 
+
         //(randomly) spawn enemies on the newly created island
         SpawnEnemies(current);
         SpawnKeys(current);
-        SpawnWeapons(current);
-        
+        if(weaponPrefabs.Count()>0)
+        {
+            SpawnWeapons(current);
+
+        }
+
+
         return new Tuple<GameObject, Transform>(current, b);
     }
 
@@ -123,7 +131,7 @@ public class IslandGenerator : MonoBehaviour
         for(int i=1; i<=enemyCount; i++)
         {
             // pick a random enemy to spawn
-            var enemyPrefab = enemies[UnityEngine.Random.Range(0, enemies.Count)];
+            var enemyPrefab = enemies[UnityEngine.Random.Range(0, enemies.Count())];
             //UnityEngine.Random.Range(-10, 10)
             var enemyOffset = new Vector3(UnityEngine.Random.Range(-6,6), 2, UnityEngine.Random.Range(-4, 4));
             while(enemyOffset.x == 0 && enemyOffset.z == 0)
@@ -150,6 +158,8 @@ public class IslandGenerator : MonoBehaviour
             var keyOffset = new Vector3(UnityEngine.Random.Range(-6, 6), 2, UnityEngine.Random.Range(-4, 4));
             var k = Instantiate(keyPrefab, position: current.transform.position + keyOffset, rotation: Quaternion.identity, parent: parentPickups.transform);
             k.name = "k";
+            var label = Instantiate(pickupLabel, parent: parentLabel.transform);
+            k.GetComponent<PickupController>().text = label;
         }
         pickupKey.Remove(keyIndex);
     }
