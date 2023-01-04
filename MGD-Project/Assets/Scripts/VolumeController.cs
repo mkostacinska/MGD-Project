@@ -7,7 +7,8 @@ public class VolumeController : MonoBehaviour //https://www.youtube.com/watch?v=
 {
     [SerializeField] private Slider VolumeSliderUI=null;//UI slider
     [SerializeField] private Text VolumeText=null;//UI text
-
+    private float defaultVolume = 0.2f;
+    
     private void Start()
     {
         LoadValues();
@@ -15,7 +16,7 @@ public class VolumeController : MonoBehaviour //https://www.youtube.com/watch?v=
 
     public void VolumeSlider(float volume)
     {
-        VolumeText.text=volume.ToString("0.0");//UI text
+        VolumeText.text= ((int)(volume * 100)).ToString() + "%";//UI text
     }
 
     public void SaveVolume()
@@ -29,7 +30,7 @@ public class VolumeController : MonoBehaviour //https://www.youtube.com/watch?v=
 
     void LoadValues()
     {
-        float volumeValue=PlayerPrefs.GetFloat("gameValue");
+        float volumeValue=PlayerPrefs.GetFloat("gameVolume", defaultVolume);    //sets the volume to default volume if no player prefs exist
         VolumeSliderUI.value=volumeValue;
         AudioListener.volume=volumeValue;//audioListener effects/controls game volume 
     }
