@@ -6873,29 +6873,9 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 70802583}
-    - target: {fileID: 8153010067211552577, guid: 8bc7e6bbea78872418128f457af7204f, type: 3}
-      propertyPath: canvasLabel
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8153010067211552577, guid: 8bc7e6bbea78872418128f457af7204f, type: 3}
-      propertyPath: heightSpeed
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 8153010067211552578, guid: 8bc7e6bbea78872418128f457af7204f, type: 3}
       propertyPath: m_RootOrder
       value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8153010067211552578, guid: 8bc7e6bbea78872418128f457af7204f, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.15540123
-      objectReference: {fileID: 0}
-    - target: {fileID: 8153010067211552578, guid: 8bc7e6bbea78872418128f457af7204f, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.15540123
-      objectReference: {fileID: 0}
-    - target: {fileID: 8153010067211552578, guid: 8bc7e6bbea78872418128f457af7204f, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.15540123
       objectReference: {fileID: 0}
     - target: {fileID: 8153010067211552578, guid: 8bc7e6bbea78872418128f457af7204f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6937,20 +6917,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 45
       objectReference: {fileID: 0}
-    - target: {fileID: 8153010067211552579, guid: 8bc7e6bbea78872418128f457af7204f, type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: -5546940888850326318, guid: 0098270d50ef9c5428045644a05de813, type: 3}
-    - target: {fileID: 8153010067211552637, guid: 8bc7e6bbea78872418128f457af7204f, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8153010067211552638, guid: 8bc7e6bbea78872418128f457af7204f, type: 3}
       propertyPath: m_Name
       value: k
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 8153010067211552637, guid: 8bc7e6bbea78872418128f457af7204f, type: 3}
+    m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 8bc7e6bbea78872418128f457af7204f, type: 3}
 --- !u!4 &1168151222 stripped
