@@ -11,7 +11,7 @@ public class WeaponInstance : MonoBehaviour
     private Weapon thisWeapon;
     private int enemyLayer;
     private bool attacking = false;
-    [SerializeField] private string elementName = "NAME"; //set projectile element here, used for quick testing
+    [SerializeField] public string elementName = "NAME"; //set projectile element here, used for quick testing
     public Element element;
 
     void Start()
