@@ -553,6 +553,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 920797f50d5fa9b4580c426056e499c7, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 430bf46350516e54080043d16ccb0efe, type: 2}
     - target: {fileID: 919132149155446097, guid: 920797f50d5fa9b4580c426056e499c7, type: 3}
       propertyPath: m_Name
       value: Tall_Mushroom (5)
@@ -705,6 +709,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 920797f50d5fa9b4580c426056e499c7, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 430bf46350516e54080043d16ccb0efe, type: 2}
     - target: {fileID: 919132149155446097, guid: 920797f50d5fa9b4580c426056e499c7, type: 3}
       propertyPath: m_Name
       value: Tall_Mushroom (4)
@@ -781,6 +789,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 653df7d2039203843ae5675b3ec4d68e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: cbe3045097462594a94f8eff9b711e33, type: 2}
     - target: {fileID: 919132149155446097, guid: 653df7d2039203843ae5675b3ec4d68e, type: 3}
       propertyPath: m_Name
       value: Flat_Mushroom (5)
@@ -1085,6 +1097,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 653df7d2039203843ae5675b3ec4d68e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: cbe3045097462594a94f8eff9b711e33, type: 2}
     - target: {fileID: 919132149155446097, guid: 653df7d2039203843ae5675b3ec4d68e, type: 3}
       propertyPath: m_Name
       value: Flat_Mushroom (4)
@@ -1483,6 +1499,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 920797f50d5fa9b4580c426056e499c7, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 430bf46350516e54080043d16ccb0efe, type: 2}
     - target: {fileID: 919132149155446097, guid: 920797f50d5fa9b4580c426056e499c7, type: 3}
       propertyPath: m_Name
       value: Tall_Mushroom (2)
@@ -1559,6 +1579,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 920797f50d5fa9b4580c426056e499c7, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 430bf46350516e54080043d16ccb0efe, type: 2}
     - target: {fileID: 919132149155446097, guid: 920797f50d5fa9b4580c426056e499c7, type: 3}
       propertyPath: m_Name
       value: Tall_Mushroom (6)
@@ -1711,6 +1735,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 920797f50d5fa9b4580c426056e499c7, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 430bf46350516e54080043d16ccb0efe, type: 2}
     - target: {fileID: 919132149155446097, guid: 920797f50d5fa9b4580c426056e499c7, type: 3}
       propertyPath: m_Name
       value: Tall_Mushroom (7)
@@ -1787,6 +1815,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 653df7d2039203843ae5675b3ec4d68e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: cbe3045097462594a94f8eff9b711e33, type: 2}
     - target: {fileID: 919132149155446097, guid: 653df7d2039203843ae5675b3ec4d68e, type: 3}
       propertyPath: m_Name
       value: Flat_Mushroom
@@ -1863,6 +1895,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 653df7d2039203843ae5675b3ec4d68e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: cbe3045097462594a94f8eff9b711e33, type: 2}
     - target: {fileID: 919132149155446097, guid: 653df7d2039203843ae5675b3ec4d68e, type: 3}
       propertyPath: m_Name
       value: Flat_Mushroom (3)
@@ -2015,6 +2051,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 920797f50d5fa9b4580c426056e499c7, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 430bf46350516e54080043d16ccb0efe, type: 2}
     - target: {fileID: 919132149155446097, guid: 920797f50d5fa9b4580c426056e499c7, type: 3}
       propertyPath: m_Name
       value: Tall_Mushroom
@@ -2167,6 +2207,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 920797f50d5fa9b4580c426056e499c7, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 430bf46350516e54080043d16ccb0efe, type: 2}
     - target: {fileID: 919132149155446097, guid: 920797f50d5fa9b4580c426056e499c7, type: 3}
       propertyPath: m_Name
       value: Tall_Mushroom (1)
@@ -2562,6 +2606,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 653df7d2039203843ae5675b3ec4d68e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: cbe3045097462594a94f8eff9b711e33, type: 2}
     - target: {fileID: 919132149155446097, guid: 653df7d2039203843ae5675b3ec4d68e, type: 3}
       propertyPath: m_Name
       value: Flat_Mushroom (1)
@@ -2638,6 +2686,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 920797f50d5fa9b4580c426056e499c7, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 430bf46350516e54080043d16ccb0efe, type: 2}
     - target: {fileID: 919132149155446097, guid: 920797f50d5fa9b4580c426056e499c7, type: 3}
       propertyPath: m_Name
       value: Tall_Mushroom (8)
@@ -2714,6 +2766,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 653df7d2039203843ae5675b3ec4d68e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: cbe3045097462594a94f8eff9b711e33, type: 2}
     - target: {fileID: 919132149155446097, guid: 653df7d2039203843ae5675b3ec4d68e, type: 3}
       propertyPath: m_Name
       value: Flat_Mushroom (2)
@@ -2790,6 +2846,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 920797f50d5fa9b4580c426056e499c7, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 430bf46350516e54080043d16ccb0efe, type: 2}
     - target: {fileID: 919132149155446097, guid: 920797f50d5fa9b4580c426056e499c7, type: 3}
       propertyPath: m_Name
       value: Tall_Mushroom (3)

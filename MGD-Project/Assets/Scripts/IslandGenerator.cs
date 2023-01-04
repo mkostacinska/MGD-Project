@@ -91,7 +91,7 @@ public class IslandGenerator : MonoBehaviour
 
 
         Transform b = new GameObject().transform;
-        if (counter < numberOfIslands)
+        if (counter < numberOfIslands-1)
         {
             var bridgeG = free[UnityEngine.Random.Range(0, free.Count())];
 

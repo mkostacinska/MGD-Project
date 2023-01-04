@@ -469,6 +469,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: ac481fb229f04fb448175f3b405b6932, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 8748892135801146194, guid: 0098270d50ef9c5428045644a05de813, type: 3}
     - target: {fileID: 919132149155446097, guid: ac481fb229f04fb448175f3b405b6932, type: 3}
       propertyPath: m_Name
       value: Normal_Mushroom_L (3)
@@ -545,6 +549,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 920797f50d5fa9b4580c426056e499c7, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7aa8ba30e60be4f4491d614c453f49aa, type: 2}
     - target: {fileID: 919132149155446097, guid: 920797f50d5fa9b4580c426056e499c7, type: 3}
       propertyPath: m_Name
       value: Tall_Mushroom (2)
@@ -625,6 +633,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Curved_Mushroom (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 4008698135582670722, guid: c9c6e3f79a64b5940afef6ce2f836c94, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 8748892135801146194, guid: ac481fb229f04fb448175f3b405b6932, type: 3}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: c9c6e3f79a64b5940afef6ce2f836c94, type: 3}
@@ -697,6 +709,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: ac481fb229f04fb448175f3b405b6932, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 8748892135801146194, guid: 0098270d50ef9c5428045644a05de813, type: 3}
     - target: {fileID: 919132149155446097, guid: ac481fb229f04fb448175f3b405b6932, type: 3}
       propertyPath: m_Name
       value: Normal_Mushroom_L (1)
@@ -853,6 +869,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Curved_Mushroom (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 4008698135582670722, guid: c9c6e3f79a64b5940afef6ce2f836c94, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 8748892135801146194, guid: ac481fb229f04fb448175f3b405b6932, type: 3}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: c9c6e3f79a64b5940afef6ce2f836c94, type: 3}
@@ -925,6 +945,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 920797f50d5fa9b4580c426056e499c7, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7aa8ba30e60be4f4491d614c453f49aa, type: 2}
     - target: {fileID: 919132149155446097, guid: 920797f50d5fa9b4580c426056e499c7, type: 3}
       propertyPath: m_Name
       value: Tall_Mushroom (1)
@@ -1005,6 +1029,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Curved_Mushroom (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4008698135582670722, guid: c9c6e3f79a64b5940afef6ce2f836c94, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 8748892135801146194, guid: ac481fb229f04fb448175f3b405b6932, type: 3}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: c9c6e3f79a64b5940afef6ce2f836c94, type: 3}
@@ -1077,6 +1105,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: ac481fb229f04fb448175f3b405b6932, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 8748892135801146194, guid: 0098270d50ef9c5428045644a05de813, type: 3}
     - target: {fileID: 919132149155446097, guid: ac481fb229f04fb448175f3b405b6932, type: 3}
       propertyPath: m_Name
       value: Normal_Mushroom_L (2)
@@ -1229,6 +1261,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: ac481fb229f04fb448175f3b405b6932, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 8748892135801146194, guid: 0098270d50ef9c5428045644a05de813, type: 3}
     - target: {fileID: 919132149155446097, guid: ac481fb229f04fb448175f3b405b6932, type: 3}
       propertyPath: m_Name
       value: Normal_Mushroom_L
@@ -1627,6 +1663,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 920797f50d5fa9b4580c426056e499c7, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7aa8ba30e60be4f4491d614c453f49aa, type: 2}
     - target: {fileID: 919132149155446097, guid: 920797f50d5fa9b4580c426056e499c7, type: 3}
       propertyPath: m_Name
       value: Tall_Mushroom
@@ -2040,6 +2080,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Curved_Mushroom
       objectReference: {fileID: 0}
+    - target: {fileID: 4008698135582670722, guid: c9c6e3f79a64b5940afef6ce2f836c94, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 8748892135801146194, guid: ac481fb229f04fb448175f3b405b6932, type: 3}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: c9c6e3f79a64b5940afef6ce2f836c94, type: 3}
@@ -2192,6 +2236,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Curved_Mushroom (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4008698135582670722, guid: c9c6e3f79a64b5940afef6ce2f836c94, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 8748892135801146194, guid: ac481fb229f04fb448175f3b405b6932, type: 3}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: c9c6e3f79a64b5940afef6ce2f836c94, type: 3}
