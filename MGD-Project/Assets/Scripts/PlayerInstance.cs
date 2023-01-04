@@ -7,7 +7,7 @@ public class PlayerInstance : MonoBehaviour
 {
     [SerializeField] private int health = 3;
     [SerializeField] private int level = 1;
-    [SerializeField] private string name = "Player 1";
+    [SerializeField] private new string name = "Player 1";
     public Player thisPlayer;
     public HealthBar healthBar;
     

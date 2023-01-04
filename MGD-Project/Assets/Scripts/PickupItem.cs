@@ -49,11 +49,10 @@ public class PickupItem : PickupController
             {
                 //if inventory is full, swap with active weapon first
                 Inventory inventory = GameObject.Find("Hotbar Panel").GetComponent<Inventory>();
-                print("count: " + inventory.items.Count);
                 if (inventory.items.Count >= inventory.maxSlots)
                 {
                     GameObject activeItem = inventory.items[inventory.scrollPos];
-                    print(activeItem.name);
+
                     activeItem.transform.SetParent(this.transform.parent);
                     activeItem.transform.localPosition = this.transform.localPosition;
                     activeItem.transform.localRotation = this.transform.localRotation;
@@ -62,10 +61,6 @@ public class PickupItem : PickupController
                     var script = activeItem.AddComponent<PickupItem>();
                     script.player = this.player;
                     script.labelPrefab = this.labelPrefab;
-                    //var script = activeItem.GetComponent<PickupItem>();
-                    //script.enabled = true;
-                    //script.player = this.player;
-                    //script.Start();
                 }
 
                 Destroy(text);

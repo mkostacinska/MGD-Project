@@ -42,8 +42,6 @@ public class PickupController : MonoBehaviour
         if(Vector3.Distance(transform.position, player.transform.position) <= 1.5f)
         {
             text.SetActive(true);
-            print("checking E");
-            //if (Input.GetKeyDown(KeyCode.E))
             if(keyDown)
             {
                 text.SetActive(false);

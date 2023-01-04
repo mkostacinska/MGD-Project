@@ -16,10 +16,9 @@ public class PlayerContoller : MonoBehaviour
     [SerializeField] private float jumpHeight;
 
     private Vector3 velocity;
-    public Camera camera;
 
     private Animator animator;
-    private Rigidbody rigidbody;
+    private new Rigidbody rigidbody;
 
     private void Start()
     {

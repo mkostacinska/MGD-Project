@@ -15,9 +15,8 @@ public class PlayerContollerPrototype : MonoBehaviour
     [SerializeField] private float gravity;
     [SerializeField] private float jumpHeight;
 
-    public Camera camera;
 
-    private Rigidbody rigidbody;
+    private new Rigidbody rigidbody;
     [SerializeField] private GameObject weapon;
 
     private Vector2 movementVector = new Vector2(0, 0);     //initialise movement to 0,0
