@@ -24,7 +24,7 @@ public class RangedWeapon : MonoBehaviour
     }
 
     private bool attackKeyDown = false;
-    void OnAttack(InputValue attackValue) {
+    void OnAttack() {
         if (transform.parent != null) {
             if (transform.parent.name == "WeaponHolder") { //only attack if its in weapon holder
                 attackKeyDown = true; 
@@ -48,6 +48,14 @@ public class RangedWeapon : MonoBehaviour
     }
     private void Update()
     {
+        //there is a Unity Engine Input System bug where some gameobjects' actions are not triggered
+        //this bug only occurs in the build and not the editor and which object's actions break is not consistent; changes each build
+        //this code is a backup for when this object's actions are bugged
+        if (GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInput>().currentActionMap.FindAction("Attack").triggered)
+        {
+            OnAttack();
+        }
+
         //if the weapon is the ranged weapon, shoot projectiles when the attack button is pressed
         if (attackKeyDown)
         {

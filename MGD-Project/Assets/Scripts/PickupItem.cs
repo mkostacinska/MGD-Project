@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 public class PickupItem : PickupController
 {
     [SerializeField] GameObject labelPrefab;
+    private InputActionAsset inputActions;
 
     //override method so the item goes into player inventory
     new private void Start(){
@@ -27,9 +28,17 @@ public class PickupItem : PickupController
     new void Update(){
         rotateObject(); //periodic key movement (rotation + moving up and down)
         checkDistance(); //check the distance to the player to decide whether or not to display the prompt
+
+        //there is a Unity Engine Input System bug where some gameobjects' actions are not triggered
+        //this bug only occurs in the build and not the editor and which object's actions break is not consistent; changes each build
+        //this code is a backup for when this object's actions are bugged
+        if (GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInput>().currentActionMap.FindAction("Pickup").triggered)
+        {
+            OnPickup();
+        }
     }
 
-    void OnPickup(InputValue value)
+    void OnPickup()
     {
         if (text)
         {
@@ -45,7 +54,8 @@ public class PickupItem : PickupController
         if (Vector3.Distance(transform.position, player.transform.position) <= 1.5f)
         {
             text.SetActive(true);
-            if (keyDown)
+            //if (Input.GetKeyDown(KeyCode.E))
+            if (keyDown == true)
             {
                 //if inventory is full, swap with active weapon first
                 Inventory inventory = GameObject.Find("Hotbar Panel").GetComponent<Inventory>();

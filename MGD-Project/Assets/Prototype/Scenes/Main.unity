@@ -2614,10 +2614,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4403796477446457228, guid: 0ace70afb34e4a44ca879afa64dc9587, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4403796477446457229, guid: 0ace70afb34e4a44ca879afa64dc9587, type: 3}
       propertyPath: elementName
       value: pyro
@@ -3891,10 +3887,6 @@ PrefabInstance:
     - target: {fileID: 4403796477446457219, guid: 0ace70afb34e4a44ca879afa64dc9587, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4403796477446457228, guid: 0ace70afb34e4a44ca879afa64dc9587, type: 3}
-      propertyPath: m_Enabled
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4403796477446457229, guid: 0ace70afb34e4a44ca879afa64dc9587, type: 3}
       propertyPath: elementName
@@ -13349,6 +13341,10 @@ PrefabInstance:
     - target: {fileID: 7049634308233331326, guid: 06cc3aaa6b749ee469999fb643dc9e54, type: 3}
       propertyPath: m_Name
       value: PlayerPrototype
+      objectReference: {fileID: 0}
+    - target: {fileID: 7049634308233331326, guid: 06cc3aaa6b749ee469999fb643dc9e54, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 8481621195838010707, guid: 06cc3aaa6b749ee469999fb643dc9e54, type: 3}
       propertyPath: m_LocalPosition.x
