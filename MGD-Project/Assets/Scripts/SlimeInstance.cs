@@ -9,7 +9,7 @@ public class SlimeInstance : MonoBehaviour
     [SerializeField] private int range = 1;
 
     public NPC thisSlime;
-    [SerializeField] private GameObject Player;
+    private GameObject Player = PlayerToFollow.shared.player;
     public HealthBar healthBar;
     // Start is called before the first frame update
     void Start()

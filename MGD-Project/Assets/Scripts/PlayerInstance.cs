@@ -14,6 +14,7 @@ public class PlayerInstance : MonoBehaviour
     void Start()
     {
         thisPlayer = new Player(gameObject, health, level, name);
+        PlayerToFollow.shared.player = this.gameObject;
         healthBar.SetMaxHealth(health);
     }
 

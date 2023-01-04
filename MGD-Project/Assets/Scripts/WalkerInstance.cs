@@ -9,7 +9,7 @@ public class WalkerInstance : MonoBehaviour
     [SerializeField] private int range = 1;
 
     public NPC thisWalker;
-    [SerializeField] private GameObject Player;
+    private GameObject Player = PlayerToFollow.shared.player;
     public HealthBar healthBar;
 
     void Start()
