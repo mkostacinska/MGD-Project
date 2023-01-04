@@ -24,6 +24,7 @@ public class PlayerContollerPrototype : MonoBehaviour
     private void Start()
     {
         rigidbody = GetComponent<Rigidbody>();
+        //GetComponent<PlayerInput>().ActivateInput();
     }
 
     private void Update()
