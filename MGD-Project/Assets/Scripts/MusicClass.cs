@@ -9,6 +9,10 @@ public class MusicClass : MonoBehaviour
     private AudioSource audioSource;
     private void Awake()
     {
+        //if there is already a music source, delete this one: prevents duplicates whenever the menu loads
+        if (GameObject.FindGameObjectsWithTag("Music").Length > 1) {
+            Destroy(this.gameObject); 
+        }
         DontDestroyOnLoad(transform.gameObject);
         audioSource = GetComponent<AudioSource>();
     }
