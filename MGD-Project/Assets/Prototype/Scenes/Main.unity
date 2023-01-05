@@ -288,6 +288,7 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 128
+  bridge: {fileID: 629000786}
   numberOfIslands: 4
 --- !u!1 &35124611 stripped
 GameObject:
@@ -4001,6 +4002,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 653df7d2039203843ae5675b3ec4d68e, type: 3}
   m_PrefabInstance: {fileID: 628601774}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &629000786 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 25df3ba2134001f46ae5b2c59275cf0d, type: 3}
+  m_PrefabInstance: {fileID: 1184458505}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &651255963
 PrefabInstance:
@@ -13184,6 +13190,10 @@ PrefabInstance:
     - target: {fileID: 8481621195838010707, guid: 06cc3aaa6b749ee469999fb643dc9e54, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9114788075726941261, guid: 06cc3aaa6b749ee469999fb643dc9e54, type: 3}
+      propertyPath: m_DefaultActionMap
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4339759802853994975, guid: 06cc3aaa6b749ee469999fb643dc9e54, type: 3}

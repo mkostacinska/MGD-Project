@@ -22,7 +22,7 @@ public class GameController : MonoBehaviour
     public LayerMask playerLayer;
 
     //needed for spawning the bridge when all keys are collected:
-    //[SerializeField] private GameObject bridge;
+    [SerializeField] private GameObject bridge = null;
 
     //needed for winning
     [SerializeField] private int numberOfIslands = 4;
@@ -155,9 +155,9 @@ public class GameController : MonoBehaviour
         updateText(); //update the key counter accordinglu
         
         //if all keys have been collected, allow access to the final island by spawning a bridge
-        if(keyCount == keyNum)
+        if(keyCount == keyNum && bridge != null)
         {
-            //bridge.SetActive(true);
+            bridge.SetActive(true);
         }
     }
     void updateText()
