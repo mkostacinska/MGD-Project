@@ -172,7 +172,7 @@ public class IslandGenerator : MonoBehaviour
         var elements = new List<string>() { "cryo", "pyro", "electro" };
         GameObject weapon = weaponPrefabs[UnityEngine.Random.Range(0, weaponPrefabs.Count())];
         string element = elements[UnityEngine.Random.Range(0, elements.Count())];
-        var weaponOffset = new Vector3(UnityEngine.Random.Range(-6, 6), 5, UnityEngine.Random.Range(-4, 4));
+        var weaponOffset = new Vector3(UnityEngine.Random.Range(-6, 6), 3, UnityEngine.Random.Range(-4, 4));
         var w = Instantiate(weapon, position: current.transform.position + weaponOffset, rotation: Quaternion.identity, parent: parentWeapon.transform);
         if(weapon.gameObject.name == "STAFF")
         {
