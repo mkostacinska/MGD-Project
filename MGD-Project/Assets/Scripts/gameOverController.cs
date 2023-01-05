@@ -8,6 +8,6 @@ public class gameOverController : MonoBehaviour
     //when the restartButton is pressed, reload the main scene
     public void restartButton()
     {
-        SceneManager.LoadScene("Main");//relaod main
+        SceneManager.LoadScene("Maja-PCG");//load PCG scene
     }
 }
