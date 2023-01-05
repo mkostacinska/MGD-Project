@@ -15,5 +15,5 @@ public class MainMenu : MonoBehaviour
         //Application.Quit();
         //Debug.Log("Quit");
         SceneManager.LoadScene("credits");
-    }//tutorial used:https://www.youtube.com/watch?v=pcyiub1hz20&list=WL&index=13
+    }//tutorial used:https://www.youtube.com/watch?v=pcyiub1hz20&list=WL&index=14 - Accessed 11/2022, published 6/2022, used for menus(death , main), DB Dev on YouTube.
 }
