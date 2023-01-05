@@ -13699,6 +13699,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 3784acc2e41949a4abcd1db9b41dbc51, type: 2}
+    - target: {fileID: 7748986826915637277, guid: 1c9722cfefc8f5e4b8f1651a864b7158, type: 3}
+      propertyPath: m_Name
+      value: Enemies
+      objectReference: {fileID: 0}
     - target: {fileID: 9138886240891371552, guid: 1c9722cfefc8f5e4b8f1651a864b7158, type: 3}
       propertyPath: m_Materials.Array.size
       value: 0

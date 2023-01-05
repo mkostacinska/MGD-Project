@@ -6,9 +6,10 @@ using UnityEngine;
 
 public class IslandGenerator : MonoBehaviour
 {
+    [SerializeField] private GameObject game;
     [SerializeField] private GameObject island;
     [SerializeField] private GameObject parentIsland;
-    [SerializeField] private int numberOfIslands;
+    //[SerializeField] private int numberOfIslands;
     [SerializeField] private List<GameObject> islandPrefabs;
     [SerializeField] private List<GameObject> enemies;
     [SerializeField] private GameObject player;
@@ -35,7 +36,7 @@ public class IslandGenerator : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        for(int i=0; i<numberOfIslands; i++)
+        for(int i=0; i<PlayerToFollow.shared.islandNum; i++)
         {
             if(i<keyCount)
             {
@@ -54,13 +55,14 @@ public class IslandGenerator : MonoBehaviour
         initial.name = "initial";
         List<Transform> bridges = GetBridges(initial);
         Transform finalBridge = bridges.Where(b => b.gameObject.name == "BridgeN").First();
-        finalBridge.gameObject.SetActive(true);
+        finalBridge.gameObject.SetActive(false);
+        game.GetComponent<GameController>().bridge = finalBridge.gameObject;
 
         //Instantiate(player, position: new Vector3(0, 196.0869f, 0) + initial.transform.position, rotation: Quaternion.identity);
 
         //randomly generate each of the remaining islands
         GameObject prev = initial;
-        for(counter = 0; counter<numberOfIslands; counter++)
+        for(counter = 0; counter< PlayerToFollow.shared.islandNum; counter++)
         {
             var spawned = SpawnNext(prev, finalBridge);
             print(spawned);
@@ -70,7 +72,9 @@ public class IslandGenerator : MonoBehaviour
             {
                 finalBridge = spawned.Item2;
             }
-        }        
+        }
+
+        SpawnEnemies(initial);
     }
 
     List<Transform> GetBridges(GameObject island)
@@ -91,7 +95,7 @@ public class IslandGenerator : MonoBehaviour
 
 
         Transform b = new GameObject().transform;
-        if (counter < numberOfIslands-1)
+        if (counter < PlayerToFollow.shared.islandNum - 1)
         {
             var bridgeG = free[UnityEngine.Random.Range(0, free.Count())];
 
@@ -127,7 +131,7 @@ public class IslandGenerator : MonoBehaviour
     void SpawnEnemies(GameObject island)
     {
         //on regular islands, spawn between 3 and 6 enemies (?)
-        int enemyCount = UnityEngine.Random.Range(3, 6);
+        int enemyCount = UnityEngine.Random.Range(3+counter, 6+counter);
         for(int i=1; i<=enemyCount; i++)
         {
             // pick a random enemy to spawn

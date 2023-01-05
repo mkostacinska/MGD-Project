@@ -22,10 +22,10 @@ public class GameController : MonoBehaviour
     public LayerMask playerLayer;
 
     //needed for spawning the bridge when all keys are collected:
-    [SerializeField] private GameObject bridge = null;
+    [SerializeField] public GameObject bridge = null;
 
     //needed for winning
-    [SerializeField] private int numberOfIslands = 4;
+    //[SerializeField] private int numberOfIslands = PlayerToFollow.shared.islandNum + 1;
 
     //speed increase when rooms are cleared
     private float bonusSpeedMultiplyer = 1.8f; //multiplier
@@ -81,8 +81,9 @@ public class GameController : MonoBehaviour
             }
 
             //print(islandsCleared.Count());
-            if (islandsCleared.Count() == numberOfIslands)
+            if (islandsCleared.Count() == PlayerToFollow.shared.islandNum + 1)
             {
+                PlayerToFollow.shared.islandNum += 1;
                 SceneManager.LoadScene("Win");
             }
         }
