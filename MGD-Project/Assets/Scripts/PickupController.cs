@@ -39,7 +39,7 @@ public class PickupController : MonoBehaviour
     void checkDistance()
     {
         //if the player is within 1.5 unit from the key, display the prompt 
-        if(Vector3.Distance(transform.position, player.transform.position) <= 1.5f)
+        if(Vector3.Distance(transform.position, PlayerToFollow.shared.player.transform.position) <= 1.5f)
         {
             text.SetActive(true);
             if(keyDown)

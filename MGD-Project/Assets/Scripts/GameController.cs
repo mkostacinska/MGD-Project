@@ -94,7 +94,6 @@ public class GameController : MonoBehaviour
     {
         //raycast from the player straignt down below to get the ground they're on
         Physics.Raycast(player.transform.position, Vector3.down, out var hit, Mathf.Infinity, ~playerLayer);
-        print(hit.collider.gameObject.name);
 
         //if the object the player is standing on is classified as ground & DOES NOT correspond to the most recent island
         if (hit.collider != null) //prevents errors
