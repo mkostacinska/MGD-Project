@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class turretProjectile : MonoBehaviour
 {
-    [SerializeField] private GameObject Player;
+    private GameObject Player = PlayerToFollow.shared.player;
     public float life = 3;
 
     void Awake()

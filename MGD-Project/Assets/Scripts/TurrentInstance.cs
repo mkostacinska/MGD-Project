@@ -11,7 +11,7 @@ public class TurrentInstance : MonoBehaviour
     [SerializeField] private float readyTime = 0f;
 
     public NPC thisTurret;
-    [SerializeField] private GameObject Player;
+    //private GameObject Player = PlayerToFollow.shared.player;
     public HealthBar healthBar;
 
     //projectile variables
@@ -40,7 +40,7 @@ public class TurrentInstance : MonoBehaviour
     {
         thisTurret.Update();
         //rotate the turret enemy to face the player
-        Vector3 difference = Player.transform.position - transform.position;
+        Vector3 difference = PlayerToFollow.shared.player.transform.position - transform.position;
         Vector3 direction = difference.normalized;      //gets the unit vector direction
         transform.forward = direction;
 

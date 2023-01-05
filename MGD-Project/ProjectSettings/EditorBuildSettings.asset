@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Final Game/Scenes/credits.unity
     guid: fd06c9720bc2ac049934587b36263912
+  - enabled: 1
+    path: Assets/Final Game/Scenes/Maja-PCG.unity
+    guid: a2ccdf8eeabc86f468f0aa9c2c7abf11
   m_configObjects: {}

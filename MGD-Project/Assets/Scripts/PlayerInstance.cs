@@ -14,6 +14,7 @@ public class PlayerInstance : MonoBehaviour
     void Start()
     {
         thisPlayer = new Player(gameObject, health, level, name);
+        PlayerToFollow.shared.player = this.gameObject;
         healthBar.SetMaxHealth(health);
     }
 
@@ -29,6 +30,7 @@ public class PlayerInstance : MonoBehaviour
         {
             //MonoBehaviour.print("dead");
             //Destroy(gameObject);
+            PlayerToFollow.shared.islandNum = 3;
             PlayerPrefs.SetString("Death by", thisPlayer.getLastHitBy()); //method from: https://stackoverflow.com/questions/32306704/how-to-pass-data-and-references-between-scenes-in-unity
             SceneManager.LoadScene("DeathMenu");
         }

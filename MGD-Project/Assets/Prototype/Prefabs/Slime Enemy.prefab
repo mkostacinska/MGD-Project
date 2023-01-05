@@ -147,7 +147,7 @@ Transform:
   m_GameObject: {fileID: 7870592688196661338}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.33225405, y: 0.332, z: 4.5}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 50, y: 50, z: 50}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 5256771461038640752}
@@ -260,7 +260,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2209e8d4d21d76943971ce142242adc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 7049634308233331326, guid: 06cc3aaa6b749ee469999fb643dc9e54, type: 3}
   jumpAmount: 3
   moveAmount: 1.2
   cooldown: 1
@@ -281,7 +280,6 @@ MonoBehaviour:
   health: 200
   level: 1
   range: 1
-  Player: {fileID: 0}
   healthBar: {fileID: 3452564616317410505}
   cooldown: 0.5
   cooldownEnd: 0
@@ -509,6 +507,14 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7320917565415628024, guid: 3d0203d4100822e42b018232687d008e, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    - target: {fileID: 7320917565415628024, guid: 3d0203d4100822e42b018232687d008e, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d0203d4100822e42b018232687d008e, type: 3}

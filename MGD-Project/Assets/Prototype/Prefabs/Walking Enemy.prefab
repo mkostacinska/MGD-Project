@@ -147,7 +147,7 @@ Transform:
   m_GameObject: {fileID: 3745734826326257058}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.41, y: 0.25, z: 4.5}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 697034825}
@@ -260,7 +260,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ac66ee952e31874f9140001bcdf185b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 0}
+  Player: {fileID: 7049634308233331326, guid: 06cc3aaa6b749ee469999fb643dc9e54, type: 3}
   speed: 1.5
   range: 0.5
 --- !u!114 &3745734826326257069
@@ -406,6 +406,14 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7320917565415628024, guid: 3d0203d4100822e42b018232687d008e, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    - target: {fileID: 7320917565415628024, guid: 3d0203d4100822e42b018232687d008e, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d0203d4100822e42b018232687d008e, type: 3}

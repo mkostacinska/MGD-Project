@@ -11,7 +11,7 @@ public class WeaponInstance : MonoBehaviour
     private Weapon thisWeapon;
     private int enemyLayer;
     private bool attacking = false;
-    [SerializeField] private string elementName = "NAME"; //set projectile element here, used for quick testing
+    [SerializeField] public string elementName = "NAME"; //set projectile element here, used for quick testing
     public Element element;
 
     void Start()
@@ -20,6 +20,19 @@ public class WeaponInstance : MonoBehaviour
         thisWeapon = new Weapon(attack);
         enemyLayer = LayerMask.NameToLayer("Enemy");
         gameObject.name = (elementName + " Sword").ToUpper();
+
+        //change colour to match element
+        Material[] materials = transform.GetComponentInChildren<MeshRenderer>().materials;
+        foreach (Material m in materials)
+        {
+            print(m.name);
+            if (m.name.StartsWith("Crystal"))
+            { //StartsWith() is used because "(instance)" is added by unity
+                m.color = element.getColour();
+                m.EnableKeyword("_EMISSION");   //https://stackoverflow.com/a/33671094
+                m.SetColor("_EmissionColor", element.getColour());
+            }
+        }
     }
 
     bool cooldownCheck()

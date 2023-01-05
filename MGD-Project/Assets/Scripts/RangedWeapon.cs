@@ -8,7 +8,7 @@ public class RangedWeapon : MonoBehaviour
     public Transform projectileSpawnPoint;
     public GameObject projectilePrefab;
     public float projectileSpeed = 5;
-    [SerializeField] private string elementName = "NAME"; //set projectile element here, used for quick testing
+    [SerializeField] public string elementName = "NAME"; //set projectile element here, used for quick testing
     private Element element;
 
     [SerializeField] private float cooldown = 0.2f;

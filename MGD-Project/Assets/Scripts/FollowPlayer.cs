@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class FollowPlayer : MonoBehaviour
 {
-    [SerializeField] private GameObject Player;
     [SerializeField] private float jumpAmount = 1;
     [SerializeField] private float moveAmount = 0.5f;
 
@@ -44,7 +43,7 @@ public class FollowPlayer : MonoBehaviour
             //jump when grounded
             rb.AddForce(new Vector3(0, jumpAmount, 0), ForceMode.Impulse);
 
-            Vector3 difference = Player.transform.position - transform.position;
+            Vector3 difference = PlayerToFollow.shared.player.transform.position - transform.position;
             //normalize the direction vector
             Vector3 direction = difference.normalized;      
             //jump towards player
