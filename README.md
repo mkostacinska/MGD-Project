@@ -18,7 +18,7 @@ The following assets can be found in the repository, but are NOT a part of the p
 -https://www.youtube.com/watch?v=bxKEftSIGiQ&list=WL&index=10&t=604s- Accessed 11/2022, published 10/2022, used for pause menu, DB Dev on YouTube.
 -https://www.youtube.com/watch?v=k2vOeTK0z2g&list=WL&index=2- Accessed 11/2022, published 6/2021, used for volume slider and volume controller , SpeedTutor on YouTube.
 -https://www.youtube.com/watch?v=csqVa2Vimao&list=WL&index=10&t=745s -accessed 11/2022-1/2023 , published 4/2021, used for rebinding controls ,samyam on Youtube.
-(the code from this was used to modify the scripts from the rebinding UI extention for the input system package that was also used for rebinding)(scripts:
+(the code from this was used to modify the scripts from the rebinding UI extention for the input system package that was also used for rebinding)
 
 unity documentaion and manual pages used:
 https://docs.unity3d.com/Packages/com.unity.inputsystem@1.0/api/UnityEngine.InputSystem.InputBinding.html
