@@ -64,6 +64,8 @@ public class WeaponSwitching : MonoBehaviour {
                     animator.StopPlayback();
                     weapon.gameObject.transform.localRotation = Quaternion.identity;
                     weapon.gameObject.transform.localPosition = Vector3.zero;
+                    //if object is a sword: add an offset to position so it looks right
+                    weapon.gameObject.transform.localPosition += new Vector3(-0.1f, 0.3f, 0);
                 }
                 weapon.gameObject.SetActive(false);
             }
