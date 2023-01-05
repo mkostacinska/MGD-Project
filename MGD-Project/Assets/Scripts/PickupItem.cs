@@ -10,6 +10,7 @@ public class PickupItem : PickupController
 
     //override method so the item goes into player inventory
     new private void Start(){
+        if (player == null) {player = PlayerToFollow.shared.player; } //prevents breaking other scenes
         text = Instantiate(labelPrefab);
         base.Start();       //get the start() from superclass
 

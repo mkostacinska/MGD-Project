@@ -151,7 +151,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heightSpeed: 4
   deltaHeight: 0.1
-  offset: 0.8
+  offset: 2
   player: {fileID: 0}
   text: {fileID: 0}
   labelPrefab: {fileID: 3074103531843657705, guid: c0a37a73a899d9e4b9e54324a6985124, type: 3}
