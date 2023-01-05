@@ -98,7 +98,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 5957875611086660625, guid: 1da95fc69ab53774784d3ce607a53858, type: 3}
   projectileSpeed: 6
   elementName: cryo
-  cooldown: 1
+  cooldown: 0.5
   cooldownEnd: 0
 --- !u!114 &4403796477446457228
 MonoBehaviour:
@@ -127,7 +127,7 @@ MonoBehaviour:
   m_ActionEvents: []
   m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: 
-  m_DefaultActionMap: 
+  m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!114 &1804325688

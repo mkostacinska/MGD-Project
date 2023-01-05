@@ -9,12 +9,13 @@ public class SlimeInstance : MonoBehaviour
     [SerializeField] private int range = 1;
 
     public NPC thisSlime;
-    private GameObject Player = PlayerToFollow.shared.player;
+    private GameObject Player;
     public HealthBar healthBar;
     // Start is called before the first frame update
     void Start()
     {
-        if (Player == null) { this.enabled = false; }   //disable script if player == false, this should never happen outside of testing
+        //print("SLIME: "+ Player);
+        if (PlayerToFollow.shared.player == null) { this.enabled = false; }   //disable script if player == false, this should never happen outside of testing
         thisSlime = new NPC(gameObject, health, level, range);
         healthBar.SetMaxHealth(health);
         thisSlime.Start();
@@ -34,7 +35,7 @@ public class SlimeInstance : MonoBehaviour
 
     private void OnCollisionStay(Collision collision)
     {
-        if (collision.gameObject == Player)
+        if (collision.gameObject == PlayerToFollow.shared.player)
         {
             if (cooldownCheck())
             {
@@ -51,7 +52,7 @@ public class SlimeInstance : MonoBehaviour
         thisSlime.Update();
 
         //rotate enemy to face player
-        Vector3 difference = Player.transform.position - transform.position;
+        Vector3 difference = PlayerToFollow.shared.player.transform.position - transform.position;
         Vector3 direction = difference.normalized;      //gets the unit vector direction
         transform.forward = direction;
 
