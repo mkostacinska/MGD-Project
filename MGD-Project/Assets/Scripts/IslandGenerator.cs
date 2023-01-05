@@ -158,7 +158,7 @@ public class IslandGenerator : MonoBehaviour
         int keyIndex = pickupKey[UnityEngine.Random.Range(0, pickupKey.Count())];
         if (keyIndex == 1)
         {
-            var keyOffset = new Vector3(UnityEngine.Random.Range(-6, 6), 20, UnityEngine.Random.Range(-4, 4));
+            var keyOffset = new Vector3(UnityEngine.Random.Range(-6, 6), 2.5f, UnityEngine.Random.Range(-4, 4));
             var k = Instantiate(keyPrefab, position: current.transform.position + keyOffset, rotation: Quaternion.identity, parent: parentPickups.transform);
             k.name = "k";
             var label = Instantiate(pickupLabel, parent: parentLabel.transform);
