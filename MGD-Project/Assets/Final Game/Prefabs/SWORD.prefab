@@ -198,7 +198,7 @@ MonoBehaviour:
   m_ActionEvents: []
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: 
+  m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!1001 &7631907512817648128
@@ -209,6 +209,26 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 1127206217810271780}
     m_Modifications:
+    - target: {fileID: -9089251081239633261, guid: 112460515bf84684595e0463ab74ba64, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 168c24ab2085f634aa1754fc2a261f87, type: 2}
+    - target: {fileID: -9089251081239633261, guid: 112460515bf84684595e0463ab74ba64, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0a167f221104e7e438c5340afa7d4c30, type: 2}
+    - target: {fileID: -9089251081239633261, guid: 112460515bf84684595e0463ab74ba64, type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 485accddd1dd54248a44f51d327c826c, type: 2}
+    - target: {fileID: -9089251081239633261, guid: 112460515bf84684595e0463ab74ba64, type: 3}
+      propertyPath: m_Materials.Array.data[3]
+      value: 
+      objectReference: {fileID: 2100000, guid: 529eff1f4409fec4d9f64c7c2794140a, type: 2}
+    - target: {fileID: -9089251081239633261, guid: 112460515bf84684595e0463ab74ba64, type: 3}
+      propertyPath: m_Materials.Array.data[4]
+      value: 
+      objectReference: {fileID: 2100000, guid: 485accddd1dd54248a44f51d327c826c, type: 2}
     - target: {fileID: -8679921383154817045, guid: 112460515bf84684595e0463ab74ba64, type: 3}
       propertyPath: m_RootOrder
       value: -1
