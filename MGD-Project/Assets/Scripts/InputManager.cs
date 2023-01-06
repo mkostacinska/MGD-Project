@@ -20,7 +20,6 @@ public class InputManager : MonoBehaviour
         }
         DontDestroyOnLoad(transform.gameObject); //makes sure player input is persistent across scenes
         actionMap = GetComponent<PlayerInput>().currentActionMap;
-        actionMap.Enable();
     }
 
     public static InputActionMap getActionMap()
