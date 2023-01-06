@@ -11,7 +11,6 @@ public class TurrentInstance : MonoBehaviour
     [SerializeField] private float readyTime = 0f;
 
     public NPC thisTurret;
-    //private GameObject Player = PlayerToFollow.shared.player;
     public HealthBar healthBar;
 
     //projectile variables

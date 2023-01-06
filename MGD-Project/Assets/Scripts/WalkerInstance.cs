@@ -9,7 +9,6 @@ public class WalkerInstance : MonoBehaviour
     [SerializeField] private int range = 1;
 
     public NPC thisWalker;
-    private GameObject Player = PlayerToFollow.shared.player;
     public HealthBar healthBar;
 
     void Start()
@@ -33,7 +32,7 @@ public class WalkerInstance : MonoBehaviour
 
     private void OnCollisionStay(Collision collision)
     {
-        if (collision.gameObject == Player)
+        if (collision.gameObject == PlayerToFollow.shared.player)
         {
             if (cooldownCheck())
             {

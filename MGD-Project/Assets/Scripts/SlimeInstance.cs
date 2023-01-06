@@ -9,7 +9,6 @@ public class SlimeInstance : MonoBehaviour
     [SerializeField] private int range = 1;
 
     public NPC thisSlime;
-    private GameObject Player;
     public HealthBar healthBar;
     // Start is called before the first frame update
     void Start()
