@@ -10,6 +10,7 @@ public class PickupController : MonoBehaviour
     [SerializeField] private float heightSpeed = 4f;
     [SerializeField] private float deltaHeight = 0.1f;
     [SerializeField] private float offset = 0.8f;
+    private float spinAngle = 30f;
 
     //needed to make the 'press E...' text visible within a certain radius
     [SerializeField] protected GameObject player;
@@ -23,7 +24,10 @@ public class PickupController : MonoBehaviour
         updateText();
         text.transform.position = new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z);
         text.transform.eulerAngles = text.transform.eulerAngles + new Vector3(45, 0, 0); //set the angle of the text so that it faces the camera
+
+        //setting properties so the object spins properly in rotateObject()
         offset = transform.position.y;
+        transform.rotation = Quaternion.Euler(spinAngle, 0, 0);   //sets the localRotation to spinAngle degrees for a fancy spin
     }
 
     //checks if the rebinding has changed and changes text accordingly
