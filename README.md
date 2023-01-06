@@ -4,7 +4,7 @@
 
 The following assets are used in the prototype submission:
 
-- video tutorial for health bar implementation: https://www.youtube.com/watch?v=BLfNP4Sc_iA(published 2/2020, brackeys on YouTube.)
+- video tutorial for health bar implementation: https://www.youtube.com/watch?v=BLfNP4Sc_iA (published 2/2020, brackeys on YouTube.)
 - video tutorial explaining how to change between scenes for the game over screen: https://www.youtube.com/watch?v=K4uOjb5p3Io (published 12/2020, CocoCode on YouTube.)
 - lecture videos for scripting player movement
 - video tutorial for hotbar implementation: https://www.youtube.com/watch?v=aUc1Qu9_pBs(published 2/2016,MrBuFF on YouTube.)
