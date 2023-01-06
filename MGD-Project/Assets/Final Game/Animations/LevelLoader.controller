@@ -65,14 +65,15 @@ AnimatorStateMachine:
     m_Position: {x: 980, y: 130, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -2002346410199017534}
-    m_Position: {x: 1000, y: 270, z: 0}
+    m_Position: {x: 1060, y: 280, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
-  m_EntryTransitions: []
+  m_EntryTransitions:
+  - {fileID: 4317854976936639809}
   m_StateMachineTransitions: {}
   m_StateMachineBehaviours: []
   m_AnyStatePosition: {x: 790, y: 130, z: 0}
-  m_EntryPosition: {x: 810, y: 260, z: 0}
+  m_EntryPosition: {x: 780, y: 250, z: 0}
   m_ExitPosition: {x: 1210, y: 350, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
   m_DefaultState: {fileID: 5810748195156813375}
@@ -90,7 +91,7 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -104,6 +105,23 @@ AnimatorController:
     m_IKPass: 0
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
+--- !u!1109 &4317854976936639809
+AnimatorTransition:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_Conditions:
+  - m_ConditionMode: 1
+    m_ConditionEvent: Start
+    m_EventTreshold: 0
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: -2002346410199017534}
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 0
+  serializedVersion: 1
 --- !u!1102 &5810748195156813375
 AnimatorState:
   serializedVersion: 6
