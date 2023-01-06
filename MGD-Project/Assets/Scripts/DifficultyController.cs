@@ -14,6 +14,7 @@ public class DifficultyController : MonoBehaviour //modification of VolumeContro
     {
         LoadValues();
         DifficultySlider(); //set initial text before player moves the slider
+        DifficultySliderUI.maxValue = 3;    //set number of difficulty modes here (n + 1) modes
     }
 
     public void DifficultySlider()  //triggers whenever the slider moves
@@ -32,6 +33,10 @@ public class DifficultyController : MonoBehaviour //modification of VolumeContro
 
             case 2:
                 text = "Hard";
+                break;
+
+            case 3:
+                text = "Hardcore";
                 break;
         }
         DifficultyText.text = text;//UI text

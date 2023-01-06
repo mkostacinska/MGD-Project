@@ -14,8 +14,24 @@ public class PlayerInstance : MonoBehaviour
     
     void Start()
     {
-        thisPlayer = new Player(gameObject, health, level, name);   //create an instance for player
         PlayerToFollow.shared.player = this.gameObject;             //set PlayerToFollow when the object starts
+
+        switch (PlayerToFollow.shared.difficulty)
+        {
+            case 1:         //Easiest Difficulty
+                health = 20;
+                break;
+            case 2:
+                health = 10;
+                break;
+            case 3:
+                health = 5;
+                break;
+            case 4:         //Hardcore mode
+                health = 1;
+                break;
+        }
+        thisPlayer = new Player(gameObject, health, level, name);   //create an instance for player
         healthBar.SetMaxHealth(health);
     }
 

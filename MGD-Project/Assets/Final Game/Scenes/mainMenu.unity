@@ -7197,7 +7197,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -452, y: 339.4233}
+  m_AnchoredPosition: {x: -452, y: 270.7894}
   m_SizeDelta: {x: 904, y: 500}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &2102662156
@@ -7414,7 +7414,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -452, y: 225.08313}
+  m_AnchoredPosition: {x: -452, y: 229.21}
   m_SizeDelta: {x: 904, y: 600}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &2135855226
@@ -7820,6 +7820,10 @@ PrefabInstance:
     - target: {fileID: 5318333858198439688, guid: da2dfd8cfc570514ca638845aa709f83, type: 3}
       propertyPath: m_Name
       value: EventSystem
+      objectReference: {fileID: 0}
+    - target: {fileID: 5318333858198439688, guid: da2dfd8cfc570514ca638845aa709f83, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5318333858198439925, guid: da2dfd8cfc570514ca638845aa709f83, type: 3}
       propertyPath: m_RootOrder
