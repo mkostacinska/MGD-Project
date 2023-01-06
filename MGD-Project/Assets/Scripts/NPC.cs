@@ -86,7 +86,7 @@ public class NPC : Character
     private float reactionTextTime = 0.4f;  //time that the reaction text stays in seconds
     private void Overload()
     {
-        elementIcon.setReaction("Overload", reactionTextTime);
+        elementIcon.SetReaction("Overload", reactionTextTime);
 
         //apply knockback: add a random force for now
         //rb.AddForce(Vector3.back forwardForce Time.deltaTime, ForceMode.VelocityChange);
@@ -98,7 +98,7 @@ public class NPC : Character
     float cooldown = 12f;   //cooldown in seconds
     Image healthbarFill;
     private void Superconduct() {
-        elementIcon.setReaction("Superconduct", reactionTextTime);
+        elementIcon.SetReaction("Superconduct", reactionTextTime);
 
         //set resistance for a certain amount of time
         resistance = -0.4f;
@@ -124,7 +124,7 @@ public class NPC : Character
                 {
                     //get element icon and change to element
                     //var elementIcon = this.self.transform.Find("Element Icon");
-                    elementIcon.setElementIcon(element);
+                    elementIcon.SetElementIcon(element);
                     elementState = element.getElementNumber();
                     //MonoBehaviour.print(element.getElementNumber());
                     this.element = null; //achknowledge element and reset
@@ -145,9 +145,9 @@ public class NPC : Character
                 if (element is Elements.Cryo) {
                     //MonoBehaviour.print("melt");
                     damageBonus.set("MULTIPLY", 2.0f);
-                    elementIcon.setReaction("Melt", reactionTextTime);
+                    elementIcon.SetReaction("Melt", reactionTextTime);
 
-                    elementIcon.setElementIcon(null);
+                    elementIcon.SetElementIcon(null);
                     elementState = NONE;
                     this.element = null; //achknowledge element and reset
                     break;
@@ -155,7 +155,7 @@ public class NPC : Character
                 if (element is Elements.Electro) {
                     Overload();
 
-                    elementIcon.setElementIcon(null);
+                    elementIcon.SetElementIcon(null);
                     elementState = NONE;
                     this.element = null; //achknowledge element and reset
                     break;
@@ -167,9 +167,9 @@ public class NPC : Character
                 if (element is Elements.Pyro) {
                     //MonoBehaviour.print("melt");
                     damageBonus.set("MULTIPLY", 2.0f);
-                    elementIcon.setReaction("Melt", reactionTextTime);
+                    elementIcon.SetReaction("Melt", reactionTextTime);
 
-                    elementIcon.setElementIcon(null);
+                    elementIcon.SetElementIcon(null);
                     elementState = NONE;
                     this.element = null; //achknowledge element and reset
                     break;
@@ -184,7 +184,7 @@ public class NPC : Character
                     //MonoBehaviour.print("superconduct");
                     Superconduct();
 
-                    elementIcon.setElementIcon(null);
+                    elementIcon.SetElementIcon(null);
                     //renderer.material.color = defaultColour;
                     elementState = NONE;
                     this.element = null; //achknowledge element and reset
@@ -197,7 +197,7 @@ public class NPC : Character
                 if (element is Elements.Pyro) {
                     Overload();
 
-                    elementIcon.setElementIcon(null);
+                    elementIcon.SetElementIcon(null);
                     elementState = NONE;
                     this.element = null; //achknowledge element and reset
                     break;
@@ -206,7 +206,7 @@ public class NPC : Character
                     //MonoBehaviour.print("superconduct");
                     Superconduct();
 
-                    elementIcon.setElementIcon(null);
+                    elementIcon.SetElementIcon(null);
                     elementState = NONE;
                     this.element = null; //achknowledge element and reset
                     break;

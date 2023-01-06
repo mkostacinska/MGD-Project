@@ -28,7 +28,7 @@ public class PickupItem : PickupController
     }
 
     new void Update(){
-        rotateObject(); //periodic key movement (rotation + moving up and down)
+        RotateObject(); //periodic key movement (rotation + moving up and down)
         checkDistance(); //check the distance to the player to decide whether or not to display the prompt
 
         checkInputs();  //method is in superclass

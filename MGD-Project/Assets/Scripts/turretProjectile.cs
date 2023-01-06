@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class turretProjectile : MonoBehaviour
 {
-    private GameObject Player = PlayerToFollow.shared.player;
     public float life = 3;
 
+    /// <summary>
+    /// Ensure that the projectile is destroyed after passing it's lifespan.
+    /// </summary>
     void Awake()
     {
         Destroy(gameObject, life); //destroy the projectile after 3 seconds
@@ -14,13 +16,14 @@ public class turretProjectile : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-        if (collision.gameObject.name == Player.name)    //for now, it searches by gameObject name
+        if (collision.gameObject.name == PlayerToFollow.shared.player.name)   
         {    
-            //if the projectile collides with player
+            // deal damage to the player on collision
             Player p = collision.gameObject.GetComponent<PlayerInstance>().thisPlayer;
-            //p.setHealth(p.getHealth() - 1); //decrease the player's health
             p.dealDamage("Turret", 1);
-            Destroy(gameObject); //breaks after colliding with player
+
+            // destroy the projectile after colliding with player
+            Destroy(gameObject); 
         }
     }
 }

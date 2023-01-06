@@ -3,17 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class ResetBindings : MonoBehaviour//https://www.youtube.com/watch?v=csqVa2Vimao&list=WL&index=10&t=745s -accessed 11/2022-1/2023 , published 4/2021, used for rebinding controls ,samyam on Youtube.
+public class ResetBindings : MonoBehaviour // assets used: https://www.youtube.com/watch?v=csqVa2Vimao&list=WL&index=10&t=745s
 {
-    [SerializeField]
-    private InputActionAsset inputActions;
+    [SerializeField] private InputActionAsset inputActions;
 
+    /// <summary>
+    /// Restore all bingings to their defaults across all input maps.
+    /// </summary>
     public void RemoveBindings(){
-        foreach (InputActionMap map in inputActions.actionMaps){//for every action
-            map.RemoveAllBindingOverrides();//resetAllbindings
+        foreach (InputActionMap map in inputActions.actionMaps){
+            map.RemoveAllBindingOverrides();
         }
-    }
-
-    //PlayerPrefs.DeleteKey("rebinds");//delete persistance
-    
+    }    
 }

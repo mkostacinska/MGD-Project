@@ -24,9 +24,6 @@ public class GameController : MonoBehaviour
     //needed for spawning the bridge when all keys are collected:
     [SerializeField] public GameObject bridge = null;
 
-    //needed for winning
-    //[SerializeField] private int numberOfIslands = PlayerToFollow.shared.islandNum + 1;
-
     //speed increase when rooms are cleared
     private float bonusSpeedMultiplyer = 1.8f; //multiplier
     private float defaultSpeed;
@@ -42,7 +39,6 @@ public class GameController : MonoBehaviour
 
         //get the initial island the player is on
         Physics.Raycast(player.transform.position, Vector3.down, out var hit, Mathf.Infinity);
-        //print(hit.collider.gameObject.name);
         if (hit.collider.gameObject.layer == groundLayer)
         {
             currentIsland = hit.collider.gameObject;
@@ -55,13 +51,14 @@ public class GameController : MonoBehaviour
         checkKeyCount();
 
         //if the island has been cleared, disable the walls around it
-        if (enemiesKilled())
+        if (EnemiesKilled())
         {
             player.GetComponent<PlayerContollerPrototype>().walkSpeed = defaultSpeed * bonusSpeedMultiplyer;
             if (!islandsCleared.Contains(currentIsland.name))
             {
+                //add to cleared islands so that the enemies do not get respawned on enter
                 islandsCleared.Add(currentIsland.name);
-            }//add to cleared islands so that the enemies do not get respawned on enter
+            }
 
             //get the gameObject corresponding to walls
             var walls = currentIsland.GetComponentsInChildren<Transform>()
@@ -75,12 +72,10 @@ public class GameController : MonoBehaviour
             }
             else
             {
-                //print("UPDATING ISLAND");
                 //if the walls are already disabled, begin checking for a new island object to repeat the process
-                updateIsland();
+                UpdateIsland();
             }
 
-            //print(islandsCleared.Count());
             if (islandsCleared.Count() == PlayerToFollow.shared.islandNum + 1)
             {
                 PlayerToFollow.shared.islandNum += 1;
@@ -91,7 +86,7 @@ public class GameController : MonoBehaviour
      
     }
 
-    void updateIsland()
+    void UpdateIsland()
     {
         //raycast from the player straignt down below to get the ground they're on
         Physics.Raycast(player.transform.position, Vector3.down, out var hit, Mathf.Infinity, ~playerLayer);
@@ -107,7 +102,6 @@ public class GameController : MonoBehaviour
             if(!islandsCleared.Contains(currentIsland.name))
             {
 
-                //print(currentIsland.name);
                 player.GetComponent<PlayerContollerPrototype>().walkSpeed = defaultSpeed;
                 //get the parent 'enemies' object
                 var enemiesParent = currentIsland.GetComponentsInChildren<Transform>()
@@ -117,7 +111,6 @@ public class GameController : MonoBehaviour
                 var enemies = enemiesParent.gameObject.GetComponentsInChildren<Transform>(true) //true -> get inactive objects as wellwa
                     .Where(enemy => enemy.gameObject != enemiesParent.gameObject)
                     .ToList();
-                //print(enemies);
 
                 //set the enemies to active to spawn them 
                 enemies.ForEach(enemy => enemy.gameObject.SetActive(true));
@@ -125,12 +118,13 @@ public class GameController : MonoBehaviour
         }
     }
 
-    //check if all the enemies on an island have been killed
-    bool enemiesKilled()
+    /// <summary>
+    /// Checks if all the enemies on an island have been killed.
+    /// </summary>
+    /// <returns> <code>true</code> if all enemies on an island have been killed. False otherwise. </returns>
+    bool EnemiesKilled()
     {
 
-        //print("ENEMIES KILLED");
-        //print(currentIsland.name);
         var enemiesParent = currentIsland.GetComponentsInChildren<Transform>()
             .Where(child => child.gameObject.name == "Enemies")
             .FirstOrDefault();
@@ -139,7 +133,6 @@ public class GameController : MonoBehaviour
             .Where(enemy => enemy.gameObject.activeInHierarchy && enemy.gameObject != enemiesParent.gameObject)
             .ToList();
 
-        //print(enemies.Count() == 0);
         return enemies.Count() == 0;
     }
 

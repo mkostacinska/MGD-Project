@@ -1,3 +1,4 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -24,7 +25,7 @@ public class FollowPlayer : MonoBehaviour
         return (hit.distance < 0.3);
     }
 
-    bool cooldownCheck()
+    bool CooldownCheck()
     {
         if (Time.time > canJump)
         {
@@ -38,7 +39,7 @@ public class FollowPlayer : MonoBehaviour
     void Update()
     {
         //check if entity is grounded, then jump
-        if (IsGrounded() && cooldownCheck())
+        if (IsGrounded() && CooldownCheck())
         {
             //jump when grounded
             rb.AddForce(new Vector3(0, jumpAmount, 0), ForceMode.Impulse);

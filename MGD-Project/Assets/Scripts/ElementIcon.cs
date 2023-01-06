@@ -12,19 +12,20 @@ public class ElementIcon : MonoBehaviour
     [SerializeField] Sprite electroSprite;
     TMP_Text reactionText;
 
-    // Start is called before the first frame update
     void Start()
     {
         image = GetComponent<Image>();
         image.color = Color.clear;
-        //reactionText = GetComponentInChildren<TMP_Text>();
         reactionText = transform.GetChild(0).GetComponent<TMP_Text>();
         reactionText.text = "";
     }
 
-    public void setElementIcon(Element element)
+    /// <summary>
+    /// Sets the image according to the given element.
+    /// </summary>
+    /// <param name="element"> Element to be displayed. </param>
+    public void SetElementIcon(Element element)
     {
-        //print(element);
         image.color = Color.white;
         switch (element)
         {
@@ -43,12 +44,17 @@ public class ElementIcon : MonoBehaviour
         return;
     }
 
-    public void setReaction(string name, float seconds)
+    /// <summary>
+    /// Sets the given reaction name to appear for a given number of seconds.
+    /// </summary>
+    /// <param name="name"> The name of the reaction to be displayed, e.g. 'Melt'.</param>
+    /// <param name="seconds"> The number of seconds to display the reaction for.</param>
+    public void SetReaction(string name, float seconds)
     {
-        StartCoroutine(setReactionTimed(name, seconds));
+        StartCoroutine(SetReactionTimed(name, seconds));
     }
         
-    public IEnumerator setReactionTimed(string name, float seconds) {
+    public IEnumerator SetReactionTimed(string name, float seconds) {
         reactionText.text = name;
         yield return new WaitForSeconds(seconds);
         reactionText.text = "";

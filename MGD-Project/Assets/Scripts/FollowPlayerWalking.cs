@@ -7,7 +7,6 @@ public class FollowPlayerWalking : MonoBehaviour
     [SerializeField] private float speed = 1.5f;
     [SerializeField] private float range = 1;
 
-    // Update is called once per frame
     void Update()
     {
         // stop if enemy is within certain range of player (so that it can attack)

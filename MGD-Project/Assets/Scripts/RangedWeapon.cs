@@ -5,39 +5,62 @@ using UnityEngine.InputSystem;
 
 public class RangedWeapon : MonoBehaviour
 {
-    //Projectile Properties
+    // Projectile Properties
     [SerializeField] Transform projectileSpawnPoint;
     [SerializeField] GameObject projectilePrefab;
     [SerializeField] float projectileSpeed = 5;
 
-    //Weapon Element Properties
-    [SerializeField] public string elementName = "NAME"; //set projectile element here, used for quick testing
+    // Weapon Element Properties
+    [SerializeField] public string elementName = "NAME"; // set projectile element here, used for quick testing
     private Element element;
 
-    //Cooldown Properties
+    // Cooldown Properties
     [SerializeField] private float cooldown = 0.2f;
     [SerializeField] private float cooldownEnd = 0f;
-    bool cooldownCheck()
+
+    // Action maps
+    InputActionMap actionMap;
+
+    /// <summary>
+    /// Check if the cooldown period has passed and resets the cooldown.
+    /// </summary>
+    /// <returns> true if cooldown has passed, else false.</returns>
+    bool CooldownCheck()
     {
         if (Time.time > cooldownEnd)
         {
-            cooldownEnd = Time.time + cooldown; //acknowledge and reset cooldown
+            cooldownEnd = Time.time + cooldown; // acknowledge and reset cooldown
             return true;
         }
         return false;
     }
 
-    InputActionMap actionMap;
-    protected void checkInputs()
+    /// <summary>
+    /// Check if the action map is set approprtiately and call the relevant function when inputs are triggered
+    /// </summary>
+    /// <returns> true if cooldown has passed, else false.</returns>
+    protected void CheckInputs()
     {
-        if (actionMap == null) { actionMap = InputManager.getActionMap(); } //set the actionMap if it does not exist
-        if (actionMap.FindAction("Attack").triggered) { OnAttack(); }       //trigger attack
+        //set the actionMap if it does not exist
+        if (actionMap == null) 
+        {
+            actionMap = InputManager.getActionMap(); 
+        }
+
+        if (actionMap.FindAction("Attack").triggered) 
+        { 
+            OnAttack();
+        }       //trigger attack
     }
 
+    /// <summary>
+    /// Shoot projectile gameObjects (respecting a cooldown period).
+    /// </summary>
     void OnAttack() {
         if (transform.parent != null) {
-            if (transform.parent.name == "WeaponHolder") { //only attack if its in weapon holder
-                if (cooldownCheck())
+            //only attack if its in weapon holder
+            if (transform.parent.name == "WeaponHolder") { 
+                if (CooldownCheck())
                 {
                     //shoot at cursor position
                     //rotate projectile to look at the current mouse position
@@ -83,6 +106,6 @@ public class RangedWeapon : MonoBehaviour
     }
     private void Update()
     {
-        checkInputs();
+        CheckInputs();
     }
 }
