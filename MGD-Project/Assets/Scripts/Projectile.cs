@@ -15,7 +15,7 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        MonoBehaviour.print("projectile hit enemy");
+        //MonoBehaviour.print("projectile hit enemy");
         NPC enemy = null;
         if (other.gameObject.TryGetComponent(out SlimeInstance slime))
         { enemy = other.gameObject.GetComponent<SlimeInstance>().thisSlime; }      //sets enemy to slime if it exists

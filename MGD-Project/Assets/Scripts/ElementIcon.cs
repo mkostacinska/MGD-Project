@@ -24,7 +24,7 @@ public class ElementIcon : MonoBehaviour
 
     public void setElementIcon(Element element)
     {
-        print(element);
+        //print(element);
         image.color = Color.white;
         switch (element)
         {
