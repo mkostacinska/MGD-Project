@@ -12,9 +12,9 @@ public class turretProjectile : MonoBehaviour
         Destroy(gameObject, life); //destroy the projectile after 3 seconds
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collision)
     {
-        if (collision.gameObject.name == "PlayerPrototype")    //for now, it searches by gameObject name
+        if (collision.gameObject.name == Player.name)    //for now, it searches by gameObject name
         {    
             //if the projectile collides with player
             MonoBehaviour.print("hit player");
