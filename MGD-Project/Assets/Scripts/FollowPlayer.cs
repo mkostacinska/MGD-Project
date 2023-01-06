@@ -16,6 +16,7 @@ public class FollowPlayer : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        InvokeRepeating("resetMovement", 2.0f, 1f); //check every second to avoid instantly resetting before the slime leaves the ground
     }
 
     /// <summary>
@@ -55,7 +56,11 @@ public class FollowPlayer : MonoBehaviour
             //jump towards player
             rb.AddForce(new Vector3(direction.x, 0, direction.z) * moveAmount, ForceMode.Impulse);
         }
-        else if (IsGrounded()){
+    }
+
+    void resetMovement() {
+        if (IsGrounded())
+        {
             //reset non-vertical force when not jumping to prevent rolling
             rb.velocity = new Vector3(0, rb.velocity.y, 0);
         }
