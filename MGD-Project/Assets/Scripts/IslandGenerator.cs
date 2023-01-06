@@ -57,6 +57,12 @@ public class IslandGenerator : MonoBehaviour
         SpawnIslands();
     }
 
+    private void Start()
+    {
+        //slowing game gives time for player to mentally process the environment
+        SlowTime.slowTime(1.2f, 0.2f); //0.2x speed for 1.2s
+    }
+
     /// <summary>
     /// Spawns the predefined number of islands in the scene.
     /// </summary>

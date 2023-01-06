@@ -8,11 +8,6 @@ public class PauseMenu : MonoBehaviour //Tutorial used:https://www.youtube.com/w
     public static bool Paused =false; //check if game is paused 
     public GameObject PauseCanvas;
 
-    void Start()
-    {
-        Time.timeScale =1f;//default time scale 
-    }
-
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))//if the user pressed esc, esc is the logical option for pause 
