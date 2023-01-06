@@ -18,11 +18,17 @@ public class FollowPlayer : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
+    /// <summary>
+    /// Checks if slime is touching ground
+    /// </summary>
+    /// <returns> True if touching ground, else false </returns>
     bool IsGrounded() {
         //get distance to ground via raycast
         if (!Physics.Raycast(transform.position, Vector3.down, out var hit)) return false;
         //return true if distance to object below is less than small margin
-        return (hit.distance < 0.3);
+        //distance changes based on object size, for slime, we can get and subtract the sphere collider's radius
+        float subtract = GetComponent<SphereCollider>().radius * transform.localScale.y;
+        return (hit.distance - subtract < 0.01);    //as long as the delta is small enough that isGrounded() is false the next frame
     }
 
     bool CooldownCheck()
@@ -43,10 +49,9 @@ public class FollowPlayer : MonoBehaviour
         {
             //jump when grounded
             rb.AddForce(new Vector3(0, jumpAmount, 0), ForceMode.Impulse);
-
             Vector3 difference = PlayerToFollow.shared.player.transform.position - transform.position;
             //normalize the direction vector
-            Vector3 direction = difference.normalized;      
+            Vector3 direction = difference.normalized;
             //jump towards player
             rb.AddForce(new Vector3(direction.x, 0, direction.z) * moveAmount, ForceMode.Impulse);
         }
