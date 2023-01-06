@@ -6,6 +6,8 @@ TagManager:
   tags:
   - CinemachineTarget
   - bridgeSpawner
+  - Music
+  - InputManager
   layers:
   - Default
   - TransparentFX

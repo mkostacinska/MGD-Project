@@ -15,9 +15,10 @@ public class PickupController : MonoBehaviour
     [SerializeField] protected GameObject player;
     [SerializeField] public GameObject text;
 
+    protected InputActionMap actionMap;
     protected void Start()
     {
-        GetComponent<PlayerInput>().ActivateInput();
+        actionMap = InputManager.getActionMap();
         //set the 'press E...' text position
         updateText();
         text.transform.position = new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z);
@@ -26,7 +27,7 @@ public class PickupController : MonoBehaviour
 
     //checks if the rebinding has changed and changes text accordingly
     public void updateText() {
-        string keyText = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInput>().currentActionMap.FindAction("Pickup").bindings[0].effectivePath;
+        string keyText = actionMap.FindAction("Pickup").bindings[0].effectivePath;
         var pos = keyText.IndexOf('/');
         keyText = keyText.Substring(pos + 1).ToUpper();
         text.GetComponent<TMP_Text>().text = "Press " + keyText + " to collect";
@@ -37,13 +38,13 @@ public class PickupController : MonoBehaviour
         rotateObject(); //periodic key movement (rotation + moving up and down)
         checkDistance(); //check the distance to the player to decide whether or not to display the prompt
 
-        //there is a Unity Engine Input System bug where some gameobjects' actions are not triggered
-        //this bug only occurs in the build and not the editor and which object's actions break is not consistent; changes each build
-        //this code is a backup for when this object's actions are bugged
-        if (GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInput>().currentActionMap.FindAction("Pickup").triggered)
-        {
-            OnPickup();
-        }
+        checkInputs();
+    }
+
+    private void checkInputs()
+    {
+        if (actionMap == null) { actionMap = InputManager.getActionMap(); } //set the actionMap if it does not exist
+        if (actionMap.FindAction("Pickup").triggered) { OnPickup(); }
     }
 
     protected bool keyDown = false;

@@ -15,12 +15,11 @@ public class PlayerContollerPrototype : MonoBehaviour
     [SerializeField] private float gravity;
     [SerializeField] private float jumpHeight;
 
-
     private new Rigidbody rigidbody;
     [SerializeField] private GameObject weapon;
 
     private Vector2 movementVector = new Vector2(0, 0);     //initialise movement to 0,0
-    
+    InputActionMap actionMap;
     private void Start()
     {
         rigidbody = GetComponent<Rigidbody>();
@@ -29,6 +28,7 @@ public class PlayerContollerPrototype : MonoBehaviour
 
     private void Update()
     {
+        checkInputs();
         RotatePlayer();
         transform.position += walkSpeed * movementVector.y * new Vector3(0, 0, 1) * Time.deltaTime; //up down
         transform.position += walkSpeed * movementVector.x * new Vector3(1, 0, 0) * Time.deltaTime; //left right
@@ -42,13 +42,27 @@ public class PlayerContollerPrototype : MonoBehaviour
         return (hit.distance-1 < 0.1);
     }
 
-    //from a lecture video
-    void OnMove(InputValue movementValue)
+    private void checkInputs() {
+        if (actionMap == null) { actionMap = InputManager.getActionMap(); } //set the actionMap if it does not exist
+        if (actionMap.FindAction("Move").ReadValue<Vector2>() != Vector2.zero)  //check for OnMove()
+        {
+            OnMove(actionMap.FindAction("Move").ReadValue<Vector2>());
+        }
+        else { OnMove(Vector2.zero); }  //this just resets the movement
+        if (actionMap.FindAction("Jump").triggered) { OnJump(); }
+    }
+
+    void OnMove(InputValue movementValue)   //legacy method, if this object has Player Input
     {
         movementVector = movementValue.Get<Vector2>();//gets a vector2 in form (x, z)
     }
 
-    void OnJump(InputValue jumpValue)   //triggers when jump button is pressed
+    void OnMove(Vector2 movement)
+    {
+        movementVector = movement; //gets a vector2 in form (x, z)
+    }
+
+    void OnJump()   //triggers when jump button is pressed
     {
         if (IsGrounded()){
             rigidbody.AddForce(transform.up * jumpHeight, ForceMode.Impulse);       //adds an impulse force to cause the jump

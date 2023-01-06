@@ -10,7 +10,7 @@ public class PickupItem : PickupController
 
     //override method so the item goes into player inventory
     new private void Start(){
-        if (player == null) {player = PlayerToFollow.shared.player; } //prevents breaking other scenes
+        if (player == null) {player = PlayerToFollow.getPlayer(); } //prevents breaking other scenes
         text = Instantiate(labelPrefab);
         base.Start();       //get the start() from superclass
 
@@ -30,13 +30,12 @@ public class PickupItem : PickupController
         rotateObject(); //periodic key movement (rotation + moving up and down)
         checkDistance(); //check the distance to the player to decide whether or not to display the prompt
 
-        //there is a Unity Engine Input System bug where some gameobjects' actions are not triggered
-        //this bug only occurs in the build and not the editor and which object's actions break is not consistent; changes each build
-        //this code is a backup for when this object's actions are bugged
-        if (GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInput>().currentActionMap.FindAction("Pickup").triggered)
-        {
-            OnPickup();
-        }
+        checkInputs();  //method is in superclass
+    }
+    private void checkInputs()
+    {
+        if (actionMap == null) { actionMap = InputManager.getActionMap(); } //set the actionMap if it does not exist
+        if (actionMap.FindAction("Pickup").triggered) { OnPickup(); }
     }
 
     void OnPickup()

@@ -13,6 +13,7 @@ public class WeaponInstance : MonoBehaviour
     private bool attacking = false;
     [SerializeField] public string elementName = "NAME"; //set projectile element here, used for quick testing
     public Element element;
+    InputActionMap actionMap;
 
     void Start()
     {
@@ -76,7 +77,11 @@ public class WeaponInstance : MonoBehaviour
             }
         }
     }
-
+    protected void checkInputs()
+    {
+        if (actionMap == null) { actionMap = InputManager.getActionMap(); } //set the actionMap if it does not exist
+        if (actionMap.FindAction("Attack").triggered) { OnAttack(); }
+    }
     void OnAttack()
     {
         GetComponent<Animator>().SetTrigger("Attack");
@@ -84,14 +89,7 @@ public class WeaponInstance : MonoBehaviour
 
     void Update()
     {
-        //there is a Unity Engine Input System bug where some gameobjects' actions are not triggered
-        //this bug only occurs in the build and not the editor and which object's actions break is not consistent; changes each build
-        //this code is a backup for when this object's actions are bugged
-        if (GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInput>().currentActionMap.FindAction("Attack").triggered)
-        {
-            OnAttack();
-        }
-
+        checkInputs();
         if (GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Attack")) 
         { 
             //keep checking if the attacking animation is playing

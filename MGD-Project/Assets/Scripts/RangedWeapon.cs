@@ -22,6 +22,12 @@ public class RangedWeapon : MonoBehaviour
         }
         return false;
     }
+    InputActionMap actionMap;
+    protected void checkInputs()
+    {
+        if (actionMap == null) { actionMap = InputManager.getActionMap(); } //set the actionMap if it does not exist
+        if (actionMap.FindAction("Attack").triggered) { OnAttack(); }
+    }
 
     private bool attackKeyDown = false;
     void OnAttack() {
@@ -48,14 +54,7 @@ public class RangedWeapon : MonoBehaviour
     }
     private void Update()
     {
-        //there is a Unity Engine Input System bug where some gameobjects' actions are not triggered
-        //this bug only occurs in the build and not the editor and which object's actions break is not consistent; changes each build
-        //this code is a backup for when this object's actions are bugged
-        if (GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInput>().currentActionMap.FindAction("Attack").triggered)
-        {
-            OnAttack();
-        }
-
+        checkInputs();
         //if the weapon is the ranged weapon, shoot projectiles when the attack button is pressed
         if (attackKeyDown)
         {
