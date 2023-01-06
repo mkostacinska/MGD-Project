@@ -10,7 +10,7 @@ public class PickupController : MonoBehaviour
     [SerializeField] private float heightSpeed = 4f;
     [SerializeField] private float deltaHeight = 0.1f;
     [SerializeField] private float offset = 0.8f;
-    private float spinAngle = 30f;
+    protected float spinAngle = 30f;
 
     //needed to make the 'press E...' text visible within a certain radius
     [SerializeField] protected GameObject player;

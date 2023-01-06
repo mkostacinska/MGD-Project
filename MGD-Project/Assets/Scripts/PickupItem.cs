@@ -6,7 +6,6 @@ using UnityEngine.InputSystem;
 public class PickupItem : PickupController
 {
     [SerializeField] GameObject labelPrefab;
-    private InputActionAsset inputActions;
 
     //override method so the item goes into player inventory
     new private void Start(){
@@ -21,6 +20,7 @@ public class PickupItem : PickupController
         if (transform.parent != null)
         {
             if (transform.parent.name == "WeaponHolder") {//weapon already picked up
+                transform.rotation = Quaternion.identity; //reset the transform from superclass' start
                 Destroy(text);
                 Destroy(this);
             } 
