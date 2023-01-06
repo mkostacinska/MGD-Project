@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1127206217810271780}
   - component: {fileID: 1127206217810271781}
-  - component: {fileID: 1127206217810271803}
   - component: {fileID: 1127206217810271800}
   - component: {fileID: 1127206217810271801}
   - component: {fileID: 1127206217810271806}
@@ -29,15 +28,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1127206217810271804}
-  m_LocalRotation: {x: 0.2588191, y: 0, z: 0, w: 0.9659258}
-  m_LocalPosition: {x: 1.94, y: 1.202, z: -2.0895998}
-  m_LocalScale: {x: 0.14, y: 0.81048, z: 0.18997}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7954274003262957035}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 30, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1127206217810271781
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -46,20 +45,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1127206217810271804}
   m_Mesh: {fileID: 0}
---- !u!136 &1127206217810271803
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1127206217810271804}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 0
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!65 &1127206217810271800
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -68,11 +53,11 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1127206217810271804}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.2, y: 2.1, z: 1.2}
-  m_Center: {x: 0.0000003193106, y: 0.03468377, z: -0.0000000784412}
+  m_Size: {x: 0.1, y: 1.2, z: 0.25}
+  m_Center: {x: 0, y: 0.2, z: 0}
 --- !u!95 &1127206217810271801
 Animator:
   serializedVersion: 4
@@ -123,7 +108,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35721353bdc0fcb40bd47a01ceba77ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attack: 0
   cooldown: 1
   cooldownEnd: 0
   elementName: pyro
@@ -161,23 +145,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 112460515bf84684595e0463ab74ba64, type: 3}
       propertyPath: m_LocalScale.x
-      value: 7.1428576
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 112460515bf84684595e0463ab74ba64, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.5258968
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 112460515bf84684595e0463ab74ba64, type: 3}
       propertyPath: m_LocalScale.z
-      value: 4.7233014
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 112460515bf84684595e0463ab74ba64, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.84
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 112460515bf84684595e0463ab74ba64, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.874
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 112460515bf84684595e0463ab74ba64, type: 3}
       propertyPath: m_LocalPosition.z
@@ -211,13 +195,33 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8513424388201257645, guid: 112460515bf84684595e0463ab74ba64, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3957782524123411102, guid: 112460515bf84684595e0463ab74ba64, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3189595122676651536, guid: 112460515bf84684595e0463ab74ba64, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -3189595122676651536, guid: 112460515bf84684595e0463ab74ba64, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.051025
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -3189595122676651536, guid: 112460515bf84684595e0463ab74ba64, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -3189595122676651536, guid: 112460515bf84684595e0463ab74ba64, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -3189595122676651536, guid: 112460515bf84684595e0463ab74ba64, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.244
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -3189595122676651536, guid: 112460515bf84684595e0463ab74ba64, type: 3}
       propertyPath: m_LocalPosition.z
@@ -246,6 +250,22 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 112460515bf84684595e0463ab74ba64, type: 3}
       propertyPath: m_Name
       value: Sword
+      objectReference: {fileID: 0}
+    - target: {fileID: 2866621852552652557, guid: 112460515bf84684595e0463ab74ba64, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3309868096826352713, guid: 112460515bf84684595e0463ab74ba64, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3779745573541866595, guid: 112460515bf84684595e0463ab74ba64, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7631990362035386142, guid: 112460515bf84684595e0463ab74ba64, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []

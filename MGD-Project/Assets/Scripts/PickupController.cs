@@ -23,6 +23,7 @@ public class PickupController : MonoBehaviour
         updateText();
         text.transform.position = new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z);
         text.transform.eulerAngles = text.transform.eulerAngles + new Vector3(45, 0, 0); //set the angle of the text so that it faces the camera
+        offset = transform.position.y;
     }
 
     //checks if the rebinding has changed and changes text accordingly
@@ -83,7 +84,7 @@ public class PickupController : MonoBehaviour
 
         //make the object move up and down
         Vector3 current = transform.position;
-        float newY = Mathf.Sin(Time.time * heightSpeed);
+        float newY = Mathf.Sin(Time.time * heightSpeed);       //gives a value between 1 and -1
         transform.position = new Vector3(current.x, (newY * deltaHeight) + offset, current.z); //change y to new position (offset by initial Y position!)
     }
 }

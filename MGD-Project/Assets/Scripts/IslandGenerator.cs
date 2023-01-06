@@ -157,12 +157,13 @@ public class IslandGenerator : MonoBehaviour
         return;
     }
 
+    private float spawnOffsetY = 2.0f;
     void SpawnKeys(GameObject current)
     {
         int keyIndex = pickupKey[UnityEngine.Random.Range(0, pickupKey.Count())];
         if (keyIndex == 1)
         {
-            var keyOffset = new Vector3(UnityEngine.Random.Range(-6, 6), 2.5f, UnityEngine.Random.Range(-4, 4));
+            var keyOffset = new Vector3(UnityEngine.Random.Range(-6, 6), spawnOffsetY, UnityEngine.Random.Range(-4, 4));
             var k = Instantiate(keyPrefab, position: current.transform.position + keyOffset, rotation: Quaternion.identity, parent: parentPickups.transform);
             k.name = "k";
             var label = Instantiate(pickupLabel, parent: parentLabel.transform);
@@ -176,7 +177,7 @@ public class IslandGenerator : MonoBehaviour
         var elements = new List<string>() { "cryo", "pyro", "electro" };
         GameObject weapon = weaponPrefabs[UnityEngine.Random.Range(0, weaponPrefabs.Count())];
         string element = elements[UnityEngine.Random.Range(0, elements.Count())];
-        var weaponOffset = new Vector3(UnityEngine.Random.Range(-6, 6), 3, UnityEngine.Random.Range(-4, 4));
+        var weaponOffset = new Vector3(UnityEngine.Random.Range(-6, 6), spawnOffsetY, UnityEngine.Random.Range(-4, 4));
         var w = Instantiate(weapon, position: current.transform.position + weaponOffset, rotation: Quaternion.identity, parent: parentWeapon.transform);
         if(weapon.gameObject.name == "STAFF")
         {

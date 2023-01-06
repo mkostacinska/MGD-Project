@@ -16,6 +16,7 @@ public class PickupItem : PickupController
 
         //if there is an animator, disable it so that item can spin
         if (TryGetComponent(out Animator animator)) { animator.enabled = false; }
+        if (TryGetComponent(out BoxCollider collider)) { collider.enabled = false; }
 
         if (transform.parent != null)
         {
@@ -79,8 +80,9 @@ public class PickupItem : PickupController
                 transform.localPosition = Vector3.zero;
                 transform.localRotation = Quaternion.identity;
 
-                //if there is an animator, re-enable it
+                //if there is an animator or collider, re-enable it
                 if (TryGetComponent(out Animator animator)) { animator.enabled = true; }
+                if (TryGetComponent(out BoxCollider collider)) { collider.enabled = true; }
                 inventory.refreshInventory();
 
                 Destroy(this);     //destroy this script
