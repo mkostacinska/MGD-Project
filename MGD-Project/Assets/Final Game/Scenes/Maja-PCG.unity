@@ -1157,6 +1157,7 @@ MonoBehaviour:
   - {fileID: 4403796477446457218, guid: 11da4e0d87929bc4a9ac210c290dedd8, type: 3}
   - {fileID: 4403796477446457218, guid: 11da4e0d87929bc4a9ac210c290dedd8, type: 3}
   - {fileID: 1127206217810271804, guid: 888fd308fc0ceeb4aa04bc5ba9ac69b2, type: 3}
+  freezeMenu: {fileID: 886057360844400426, guid: 2bad2e1011e4cd94199dc1a9f5e1008f, type: 3}
 --- !u!4 &1487201243
 Transform:
   m_ObjectHideFlags: 0
