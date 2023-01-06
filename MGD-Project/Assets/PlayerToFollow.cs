@@ -8,6 +8,7 @@ public class PlayerToFollow
     public GameObject player;
     public GameObject pickupText;
     public int islandNum = 3;
+    public int difficulty = 2;
 
     public static GameObject getPlayer() {
         return GameObject.FindGameObjectsWithTag("Player")[0];

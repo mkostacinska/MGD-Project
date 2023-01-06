@@ -51,7 +51,7 @@ public class DifficultyController : MonoBehaviour //modification of VolumeContro
         difficultyValue = PlayerPrefs.GetInt("gameDifficulty", defaultDifficulty);    //sets the difficulty to default difficulty if no player prefs exist
         DifficultySliderUI.value = difficultyValue;   //sets the slider value
         //call an external script to set the difficulty of game here
-        //pass in difficulty value which is an int
+        PlayerToFollow.shared.difficulty = difficultyValue+1;
     }
 
 

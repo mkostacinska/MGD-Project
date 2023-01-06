@@ -131,7 +131,7 @@ public class IslandGenerator : MonoBehaviour
     void SpawnEnemies(GameObject island)
     {
         //on regular islands, spawn between 3 and 6 enemies (?)
-        int enemyCount = UnityEngine.Random.Range(3+counter, 6+counter);
+        int enemyCount = UnityEngine.Random.Range(PlayerToFollow.shared.difficulty+counter, 2*PlayerToFollow.shared.difficulty + counter);
         for(int i=1; i<=enemyCount; i++)
         {
             // pick a random enemy to spawn
