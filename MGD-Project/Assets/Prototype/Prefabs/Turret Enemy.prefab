@@ -260,10 +260,6 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 1649215887}
     m_Modifications:
-    - target: {fileID: 4682585594983530362, guid: 3d0203d4100822e42b018232687d008e, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4682585595537783760, guid: 3d0203d4100822e42b018232687d008e, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -299,18 +295,6 @@ PrefabInstance:
     - target: {fileID: 4682585595537783760, guid: 3d0203d4100822e42b018232687d008e, type: 3}
       propertyPath: m_SizeDelta.y
       value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 4682585595537783760, guid: 3d0203d4100822e42b018232687d008e, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4682585595537783760, guid: 3d0203d4100822e42b018232687d008e, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4682585595537783760, guid: 3d0203d4100822e42b018232687d008e, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4682585595537783760, guid: 3d0203d4100822e42b018232687d008e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -364,18 +348,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Health Bar
       objectReference: {fileID: 0}
-    - target: {fileID: 4682585596084374423, guid: 3d0203d4100822e42b018232687d008e, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 4682585596640161708, guid: 3d0203d4100822e42b018232687d008e, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 4682585596808752581, guid: 3d0203d4100822e42b018232687d008e, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
     - target: {fileID: 4682585596808752585, guid: 3d0203d4100822e42b018232687d008e, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -384,14 +356,6 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7320917565415628024, guid: 3d0203d4100822e42b018232687d008e, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-    - target: {fileID: 7320917565415628024, guid: 3d0203d4100822e42b018232687d008e, type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d0203d4100822e42b018232687d008e, type: 3}

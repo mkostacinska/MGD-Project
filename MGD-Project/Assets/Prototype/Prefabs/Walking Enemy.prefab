@@ -153,7 +153,7 @@ Transform:
   - {fileID: 697034825}
   - {fileID: 6274601774429342892}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &3745734826326257065
 MeshFilter:
@@ -260,7 +260,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ac66ee952e31874f9140001bcdf185b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 7049634308233331326, guid: 06cc3aaa6b749ee469999fb643dc9e54, type: 3}
   speed: 1.5
   range: 0.5
 --- !u!114 &3745734826326257069
@@ -278,7 +277,6 @@ MonoBehaviour:
   health: 600
   level: 1
   range: 1
-  Player: {fileID: 7049634308233331326, guid: 06cc3aaa6b749ee469999fb643dc9e54, type: 3}
   healthBar: {fileID: 7043628180950871425}
   cooldown: 1
   cooldownEnd: 0
@@ -290,26 +288,6 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 697034825}
     m_Modifications:
-    - target: {fileID: 1442552595400630168, guid: 3d0203d4100822e42b018232687d008e, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1442552595400630168, guid: 3d0203d4100822e42b018232687d008e, type: 3}
-      propertyPath: m_Color.a
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3432659203713935241, guid: 3d0203d4100822e42b018232687d008e, type: 3}
-      propertyPath: cryoSprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 46e3030036ca2814b8d883bac5889a95, type: 3}
-    - target: {fileID: 3432659203713935241, guid: 3d0203d4100822e42b018232687d008e, type: 3}
-      propertyPath: pyroSprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 623d070dc653cae42b715aa7ba163e41, type: 3}
-    - target: {fileID: 3432659203713935241, guid: 3d0203d4100822e42b018232687d008e, type: 3}
-      propertyPath: electroSprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 19599799be99a0943870f1d580722029, type: 3}
     - target: {fileID: 4682585595537783760, guid: 3d0203d4100822e42b018232687d008e, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -398,22 +376,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Health Bar
       objectReference: {fileID: 0}
-    - target: {fileID: 4682585596808752585, guid: 3d0203d4100822e42b018232687d008e, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4682585596808752585, guid: 3d0203d4100822e42b018232687d008e, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7320917565415628024, guid: 3d0203d4100822e42b018232687d008e, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-    - target: {fileID: 7320917565415628024, guid: 3d0203d4100822e42b018232687d008e, type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d0203d4100822e42b018232687d008e, type: 3}
