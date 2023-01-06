@@ -4,30 +4,25 @@ using UnityEngine;
 
 public class SlowTime : MonoBehaviour
 {
-    public static void slowTime(float seconds, float amount = 0f, bool screen = true)
+    public static void slowTime(float seconds, float amount)
     {
-        GameObject.FindGameObjectsWithTag("SlowTime")[0].GetComponent<SlowTime>().slowTimeNonStatic(seconds, amount, screen);
-    }
-    public static void slowTime(float seconds, bool screen) //method overloading
-    {
-        slowTime(seconds, 0f, screen = true);
+        GameObject.FindGameObjectsWithTag("SlowTime")[0].GetComponent<SlowTime>().slowTimeNonStatic(seconds, amount);
     }
 
     //method to slow time: pass in seconds and amount; freezes time by default if only seconds specified
-    public void slowTimeNonStatic(float seconds, float amount = 0f, bool screen = true) { StartCoroutine(iSlowTime(seconds, amount, screen)); }
+    public void slowTimeNonStatic(float seconds, float amount = 0f) { StartCoroutine(iSlowTime(seconds, amount)); }
 
     [SerializeField] private GameObject freezeMenu;
-    private IEnumerator iSlowTime(float seconds, float amount, bool screen)
+    public IEnumerator iSlowTime(float seconds, float amount)
     {
         //When timescale = 1: game is running at normal speed
         //if amount is 0: game is frozen
         Time.timeScale = amount;    //set the game speed
-        GameObject freezeScreen = null;
-        if (screen == true) { freezeScreen = Instantiate(freezeMenu); }
+        GameObject freezeScreen = Instantiate(freezeMenu);
+        print("freezing");
 
         yield return new WaitForSecondsRealtime(seconds);
-
         Time.timeScale = 1f;    //resume time
-        if (screen == true) { Destroy(freezeScreen); }
+        Destroy(freezeScreen);
     }
 }
