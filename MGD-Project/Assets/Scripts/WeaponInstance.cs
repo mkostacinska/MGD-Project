@@ -5,20 +5,23 @@ using UnityEngine.InputSystem;
 
 public class WeaponInstance : MonoBehaviour
 {
-    [SerializeField] private int attack;
+    //Cooldown Properties
     [SerializeField] private float cooldown = 1;
     [SerializeField] private float cooldownEnd = 0f;
-    private Weapon thisWeapon;
+
+    //Attacking Properties
     private int enemyLayer;
     private bool attacking = false;
+
+    //Element Properties
     [SerializeField] public string elementName = "NAME"; //set projectile element here, used for quick testing
     public Element element;
+
     InputActionMap actionMap;
 
     void Start()
     {
         element = new Elements().getElement(elementName);
-        thisWeapon = new Weapon(attack);
         enemyLayer = LayerMask.NameToLayer("Enemy");
         gameObject.name = (elementName + " Sword").ToUpper();
 
@@ -50,7 +53,6 @@ public class WeaponInstance : MonoBehaviour
         //player can only deal damage when they are in the attack animation
         if (cooldownCheck())
         {
-            Debug.Log(attacking);
             if (other.gameObject.layer == enemyLayer && attacking == true)
             {
                 NPC enemy = null;
@@ -71,7 +73,6 @@ public class WeaponInstance : MonoBehaviour
                 }
 
                 //decrease the health of the enemy appropriately
-                //enemy.setHealth(enemy.getHealth() - 3);
                 enemy.setElement(element);
                 enemy.dealDamage(300);
             }

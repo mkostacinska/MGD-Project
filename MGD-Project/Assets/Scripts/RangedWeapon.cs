@@ -5,12 +5,16 @@ using UnityEngine.InputSystem;
 
 public class RangedWeapon : MonoBehaviour
 {
-    public Transform projectileSpawnPoint;
-    public GameObject projectilePrefab;
-    public float projectileSpeed = 5;
+    //Projectile Properties
+    [SerializeField] Transform projectileSpawnPoint;
+    [SerializeField] GameObject projectilePrefab;
+    [SerializeField] float projectileSpeed = 5;
+
+    //Weapon Element Properties
     [SerializeField] public string elementName = "NAME"; //set projectile element here, used for quick testing
     private Element element;
 
+    //Cooldown Properties
     [SerializeField] private float cooldown = 0.2f;
     [SerializeField] private float cooldownEnd = 0f;
     bool cooldownCheck()
@@ -22,21 +26,46 @@ public class RangedWeapon : MonoBehaviour
         }
         return false;
     }
+
     InputActionMap actionMap;
     protected void checkInputs()
     {
         if (actionMap == null) { actionMap = InputManager.getActionMap(); } //set the actionMap if it does not exist
-        if (actionMap.FindAction("Attack").triggered) { OnAttack(); }
+        if (actionMap.FindAction("Attack").triggered) { OnAttack(); }       //trigger attack
     }
 
-    private bool attackKeyDown = false;
     void OnAttack() {
         if (transform.parent != null) {
             if (transform.parent.name == "WeaponHolder") { //only attack if its in weapon holder
-                attackKeyDown = true; 
+                if (cooldownCheck())
+                {
+                    //shoot at cursor position
+                    //rotate projectile to look at the current mouse position
+                    RaycastHit lookHit;
+                    Vector3 direction;
+
+                    if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out lookHit, 100)) //only changes direction if pointed at a surface
+                    {
+                        Vector3 finalPoint = new Vector3(lookHit.point.x, 0, lookHit.point.z);  //gets the x and y of the raycasted position
+                        Vector3 difference = finalPoint - transform.position;  //direction is the difference between weapon pos and point pos
+                        direction = difference.normalized;
+                        direction = new Vector3(direction.x, 0, direction.z);
+                    }
+                    else //a backup direction of raycast does not work e.g when mouse is above the void
+                    {
+                        direction = projectileSpawnPoint.forward;
+                    }
+                    //spawn projectile and set it's properties
+                    var projectile = Instantiate(projectilePrefab, projectileSpawnPoint.position, projectileSpawnPoint.rotation);
+
+                    projectile.GetComponent<Rigidbody>().velocity = direction * projectileSpeed;
+                    projectile.GetComponent<Projectile>().element = this.element;
+                    projectile.transform.GetChild(0).GetComponent<Renderer>().material.color = this.element.getColour();
+                }
             }
         }
     }
+
     private void Start()
     {
         element = new Elements().getElement(elementName);
@@ -55,33 +84,5 @@ public class RangedWeapon : MonoBehaviour
     private void Update()
     {
         checkInputs();
-        //if the weapon is the ranged weapon, shoot projectiles when the attack button is pressed
-        if (attackKeyDown)
-        {
-            if (cooldownCheck())
-            {
-                //shoot at cursor position
-                //rotate projectile to look at the current mouse position
-                RaycastHit lookHit;
-                Vector3 direction;
-
-                if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out lookHit, 100)) //only changes direction if pointed at a surface
-                {
-                    Vector3 finalPoint = new Vector3(lookHit.point.x, 0, lookHit.point.z);
-                    Vector3 difference = finalPoint - transform.position;  //direction is the difference between weapon pos and point pos
-                    direction = difference.normalized;
-                    direction = new Vector3(direction.x, 0, direction.z);
-                }
-                else {
-                    direction = projectileSpawnPoint.forward;
-                }
-                var projectile = Instantiate(projectilePrefab, projectileSpawnPoint.position, projectileSpawnPoint.rotation);
-                //projectile.GetComponent<Rigidbody>().velocity = projectileSpawnPoint.forward * projectileSpeed;
-                projectile.GetComponent<Rigidbody>().velocity = direction * projectileSpeed;
-                projectile.GetComponent<Projectile>().element = this.element;
-                projectile.transform.GetChild(0).GetComponent<Renderer>().material.color = this.element.getColour();
-            }
-            attackKeyDown = false; //acknowledge and reset
-        }
     }
 }
