@@ -12079,8 +12079,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "REACTIONS\n\nMelt - Cryo + Pyro\n\t2x Damage\n\nSuperconduct - Cryo +
-    Electro\n\tReduces enemy resistance\n        for 12s\n\nOverload - Pyro + Electro\n\tKnocks
+  m_text: "REACTIONS\n\nMelt : Cryo + Pyro\n\t2x Damage\n\nSuperconduct : Cryo +
+    Electro\n\tReduces enemy resistance\n        for 12s\n\nOverload : Pyro + Electro\n\tKnocks
     back enemies"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -12806,7 +12806,19 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "ELEMENTS\n\nCryo\n\tIce\n\nPyro\n\tFire\n\nElectro\n\tElectricity\n\n"
+  m_text: 'ELEMENTS
+
+
+    Cryo
+
+
+    Pyro
+
+
+    Electro
+
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
