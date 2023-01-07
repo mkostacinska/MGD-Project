@@ -7,6 +7,7 @@ public class nextPage : MonoBehaviour
     public GameObject panel1;
     public GameObject panel2;
     public GameObject panel3;
+    public GameObject panel4;
 
     int currentPanel = 1;
 
@@ -15,6 +16,7 @@ public class nextPage : MonoBehaviour
         panel1.SetActive(true);
         panel2.SetActive(false);
         panel3.SetActive(false);
+        panel4.SetActive(false);
     }
     public void nextPanel()
     {
@@ -34,18 +36,28 @@ public class nextPage : MonoBehaviour
             panel1.SetActive(true);
             panel2.SetActive(false);
             panel3.SetActive(false);
+            panel4.SetActive(false);
         }
         else if (currentPanel == 2)
         {
             panel1.SetActive(false);
             panel2.SetActive(true);
             panel3.SetActive(false);
+            panel4.SetActive(false);
         }
         else if (currentPanel == 3)
         {
             panel1.SetActive(false);
             panel2.SetActive(false);
             panel3.SetActive(true);
+            panel4.SetActive(false);
+        }
+        else if (currentPanel == 4)
+        {
+            panel1.SetActive(false);
+            panel2.SetActive(false);
+            panel3.SetActive(false);
+            panel4.SetActive(true);
         }
     }
 }
