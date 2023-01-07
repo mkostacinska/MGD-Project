@@ -5,6 +5,9 @@ using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.LowLevel;
 using UnityEngine.InputSystem.Users;
 
+/// <summary>
+/// Creates a virtual mouse for the gamepad to control and move, for menus
+/// </summary>
 public class GamepadCursor : MonoBehaviour     //Modified version of Virtual Mouse from: https://www.youtube.com/watch?v=Y3WNwl1ObC8
 {
     private Mouse virtualMouse;
@@ -75,6 +78,8 @@ public class GamepadCursor : MonoBehaviour     //Modified version of Virtual Mou
         InputState.Change(virtualMouse, mouseState);
 
         AnchorCursor(newPosition);
+
+        if (InputManager.getInputManager().inputMode != "Gamepad") { gameObject.SetActive(false); }     //automatically hide the virtual mouse when gamepad is not the input mode
     }
 
     //map screen coord to rect transform coord
