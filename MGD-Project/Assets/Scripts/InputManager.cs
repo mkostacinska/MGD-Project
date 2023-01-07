@@ -30,10 +30,13 @@ if (actionMap.FindAction("Move").WasPressedThisFrame() || actionMap.FindAction("
 */
 public class InputManager : MonoBehaviour
 {
+    //Data Access Properties
     public InputActionMap actionMap;
-    public int gamepadCursorSensistivity = 5;
     public string inputMode = "";
+
+    //Gamepad Mouse Properties
     private bool gamepadMouseMode = false;
+    public int gamepadCursorSensistivity = 5;
 
     void Awake()
     {
@@ -44,7 +47,6 @@ public class InputManager : MonoBehaviour
         }
         DontDestroyOnLoad(transform.gameObject); //makes sure player input is persistent across scenes
         actionMap = GetComponent<PlayerInput>().currentActionMap;
-        actionMap.Enable();
     }
 
     public static InputActionMap getActionMap()
@@ -64,16 +66,14 @@ public class InputManager : MonoBehaviour
 
     private void Update()
     {
-        if (actionMap.FindAction("MouseMode").triggered) { gamepadMouseMode = !gamepadMouseMode; }  //toggles gamepadMouseMode
+        if (actionMap == null) { actionMap = GetComponent<PlayerInput>().currentActionMap; }
 
-        //moves the cursor using a controller if player switches to that mode
-        if (gamepadMouseMode == true)
-        {
-            if (actionMap.FindAction("Direction").ReadValue<Vector2>() != Vector2.zero) 
-            {
-                onDirection(actionMap.FindAction("Direction").ReadValue<Vector2>()); 
-            }
+        //toggles gamepadMouseMode and moves a virtual mouse using a controller
+        if (actionMap.FindAction("MouseMode").triggered) { 
+            gamepadMouseMode = !gamepadMouseMode;
+            transform.GetChild(0).gameObject.SetActive(gamepadMouseMode);
         }
+        
 
         inputMode = GetComponent<PlayerInput>().currentControlScheme;   //get if it is mouse and keyboard or gamepad
         if (actionMap.FindAction("SwitchControlScheme").triggered) {
@@ -84,7 +84,8 @@ public class InputManager : MonoBehaviour
                     break;
 
                 case "Keyboard&Mouse":
-                    GetComponent<PlayerInput>().SwitchCurrentControlScheme("Gamepad", Gamepad.current);
+                    if (Gamepad.current != null)
+                    { GetComponent<PlayerInput>().SwitchCurrentControlScheme("Gamepad", Gamepad.current); }
                     break;
 
                 case "Gamepad":
@@ -92,14 +93,5 @@ public class InputManager : MonoBehaviour
                     break;
             }
         }
-    }
-
-    //Code for gamepad controller
-    //vector is in the range [(-1,-1), (1, 1)]
-    //WarpCursorPosition only works on integer pixel so its actually floored https://stackoverflow.com/a/69196901
-    void onDirection(Vector2 direction) {
-        Vector2 move = Mouse.current.position.ReadValue() + direction * gamepadCursorSensistivity;
-        move = new Vector2(Mathf.Round(move.x), Mathf.Round(move.y));       //round instead of floor for more accuracy
-        Mouse.current.WarpCursorPosition(move);
     }
 }

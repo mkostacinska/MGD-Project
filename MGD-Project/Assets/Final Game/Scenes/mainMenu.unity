@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!224 &6110049 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1047484576, guid: 90345b65cb7ca834fad9573910189716, type: 3}
+  m_PrefabInstance: {fileID: 5689288982904413937}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &10299460
 GameObject:
   m_ObjectHideFlags: 0
@@ -1821,6 +1826,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 439926839}
   m_CullTransparentMesh: 1
+--- !u!114 &455401228 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5318333858198439924, guid: da2dfd8cfc570514ca638845aa709f83, type: 3}
+  m_PrefabInstance: {fileID: 5318333857896725877}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01614664b831546d2ae94a42149d80ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &575569103
 GameObject:
   m_ObjectHideFlags: 0
@@ -5712,6 +5728,16 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1751049333}
   m_CullTransparentMesh: 1
+--- !u!224 &1789219798 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1249406459, guid: 90345b65cb7ca834fad9573910189716, type: 3}
+  m_PrefabInstance: {fileID: 5689288982904413937}
+  m_PrefabAsset: {fileID: 0}
+--- !u!223 &1789219801 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 1249406462, guid: 90345b65cb7ca834fad9573910189716, type: 3}
+  m_PrefabInstance: {fileID: 5689288982904413937}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1803030931
 GameObject:
   m_ObjectHideFlags: 0
@@ -7256,7 +7282,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -452, y: 313.2187}
+  m_AnchoredPosition: {x: -452, y: 260.36264}
   m_SizeDelta: {x: 904, y: 500}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &2102662156
@@ -7928,6 +7954,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5318333858198439927, guid: da2dfd8cfc570514ca638845aa709f83, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: da2dfd8cfc570514ca638845aa709f83, type: 3}
@@ -7939,14 +7969,90 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5556811720182794875, guid: 90345b65cb7ca834fad9573910189716, type: 3}
-      propertyPath: m_DefaultControlScheme
-      value: Keyboard&Mouse
+    - target: {fileID: 323247095, guid: 90345b65cb7ca834fad9573910189716, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 5556811720182794875, guid: 90345b65cb7ca834fad9573910189716, type: 3}
-      propertyPath: m_NeverAutoSwitchControlSchemes
+    - target: {fileID: 323247096, guid: 90345b65cb7ca834fad9573910189716, type: 3}
+      propertyPath: canvas
+      value: 
+      objectReference: {fileID: 1789219801}
+    - target: {fileID: 323247096, guid: 90345b65cb7ca834fad9573910189716, type: 3}
+      propertyPath: cursorTransform
+      value: 
+      objectReference: {fileID: 6110049}
+    - target: {fileID: 323247096, guid: 90345b65cb7ca834fad9573910189716, type: 3}
+      propertyPath: canvasRectTransform
+      value: 
+      objectReference: {fileID: 1789219798}
+    - target: {fileID: 1047484576, guid: 90345b65cb7ca834fad9573910189716, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1047484576, guid: 90345b65cb7ca834fad9573910189716, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1047484576, guid: 90345b65cb7ca834fad9573910189716, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1047484576, guid: 90345b65cb7ca834fad9573910189716, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1047484576, guid: 90345b65cb7ca834fad9573910189716, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1047484576, guid: 90345b65cb7ca834fad9573910189716, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1047484576, guid: 90345b65cb7ca834fad9573910189716, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1047484576, guid: 90345b65cb7ca834fad9573910189716, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1047484576, guid: 90345b65cb7ca834fad9573910189716, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1047484576, guid: 90345b65cb7ca834fad9573910189716, type: 3}
+      propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1047484576, guid: 90345b65cb7ca834fad9573910189716, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1047484576, guid: 90345b65cb7ca834fad9573910189716, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1047484576, guid: 90345b65cb7ca834fad9573910189716, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1047484576, guid: 90345b65cb7ca834fad9573910189716, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1249406461, guid: 90345b65cb7ca834fad9573910189716, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1249406461, guid: 90345b65cb7ca834fad9573910189716, type: 3}
+      propertyPath: m_ScreenMatchMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5556811720182794875, guid: 90345b65cb7ca834fad9573910189716, type: 3}
+      propertyPath: m_UIInputModule
+      value: 
+      objectReference: {fileID: 455401228}
     - target: {fileID: 5689288983520408074, guid: 90345b65cb7ca834fad9573910189716, type: 3}
       propertyPath: m_Name
       value: InputManager
