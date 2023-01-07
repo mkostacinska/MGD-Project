@@ -12,6 +12,10 @@ public class PauseMenu : MonoBehaviour //Tutorial used:https://www.youtube.com/w
     {
         if (InputManager.getActionMap().FindAction("Pause").triggered)
         {
+            GameObject Tutorial = GameObject.FindGameObjectWithTag("Tutorial");
+            if (Tutorial != null){
+                if (Tutorial.activeSelf) { return; }    //if tutorial is active, disable pause
+            }
             if (Paused)
             {
                 Play();

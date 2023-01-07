@@ -11345,6 +11345,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tutorial
       objectReference: {fileID: 0}
+    - target: {fileID: 6610776437263617757, guid: cdad90e5549f6fc47a40c5150b4bc5ac, type: 3}
+      propertyPath: m_TagString
+      value: Tutorial
+      objectReference: {fileID: 0}
     - target: {fileID: 6610776437263617758, guid: cdad90e5549f6fc47a40c5150b4bc5ac, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

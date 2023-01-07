@@ -22,10 +22,10 @@ public class ShowTutorial : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (InputManager.getActionMap().FindAction("Pause").triggered)
         {
             Time.timeScale = 1f;
-            Destroy(gameObject);
+            Destroy(gameObject.transform.parent.gameObject);
         }
     }
 }
