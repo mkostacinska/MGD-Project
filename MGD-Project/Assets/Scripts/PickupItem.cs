@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+/// <summary>
+/// Modified subclass of PickupController used for items that can go into the inventory
+/// </summary>
 public class PickupItem : PickupController
 {
     [SerializeField] GameObject labelPrefab;
@@ -54,6 +57,7 @@ public class PickupItem : PickupController
         //if the player is within 1.5 unit from the item, display the prompt 
         if (Vector3.Distance(transform.position, player.transform.position) <= 1.5f)
         {
+            UpdateText();      //gets update text from superclass
             text.SetActive(true);
             //if (Input.GetKeyDown(KeyCode.E))
             if (keyDown == true)

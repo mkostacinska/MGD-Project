@@ -19,6 +19,7 @@ public class PickupController : MonoBehaviour
     protected InputActionMap actionMap;
     protected bool keyDown = false;
 
+    private string inputMode;
     /// <summary>
     /// Set the initial position of the pickup label as well as rotation of the pickup itself.
     /// </summary>
@@ -41,10 +42,32 @@ public class PickupController : MonoBehaviour
     /// Update the text to be displayed on the label according to the most recent rebinding.
     /// </summary>
     public void UpdateText() {
-        string keyText = actionMap.FindAction("Pickup").bindings[0].effectivePath;
-        var pos = keyText.IndexOf('/');
-        keyText = keyText.Substring(pos + 1).ToUpper();
-        text.GetComponent<TMP_Text>().text = "Press " + keyText + " to collect";
+        if (inputMode == InputManager.getInputManager().inputMode) { return; }  //do nothing if mode hasn't changed
+        inputMode = InputManager.getInputManager().inputMode;
+
+        text.SetActive(false);
+        string keyText = null;
+        //if control scheme is Gamepad: for each binding, if the effective path has <Gamepad> //set keyText
+        if (inputMode == "Gamepad")
+        {
+            foreach (InputBinding binding in actionMap.FindAction("Pickup").bindings)
+            {
+                if (binding.effectivePath.StartsWith("<Gamepad>"))
+                {
+                    keyText = binding.effectivePath;
+                    break;
+                }
+            }
+            keyText = InputManager.getKeyFromPath(keyText);
+            keyText = InputManager.controllerButtonToString(Gamepad.current, keyText).ToUpper();
+        }
+        else { //else get first path
+            keyText = actionMap.FindAction("Pickup").bindings[0].effectivePath;
+            keyText = InputManager.getKeyFromPath(keyText).ToUpper();
+        }
+        print(InputManager.getInputManager().inputMode + keyText);
+        text.GetComponent<TMP_Text>().text = "Press " + keyText + " to collect"; //change the floating UI text
+        text.SetActive(true);
     }
 
     /// <summary>
@@ -54,7 +77,7 @@ public class PickupController : MonoBehaviour
     {
         RotateObject(); //periodic key movement (rotation + moving up and down)
         CheckDistance(); //check the distance to the player to decide whether or not to display the prompt
-        CheckInputs();
+        CheckInputs();  //check if player pressed pickup button
     }
 
     private void CheckInputs()

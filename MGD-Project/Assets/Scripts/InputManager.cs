@@ -94,4 +94,54 @@ public class InputManager : MonoBehaviour
             }
         }
     }
+
+    /// <summary>
+    /// Converts string of button name to button based on type of controller
+    /// e.g. "buttonNorth" returns "Triangle" on a Playstation Controller
+    /// </summary>
+    /// <param name="gamepad"></param>
+    /// <param name="button"></param>
+    /// <returns></returns>
+    public static string controllerButtonToString(Gamepad gamepad, string button)
+    { //https://forum.unity.com/threads/how-can-i-detect-the-gamepad-model-like-xboxone-ps4-etc.753758/
+        if (gamepad is UnityEngine.InputSystem.DualShock.DualShockGamepad)
+        {
+            switch (button)
+            {
+                case "buttonNorth":
+                    return "Triangle";
+                case "buttonEast":
+                    return "Circle";
+                case "buttonSouth":
+                    return "X";
+                case "buttonWest":
+                    return "Square";
+            }
+        }
+        else
+        {
+            switch (button)
+            {
+                case "buttonNorth":
+                    return "Y";
+                case "buttonEast":
+                    return "B";
+                case "buttonSouth":
+                    return "A";
+                case "buttonWest":
+                    return "X";
+            }
+        }
+        return button;  //incase it gets to the end
+    }
+
+    /// <summary>
+    /// Helper method to convert path to key name
+    /// </summary>
+    /// <param name="path"></param>
+    /// <returns></returns>
+    public static string getKeyFromPath(string path) {
+        var pos = path.IndexOf('/');
+        return path.Substring(pos + 1);
+    }
 }
