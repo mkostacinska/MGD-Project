@@ -8,6 +8,7 @@ using UnityEngine.InputSystem.Users;
 //there is a Unity Engine Input System bug where some gameobjects' actions are not triggered
 //this bug only occurs in the build and not the editor and which object's actions break is not consistent; changes each build
 //I am refactoring to make everything that uses input to get PlayerInput from this script avoid this bug
+//it seems to have something to do with the order the PlayerInputs are enabled
 
 //also another bug where no inputs work when there is a PlayerInput variable in this script
 //which means that GetComponent<PlayerInput>() has to be used each time
@@ -43,6 +44,7 @@ public class InputManager : MonoBehaviour
         }
         DontDestroyOnLoad(transform.gameObject); //makes sure player input is persistent across scenes
         actionMap = GetComponent<PlayerInput>().currentActionMap;
+        actionMap.Enable();
     }
 
     public static InputActionMap getActionMap()

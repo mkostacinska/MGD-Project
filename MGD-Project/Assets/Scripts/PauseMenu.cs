@@ -39,6 +39,7 @@ public class PauseMenu : MonoBehaviour //Tutorial used:https://www.youtube.com/w
     
     public void MenuM()
     {
+        Play(); //so the game isn't frozen
         SceneManager.LoadScene("mainMenu"); //load main menu is main menu button is pressed
     }
 }

@@ -71,7 +71,7 @@ public class RangedWeapon : MonoBehaviour
                     {
                         direction = projectileSpawnPoint.forward;
                     }
-                    else if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out lookHit, 100)) //only changes direction if pointed at a surface
+                    else if (Physics.Raycast(Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue()), out lookHit, 100)) //only changes direction if pointed at a surface
                     {
                         Vector3 finalPoint = new Vector3(lookHit.point.x, 0, lookHit.point.z);  //gets the x and y of the raycasted position
                         Vector3 difference = finalPoint - transform.position;  //direction is the difference between weapon pos and point pos

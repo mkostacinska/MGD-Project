@@ -22,6 +22,7 @@ public class Inventory : MonoBehaviour
         slots = transform.childCount;   //set the initial number of slots
         matchInventory();
         Selected();
+        GetComponent<PlayerInput>().enabled = true;
     }
 
     void OnNextSlot() { scrollPos = (scrollPos + 1) % slots; Selected(); } //scroll loops back if over number of slots
