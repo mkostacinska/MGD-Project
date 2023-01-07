@@ -11,11 +11,28 @@ using UnityEngine.InputSystem.Users;
 
 //also another bug where no inputs work when there is a PlayerInput variable in this script
 //which means that GetComponent<PlayerInput>() has to be used each time
+
+
+/*
+to get a call from the player input:
+InputActionMap actionMap
+
+if (actionMap == null) { actionMap = GameObject.FindGameObjectWithTag("Input").GetComponent<PlayerInput>().currentActionMap; }  //set the actionMap if it does not exist
+if (actionMap == null) { actionMap = InputManager.getActionMap(); } //set the actionMap if it does not exist
+
+
+To get the input values: examples:
+
+if (actionMap.FindAction("Move").ReadValue<Vector2>() != Vector2.zero) { OnMove(); }
+if (actionMap.FindAction("Button").triggered) { OnButton(); }
+if (actionMap.FindAction("Move").WasPressedThisFrame() || actionMap.FindAction("Move").WasReleasedThisFrame()) //this one is jittery and you cant move diagonally
+*/
 public class InputManager : MonoBehaviour
 {
     public InputActionMap actionMap;
     public int gamepadCursorSensistivity = 5;
     public string inputMode = "";
+    private bool gamepadMouseMode = false;
 
     void Awake()
     {
@@ -43,36 +60,20 @@ public class InputManager : MonoBehaviour
         return GameObject.FindGameObjectsWithTag("InputManager")[0].GetComponent<InputManager>();
     }
 
-    /*
-    to get a call from the player input:
-    InputActionMap actionMap
-
-    if (actionMap == null) { actionMap = GameObject.FindGameObjectWithTag("Input").GetComponent<PlayerInput>().currentActionMap; }  //set the actionMap if it does not exist
-    if (actionMap == null) { actionMap = InputManager.getActionMap(); } //set the actionMap if it does not exist
-
-
-    To get the input values: examples:
-
-    if (actionMap.FindAction("Move").ReadValue<Vector2>() != Vector2.zero) { OnMove(); }
-    if (actionMap.FindAction("Button").triggered) { OnButton(); }
-    if (actionMap.FindAction("Move").WasPressedThisFrame() || actionMap.FindAction("Move").WasReleasedThisFrame()) //this one is jittery and you cant move diagonally
-    */
-
-    private void Start()
-    {
-        foreach (Gamepad controller in Gamepad.all) {
-            Debug.Log(controller);
-        }
-    }
-
     private void Update()
     {
+        if (actionMap.FindAction("MouseMode").triggered) { gamepadMouseMode = !gamepadMouseMode; }  //toggles gamepadMouseMode
+
+        //moves the cursor using a controller if player switches to that mode
+        if (gamepadMouseMode == true)
+        {
+            if (actionMap.FindAction("Direction").ReadValue<Vector2>() != Vector2.zero) 
+            {
+                onDirection(actionMap.FindAction("Direction").ReadValue<Vector2>()); 
+            }
+        }
+
         inputMode = GetComponent<PlayerInput>().currentControlScheme;   //get if it is mouse and keyboard or gamepad
-
-        //moves the cursor using a controller
-        //if (actionMap.FindAction("Direction").ReadValue<Vector2>() != Vector2.zero) {
-        //    onDirection(actionMap.FindAction("Direction").ReadValue<Vector2>()); }
-
         if (actionMap.FindAction("SwitchControlScheme").triggered) {
             switch (inputMode)
             {
@@ -89,7 +90,6 @@ public class InputManager : MonoBehaviour
                     break;
             }
         }
-        //if (actionMap.FindAction("Click").triggered) { OnClick(); }
     }
 
     //Code for gamepad controller
@@ -100,20 +100,4 @@ public class InputManager : MonoBehaviour
         move = new Vector2(Mathf.Round(move.x), Mathf.Round(move.y));       //round instead of floor for more accuracy
         Mouse.current.WarpCursorPosition(move);
     }
-
-    /*
-    private Mouse virtualMouse;
-    void OnClick() {
-        print("hello");
-        if (virtualMouse == null) {
-            virtualMouse = (Mouse)InputSystem.AddDevice("VirtualMouse");
-        }
-        else {
-            InputSystem.AddDevice(virtualMouse);
-        }
-
-        virtualMouse.WarpCursorPosition(Mouse.current.position.ReadValue());
-        print(virtualMouse.position.ReadValue());
-    }
-    */
 }

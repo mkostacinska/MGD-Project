@@ -60,18 +60,18 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Click",
+                    "name": "SwitchControlScheme",
                     "type": "Button",
-                    "id": "08c7deed-9c66-4fd3-88df-9267d43c04de",
+                    "id": "c6ddbb12-06cf-4125-99e8-4cac294fefca",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
                 },
                 {
-                    "name": "SwitchControlScheme",
+                    "name": "MouseMode",
                     "type": "Button",
-                    "id": "c6ddbb12-06cf-4125-99e8-4cac294fefca",
+                    "id": "9548a7d0-e44d-4645-80d8-e50e69a93434",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -301,28 +301,6 @@
                 },
                 {
                     "name": "",
-                    "id": "b9059e64-42e0-4529-ba73-0c2e3e193abc",
-                    "path": "<Mouse>/leftButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard&Mouse",
-                    "action": "Click",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "6072920a-a2d7-484a-b2ad-30b2bf8f8deb",
-                    "path": "<Gamepad>/rightShoulder",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Gamepad",
-                    "action": "Click",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "2c64a65e-375c-4096-be2d-4016511034ab",
                     "path": "<Gamepad>/select",
                     "interactions": "",
@@ -340,6 +318,17 @@
                     "processors": "",
                     "groups": "Keyboard&Mouse",
                     "action": "SwitchControlScheme",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "fc5e2dc8-d7a8-4f18-ba7e-c4b55fe2aa1b",
+                    "path": "<Gamepad>/rightStickPress",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "MouseMode",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -796,7 +785,7 @@
                 {
                     "name": "",
                     "id": "bb9e6b34-44bf-4381-ac63-5aa15d19f677",
-                    "path": "<XRController>/trigger",
+                    "path": "<Gamepad>/rightShoulder",
                     "interactions": "",
                     "processors": "",
                     "groups": "XR",
