@@ -5,7 +5,12 @@ using UnityEngine;
 public class ShowTutorial : MonoBehaviour
 {
     public GameObject uiObject;
-    
+
+    private void Start()
+    {
+        transform.position = GameObject.FindGameObjectWithTag("Player").transform.position;
+    }
+
     void OnTriggerEnter(Collider player)
     {
         if (player.gameObject.tag == "Player")
