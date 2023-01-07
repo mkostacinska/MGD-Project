@@ -5,12 +5,6 @@ using UnityEngine;
 public class ShowTutorial : MonoBehaviour
 {
     public GameObject uiObject;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
     
     void OnTriggerEnter(Collider player)
     {

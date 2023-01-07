@@ -2197,16 +2197,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'CONTROLS
-
-
-    W A S D - Walk
-
-
-    Left Click - Attack
-
-
-'
+  m_text: "Explore islands and kill the enemies, whilst collecting all the required
+    keys to unlock the boss island.\n\nUse the elemental weapons to \n\nYou may toggle
+    the tutorial by pressing T"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2240,7 +2233,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -2269,7 +2262,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 55.976387, w: -208.04413}
+  m_margin: {x: 0, y: 0, z: -79.19507, w: -208.04413}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -5348,6 +5341,7 @@ GameObject:
   - component: {fileID: 786655042}
   - component: {fileID: 786655041}
   - component: {fileID: 786655040}
+  - component: {fileID: 786655044}
   m_Layer: 5
   m_Name: canvas
   m_TagString: Untagged
@@ -5442,6 +5436,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &786655044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 786655039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea44d567e9c4c8645afe516722c54b62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tutorial: {fileID: 2074001097}
 --- !u!1 &786830172
 GameObject:
   m_ObjectHideFlags: 0
