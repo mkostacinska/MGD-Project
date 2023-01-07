@@ -2197,9 +2197,18 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Explore islands and kill the enemies, whilst collecting all the required
-    keys to unlock the boss island.\n\nUse the elemental weapons to \n\nYou may toggle
-    the tutorial by pressing T"
+  m_text: 'Explore islands and kill the enemies, whilst collecting all the required
+    keys to unlock the boss island.
+
+
+    Use the elemental weapons to cause different
+    reactions
+
+
+
+
+
+    You may toggle the tutorial by pressing T'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
