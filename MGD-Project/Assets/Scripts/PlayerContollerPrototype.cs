@@ -71,16 +71,26 @@ public class PlayerContollerPrototype : MonoBehaviour
 
     private void RotatePlayer()
     {
-        //rotate player to look at the current mouse position
-        RaycastHit lookHit;
 
-        if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out lookHit, 100)) //only changes direction if pointed at a surface
-        {
-            Vector3 finalPoint = new Vector3(lookHit.point.x, 0, lookHit.point.z);
-            Vector3 difference = finalPoint - transform.position;  //direction is the difference between player pos and point pos
-            Vector3 direction = difference.normalized;
-            transform.forward = new Vector3(direction.x, 0, direction.z);
+        if (InputManager.getInputMode() == "Gamepad") { //rotate player to controller direction
+            Vector2 direction = actionMap.FindAction("Direction").ReadValue<Vector2>();
+            if (direction != Vector2.zero && direction.sqrMagnitude > 0.6) {       //magnitude check prevents direction change from controller rebound from flicking the RStick
+                transform.forward = new Vector3(direction.x, 0, direction.y);
+            }
         }
+        else                    //rotate player to look at the current mouse position if input mode is mouse and keyboard
+        {
+            RaycastHit lookHit;
+
+            if (Physics.Raycast(Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue()), out lookHit, 100)) //only changes direction if pointed at a surface
+            {
+                Vector3 finalPoint = new Vector3(lookHit.point.x, 0, lookHit.point.z);
+                Vector3 difference = finalPoint - transform.position;  //direction is the difference between player pos and point pos
+                Vector3 direction = difference.normalized;
+                transform.forward = new Vector3(direction.x, 0, direction.z);
+            }
+        }
+
     }
 
 }

@@ -62,12 +62,16 @@ public class RangedWeapon : MonoBehaviour
             if (transform.parent.name == "WeaponHolder") { 
                 if (CooldownCheck())
                 {
+
                     //shoot at cursor position
                     //rotate projectile to look at the current mouse position
                     RaycastHit lookHit;
                     Vector3 direction;
-
-                    if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out lookHit, 100)) //only changes direction if pointed at a surface
+                    if (InputManager.getInputMode() == "Gamepad") //direction to be player direction
+                    {
+                        direction = projectileSpawnPoint.forward;
+                    }
+                    else if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out lookHit, 100)) //only changes direction if pointed at a surface
                     {
                         Vector3 finalPoint = new Vector3(lookHit.point.x, 0, lookHit.point.z);  //gets the x and y of the raycasted position
                         Vector3 difference = finalPoint - transform.position;  //direction is the difference between weapon pos and point pos

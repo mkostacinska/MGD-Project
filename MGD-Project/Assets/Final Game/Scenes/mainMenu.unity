@@ -7256,7 +7256,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -452, y: 270.78943}
+  m_AnchoredPosition: {x: -452, y: 313.2181}
   m_SizeDelta: {x: 904, y: 500}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &2102662156
@@ -7939,6 +7939,14 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5556811720182794875, guid: 90345b65cb7ca834fad9573910189716, type: 3}
+      propertyPath: m_DefaultControlScheme
+      value: Gamepad
+      objectReference: {fileID: 0}
+    - target: {fileID: 5556811720182794875, guid: 90345b65cb7ca834fad9573910189716, type: 3}
+      propertyPath: m_NeverAutoSwitchControlSchemes
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5689288983520408074, guid: 90345b65cb7ca834fad9573910189716, type: 3}
       propertyPath: m_Name
       value: InputManager

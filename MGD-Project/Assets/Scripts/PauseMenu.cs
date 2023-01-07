@@ -10,7 +10,7 @@ public class PauseMenu : MonoBehaviour //Tutorial used:https://www.youtube.com/w
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))//if the user pressed esc, esc is the logical option for pause 
+        if (InputManager.getActionMap().FindAction("Pause").triggered)
         {
             if (Paused)
             {

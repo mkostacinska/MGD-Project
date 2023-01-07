@@ -24,10 +24,19 @@ public class Inventory : MonoBehaviour
         Selected();
     }
 
-    void OnSlot0(InputValue value) { scrollPos = 0; Selected(); }
-    void OnSlot1(InputValue value) { scrollPos = 1; Selected(); }
-    void OnSlot2(InputValue value) { scrollPos = 2; Selected(); }
-    void OnSlot3(InputValue value) { scrollPos = 3; Selected(); }
+    void OnNextSlot() { scrollPos = (scrollPos + 1) % slots; Selected(); } //scroll loops back if over number of slots
+    void OnPreviousSlot()
+    {
+        scrollPos--;
+        if (scrollPos < 0)
+        {
+            scrollPos = slots - 1;
+        }
+        Selected();
+    }
+    void OnSlot0() { scrollPos = 0; Selected(); }
+    void OnSlot1() { scrollPos = 1; Selected(); }
+    void OnSlot2() { scrollPos = 2; Selected(); }
     void OnScroll(InputValue value)
     {
         //change the inventory slot on mouse scrollbar movement:

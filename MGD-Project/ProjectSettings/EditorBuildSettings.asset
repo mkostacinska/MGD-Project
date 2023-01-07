@@ -29,4 +29,5 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Final Game/Scenes/Maja-PCG.unity
     guid: a2ccdf8eeabc86f468f0aa9c2c7abf11
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: 0cf6abe3c7493eb44a248b65b7b8e9b8, type: 2}
