@@ -9,37 +9,33 @@ public class ShowTutorial : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        uiObject.SetActive(false);
-    }
 
-     void OnTriggerEnter(Collider player)
-    {
-        Time.timeScale = 0f;
-        
-        if (GameObject.FindGameObjectWithTag("Player").tag == "Player")
-        {
-            uiObject.SetActive(true);
-            StartCoroutine("WaitForSec");
-        }
     }
+     //void OnTriggerEnter(Collider player)
+     //{
+     //   if (GameObject.FindGameObjectWithTag("Player").tag == "Player")
+     //   {
+     //       Time.timeScale = 0f;
+     //       uiObject.SetActive(true);
+     //       Destroy(gameObject);
+     //   }
+     //}
     
-    IEnumerator WaitForSec()
+    void OnTriggerEnter(Collider player)
     {
-        yield return new WaitForSeconds(5);
-        Destroy(uiObject);
-        Destroy(gameObject);
-    }
-
-    private void Update()
-    {
-        if (Input.anyKey)
+        if (player.gameObject.tag == "Player")
         {
-            Resume();
+            Time.timeScale = 0f;
+            uiObject.SetActive(true);
         }
     }
 
-    void Resume()
+    void Update()
     {
-        Time.timeScale = 1f;
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Time.timeScale = 1f;
+            Destroy(gameObject);
+        }
     }
 }
