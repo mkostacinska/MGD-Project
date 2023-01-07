@@ -7005,6 +7005,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5556811720182794875, guid: 90345b65cb7ca834fad9573910189716, type: 3}
+      propertyPath: m_DefaultControlScheme
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5689288983520408074, guid: 90345b65cb7ca834fad9573910189716, type: 3}
       propertyPath: m_Name
       value: InputManager

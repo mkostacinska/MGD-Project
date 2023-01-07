@@ -11,7 +11,7 @@ public class GamepadCursor : MonoBehaviour     //Modified version of Virtual Mou
     [SerializeField] private RectTransform cursorTransform;
     [SerializeField] private Canvas canvas;
     [SerializeField] private RectTransform canvasRectTransform;
-    private float cursorSpeed = 1000f;
+    private float cursorSpeed = 300f;
 
     private bool previousMouseState;
     private Camera mainCamera;
@@ -57,7 +57,8 @@ public class GamepadCursor : MonoBehaviour     //Modified version of Virtual Mou
 
         // Delta
         Vector2 deltaValue = Gamepad.current.rightStick.ReadValue();    //set right stick to virtual mouse position
-        deltaValue *= cursorSpeed * Time.deltaTime;
+
+        deltaValue *= cursorSpeed * Time.fixedDeltaTime;    //not affected by time scale so it still works when game is paused
 
         Vector2 currentPosition = virtualMouse.position.ReadValue();
         Vector2 newPosition = currentPosition + deltaValue;
@@ -68,15 +69,10 @@ public class GamepadCursor : MonoBehaviour     //Modified version of Virtual Mou
         InputState.Change(virtualMouse.position, newPosition);
         InputState.Change(virtualMouse.delta, deltaValue);
 
-        bool aButtonIsPressed = Gamepad.current.aButton.IsPressed();
-        if (previousMouseState != aButtonIsPressed)
-        {
-            virtualMouse.CopyState<MouseState>(out var mouseState);
-            mouseState.WithButton(MouseButton.Left, aButtonIsPressed);
-            InputState.Change(virtualMouse, mouseState);
-            previousMouseState = aButtonIsPressed;
 
-        }
+        virtualMouse.CopyState<MouseState>(out var mouseState);
+        mouseState.scroll = Gamepad.current.leftStick.ReadValue() * cursorSpeed * Time.fixedDeltaTime;  //set left stick to virtual scroll wheel
+        InputState.Change(virtualMouse, mouseState);
 
         AnchorCursor(newPosition);
     }

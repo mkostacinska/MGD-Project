@@ -7956,7 +7956,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5318333858198439927, guid: da2dfd8cfc570514ca638845aa709f83, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -7971,7 +7971,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 323247095, guid: 90345b65cb7ca834fad9573910189716, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 323247096, guid: 90345b65cb7ca834fad9573910189716, type: 3}
       propertyPath: canvas
@@ -8053,6 +8053,14 @@ PrefabInstance:
       propertyPath: m_UIInputModule
       value: 
       objectReference: {fileID: 455401228}
+    - target: {fileID: 5556811720182794875, guid: 90345b65cb7ca834fad9573910189716, type: 3}
+      propertyPath: m_DefaultControlScheme
+      value: Keyboard&Mouse
+      objectReference: {fileID: 0}
+    - target: {fileID: 5556811720182794875, guid: 90345b65cb7ca834fad9573910189716, type: 3}
+      propertyPath: m_NeverAutoSwitchControlSchemes
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5689288983520408074, guid: 90345b65cb7ca834fad9573910189716, type: 3}
       propertyPath: m_Name
       value: InputManager
