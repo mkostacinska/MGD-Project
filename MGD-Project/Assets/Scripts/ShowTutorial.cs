@@ -11,15 +11,6 @@ public class ShowTutorial : MonoBehaviour
     {
 
     }
-     //void OnTriggerEnter(Collider player)
-     //{
-     //   if (GameObject.FindGameObjectWithTag("Player").tag == "Player")
-     //   {
-     //       Time.timeScale = 0f;
-     //       uiObject.SetActive(true);
-     //       Destroy(gameObject);
-     //   }
-     //}
     
     void OnTriggerEnter(Collider player)
     {
