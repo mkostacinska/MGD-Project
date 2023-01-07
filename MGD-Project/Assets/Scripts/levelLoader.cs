@@ -16,7 +16,7 @@ public class levelLoader : MonoBehaviour// based on https://www.youtube.com/watc
    IEnumerator sceneLoad(int levelIndex)
    {
      transistion.SetTrigger("Start");//starts animation
-     yield return new WaitForSeconds(TTime);//wait for transistion time
+     yield return new WaitForSecondsRealtime(TTime);//wait for transistion time
      SceneManager.LoadScene(levelIndex);//load next scene
    }
 
