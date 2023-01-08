@@ -33,7 +33,7 @@ public class nextPage : MonoBehaviour
         {
             //print("destroy");
             Time.timeScale = 1f;                    //Resume time
-            Destroy(transform.parent.gameObject);   //Destroy the Tutorial Object
+            Destroy(gameObject);                    //Destroy the Tutorial Object
         }
 
         int i = 0;                             //used to loop through all the children
