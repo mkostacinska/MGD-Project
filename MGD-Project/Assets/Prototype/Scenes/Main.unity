@@ -4712,7 +4712,6 @@ GameObject:
   m_Component:
   - component: {fileID: 841914028}
   - component: {fileID: 841914030}
-  - component: {fileID: 841914029}
   m_Layer: 3
   m_Name: Centre Island
   m_TagString: Untagged
@@ -4739,20 +4738,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &841914029
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 841914027}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 6329158148709259305, guid: 7ce8d755854275641a7c186cf5e3a39f, type: 3}
 --- !u!65 &841914030
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4764,8 +4749,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 19.228588, y: 8.804722, z: 16.787243}
-  m_Center: {x: -9.5893, y: -6.3298855, z: 4.070026}
+  m_Size: {x: 19.228588, y: 8.944615, z: 16.787243}
+  m_Center: {x: -9.5893, y: -6.2599387, z: 4.0700264}
 --- !u!1001 &904058516
 PrefabInstance:
   m_ObjectHideFlags: 0
