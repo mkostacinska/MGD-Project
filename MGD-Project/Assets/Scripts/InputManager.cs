@@ -80,7 +80,8 @@ public class InputManager : MonoBehaviour
             switch (inputMode)
             {
                 case null:
-                    GetComponent<PlayerInput>().SwitchCurrentControlScheme("Keyboard&Mouse", Keyboard.current);
+                    if (Keyboard.current != null)
+                    { GetComponent<PlayerInput>().SwitchCurrentControlScheme("Keyboard&Mouse", Keyboard.current); }
                     break;
 
                 case "Keyboard&Mouse":
@@ -89,7 +90,8 @@ public class InputManager : MonoBehaviour
                     break;
 
                 case "Gamepad":
-                    GetComponent<PlayerInput>().SwitchCurrentControlScheme("Keyboard&Mouse", Keyboard.current);
+                    if (Keyboard.current != null)
+                    { GetComponent<PlayerInput>().SwitchCurrentControlScheme("Keyboard&Mouse", Keyboard.current); }
                     break;
             }
         }
