@@ -49,7 +49,7 @@ public class PlayerContollerPrototype : MonoBehaviour
         //get distance to object via raycast
         if (!Physics.Raycast(transform.position, direction, out var hit)) return false;
         //return true if distance to object is less than small margin
-        print(hit.distance - 1);
+        //print(hit.distance - 1);
         return (hit.distance-1 < margin);
     }
 
@@ -76,7 +76,8 @@ public class PlayerContollerPrototype : MonoBehaviour
     void OnJump()   //triggers when jump button is pressed
     {
         if (IsGrounded()){
-            rigidbody.AddForce(Vector3.up * jumpHeight, ForceMode.Impulse);       //adds an impulse force to cause the jump
+            //rigidbody.AddForce(Vector3.up * jumpHeight, ForceMode.Impulse);       //adds an impulse force to cause the jump
+            rigidbody.velocity = new Vector3(rigidbody.velocity.x, jumpHeight, rigidbody.velocity.z);   //new method to avoid jump being buffered on pause and launching the player when unpausing
         }
     }
 
