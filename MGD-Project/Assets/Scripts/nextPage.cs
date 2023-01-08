@@ -31,7 +31,7 @@ public class nextPage : MonoBehaviour
     {
         if (currentPanel > transform.childCount-1)    //Read all pages
         {
-            print("destroy");
+            //print("destroy");
             Time.timeScale = 1f;                    //Resume time
             Destroy(transform.parent.gameObject);   //Destroy the Tutorial Object
         }

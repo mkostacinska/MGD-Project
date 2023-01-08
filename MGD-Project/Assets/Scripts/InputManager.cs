@@ -69,14 +69,15 @@ public class InputManager : MonoBehaviour
         if (actionMap == null) { actionMap = GetComponent<PlayerInput>().currentActionMap; }
 
         //toggles gamepadMouseMode and moves a virtual mouse using a controller
-        if (actionMap.FindAction("MouseMode").triggered) { 
+        if (actionMap.FindAction("MouseMode").triggered)
+        { 
             gamepadMouseMode = !gamepadMouseMode;
             transform.GetChild(0).gameObject.SetActive(gamepadMouseMode);
         }
         
 
         inputMode = GetComponent<PlayerInput>().currentControlScheme;   //get which control scheme is being used
-        if (actionMap.FindAction("SwitchControlScheme").triggered)
+        if (actionMap.FindAction("SwitchControlScheme").triggered && Time.timeScale == 1f)    //for some reason everything breaks when paused
         {    //switch control scheme
             switch (inputMode)
             {
