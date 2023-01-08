@@ -11352,10 +11352,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6610776436814648077, guid: cdad90e5549f6fc47a40c5150b4bc5ac, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6610776437263617757, guid: cdad90e5549f6fc47a40c5150b4bc5ac, type: 3}
       propertyPath: m_Name
       value: Tutorial
@@ -11444,6 +11440,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7764819178295826069, guid: cdad90e5549f6fc47a40c5150b4bc5ac, type: 3}
+      propertyPath: tutorialPrefab
+      value: 
+      objectReference: {fileID: 6610776437263617757, guid: cdad90e5549f6fc47a40c5150b4bc5ac, type: 3}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: cdad90e5549f6fc47a40c5150b4bc5ac, type: 3}
