@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// set the camera position to follow the player (with offset on z to reflect the angle)
+/// </summary>
 public class CameraController : MonoBehaviour
 {
     [SerializeField] private GameObject player;
