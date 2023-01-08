@@ -84,7 +84,7 @@ public class InputManager : MonoBehaviour
                 case null:
                     if (Keyboard.current != null)
                     {
-                        GetComponent<PlayerInput>().SwitchCurrentControlScheme("Keyboard&Mouse", Keyboard.current);
+                        GetComponent<PlayerInput>().SwitchCurrentControlScheme("Keyboard&Mouse", new InputDevice[] { Mouse.current, Keyboard.current });
                         gamepadMouseMode = false;       //turn of mouse mode if swapping control schemes
                     }
                     break;
@@ -96,7 +96,7 @@ public class InputManager : MonoBehaviour
 
                 case "Gamepad":
                     {
-                        GetComponent<PlayerInput>().SwitchCurrentControlScheme("Keyboard&Mouse", Keyboard.current);
+                        GetComponent<PlayerInput>().SwitchCurrentControlScheme("Keyboard&Mouse", new InputDevice[] { Mouse.current, Keyboard.current });
                         gamepadMouseMode = false;       //turn of mouse mode if swapping control schemes
                     }
                     break;
