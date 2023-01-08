@@ -11326,6 +11326,20 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 786655043}
     m_Modifications:
+    - target: {fileID: 5123503923733491399, guid: cdad90e5549f6fc47a40c5150b4bc5ac, type: 3}
+      propertyPath: m_text
+      value: 'Explore islands and kill the enemies, whilst collecting all the required
+        keys to unlock the final island.
+
+
+        Use the elemental weapons to cause
+        different reactions
+
+
+
+
+        Press ESC/SELECT to skip'
+      objectReference: {fileID: 0}
     - target: {fileID: 6610776435595593493, guid: cdad90e5549f6fc47a40c5150b4bc5ac, type: 3}
       propertyPath: m_IsActive
       value: 0

@@ -20,7 +20,7 @@ public class turretProjectile : MonoBehaviour
         {    
             // deal damage to the player on collision
             Player p = collision.gameObject.GetComponent<PlayerInstance>().thisPlayer;
-            p.dealDamage("Turret", 1);
+            p.dealDamage("Plant", 1);
 
             // destroy the projectile after colliding with player
             Destroy(gameObject); 
