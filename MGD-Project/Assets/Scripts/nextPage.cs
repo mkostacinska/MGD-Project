@@ -2,62 +2,51 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Switches between each page of the tutorial.
+/// Requires the children (pages) to be in the correct order in the heirarchy.
+/// transform.GetChild(0) is reserved for TutorialStart GameObject.
+/// </summary>
 public class nextPage : MonoBehaviour
 {
-    public GameObject panel1;
-    public GameObject panel2;
-    public GameObject panel3;
-    public GameObject panel4;
+    int currentPanel = 1;   //same as the child number (starts at one because child 0 is reserved)
+    
+    void Start() { UpdatePanel(); }
 
-    int currentPanel = 1;
-
-    void Start()
-    {
-        panel1.SetActive(true);
-        panel2.SetActive(false);
-        panel3.SetActive(false);
-        panel4.SetActive(false);
-    }
-    public void nextPanel()
+    public void nextPanel() //Increments next panel and updates
     {
         currentPanel++;
         UpdatePanel();
     }
-    public void backPanel()
+    public void backPanel() //Decrements next panel and updates
     {
         currentPanel--;
         UpdatePanel();
     }
 
+    /// <summary>
+    /// Enables the correct page
+    /// </summary>
     void UpdatePanel()
     {
-        if (currentPanel == 1)
+        if (currentPanel > transform.childCount)    //Read all pages
         {
-            panel1.SetActive(true);
-            panel2.SetActive(false);
-            panel3.SetActive(false);
-            panel4.SetActive(false);
+            Destroy(transform.parent.gameObject);   //Destroy the Tutorial Object
         }
-        else if (currentPanel == 2)
+
+        int i = 0;                             //used to loop through all the children
+        foreach (Transform panel in transform) //gets all the children
         {
-            panel1.SetActive(false);
-            panel2.SetActive(true);
-            panel3.SetActive(false);
-            panel4.SetActive(false);
-        }
-        else if (currentPanel == 3)
-        {
-            panel1.SetActive(false);
-            panel2.SetActive(false);
-            panel3.SetActive(true);
-            panel4.SetActive(false);
-        }
-        else if (currentPanel == 4)
-        {
-            panel1.SetActive(false);
-            panel2.SetActive(false);
-            panel3.SetActive(false);
-            panel4.SetActive(true);
+            if (panel.name == "TutorialStart") { }              //if the child is TutorialStart, ignore
+            else if (i == currentPanel)                         //if the child is current panel set to active
+            {
+                panel.gameObject.SetActive(true);
+            }
+            else
+            {
+                panel.gameObject.SetActive(false);
+            }
+            i += 1;
         }
     }
 }

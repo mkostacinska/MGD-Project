@@ -11326,6 +11326,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 786655043}
     m_Modifications:
+    - target: {fileID: 3569653378939452470, guid: cdad90e5549f6fc47a40c5150b4bc5ac, type: 3}
+      propertyPath: m_text
+      value: Close
+      objectReference: {fileID: 0}
     - target: {fileID: 6610776437263617757, guid: cdad90e5549f6fc47a40c5150b4bc5ac, type: 3}
       propertyPath: m_Name
       value: Tutorial
@@ -11418,9 +11422,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6634049471904962210, guid: cdad90e5549f6fc47a40c5150b4bc5ac, type: 3}
-      propertyPath: m_IsActive
-      value: 1
+    - target: {fileID: 7764819179013099612, guid: cdad90e5549f6fc47a40c5150b4bc5ac, type: 3}
+      propertyPath: m_text
+      value: Back
+      objectReference: {fileID: 0}
+    - target: {fileID: 7764819179465697211, guid: cdad90e5549f6fc47a40c5150b4bc5ac, type: 3}
+      propertyPath: m_text
+      value: Back
+      objectReference: {fileID: 0}
+    - target: {fileID: 7764819179471544002, guid: cdad90e5549f6fc47a40c5150b4bc5ac, type: 3}
+      propertyPath: m_text
+      value: Back
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
