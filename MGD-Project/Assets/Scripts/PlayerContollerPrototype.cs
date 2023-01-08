@@ -96,6 +96,9 @@ public class PlayerContollerPrototype : MonoBehaviour
 
             if (Physics.Raycast(Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue()), out lookHit, 100)) //only changes direction if pointed at a surface
             {
+                //Debug.Log(lookHit.collider.name);
+                if (lookHit.collider.gameObject == gameObject) { return; }      //if mouse pointer hits player, don't change direction (prevents character vibration)
+
                 Vector3 finalPoint = new Vector3(lookHit.point.x, 0, lookHit.point.z);
                 Vector3 difference = finalPoint - transform.position;  //direction is the difference between player pos and point pos
                 Vector3 direction = difference.normalized;
