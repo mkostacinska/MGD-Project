@@ -23,23 +23,34 @@ public class PlayerContollerPrototype : MonoBehaviour
     private void Start()
     {
         rigidbody = GetComponent<Rigidbody>();
-        //GetComponent<PlayerInput>().ActivateInput();
     }
 
     private void Update()
     {
         checkInputs();
         RotatePlayer();
-        transform.position += walkSpeed * movementVector.y * new Vector3(0, 0, 1) * Time.deltaTime; //up down
-        transform.position += walkSpeed * movementVector.x * new Vector3(1, 0, 0) * Time.deltaTime; //left right
+
+        if (!IsColliding(movementVector, 0.01f))
+        {
+            rigidbody.velocity = new Vector3(0, rigidbody.velocity.y, 0);       //resets velocity without affecting gravity or jump
+            transform.position += walkSpeed * movementVector.y * Vector3.forward * Time.deltaTime; //up down 
+            transform.position += walkSpeed * movementVector.x * Vector3.right * Time.deltaTime; //left right
+        }
+        else //backup method to prevent vibrations when player runs into an object
+        {
+            Vector3 move = walkSpeed * movementVector;
+            rigidbody.velocity = new Vector3(move.x, rigidbody.velocity.y, move.y); //changes velocity without affecting gravity or jump
+        }
     }
 
-    private bool IsGrounded()
+    private bool IsGrounded() { return IsColliding(Vector3.down, 0.1f); }
+    private bool IsColliding(Vector3 direction, float margin = 0.1f)
     {
-        //get distance to ground via raycast
-        if (!Physics.Raycast(transform.position, Vector3.down, out var hit)) return false;
-        //return true if distance to object below is less than small margin
-        return (hit.distance-1 < 0.1);
+        //get distance to object via raycast
+        if (!Physics.Raycast(transform.position, direction, out var hit)) return false;
+        //return true if distance to object is less than small margin
+        print(hit.distance - 1);
+        return (hit.distance-1 < margin);
     }
 
     private void checkInputs() {
@@ -65,7 +76,7 @@ public class PlayerContollerPrototype : MonoBehaviour
     void OnJump()   //triggers when jump button is pressed
     {
         if (IsGrounded()){
-            rigidbody.AddForce(transform.up * jumpHeight, ForceMode.Impulse);       //adds an impulse force to cause the jump
+            rigidbody.AddForce(Vector3.up * jumpHeight, ForceMode.Impulse);       //adds an impulse force to cause the jump
         }
     }
 
