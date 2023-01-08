@@ -11289,6 +11289,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6610776436814648077, guid: cdad90e5549f6fc47a40c5150b4bc5ac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6610776437263617757, guid: cdad90e5549f6fc47a40c5150b4bc5ac, type: 3}
       propertyPath: m_Name
       value: Tutorial
@@ -11406,7 +11410,23 @@ PrefabInstance:
 
         Gamepad Cursor Mode: Right Stick Press
 
+
+        Change
+        Weapon: Scroll Wheel / Number Buttons / Left Shoulder & Trigger / D-Pad
+
 '
+      objectReference: {fileID: 0}
+    - target: {fileID: 7764819178918749553, guid: cdad90e5549f6fc47a40c5150b4bc5ac, type: 3}
+      propertyPath: m_fontSize
+      value: 11.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7764819178918749553, guid: cdad90e5549f6fc47a40c5150b4bc5ac, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 11.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7764819178918749555, guid: cdad90e5549f6fc47a40c5150b4bc5ac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
