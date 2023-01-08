@@ -75,13 +75,17 @@ public class InputManager : MonoBehaviour
         }
         
 
-        inputMode = GetComponent<PlayerInput>().currentControlScheme;   //get if it is mouse and keyboard or gamepad
-        if (actionMap.FindAction("SwitchControlScheme").triggered) {
+        inputMode = GetComponent<PlayerInput>().currentControlScheme;   //get which control scheme is being used
+        if (actionMap.FindAction("SwitchControlScheme").triggered)
+        {    //switch control scheme
             switch (inputMode)
             {
                 case null:
                     if (Keyboard.current != null)
-                    { GetComponent<PlayerInput>().SwitchCurrentControlScheme("Keyboard&Mouse", Keyboard.current); }
+                    {
+                        GetComponent<PlayerInput>().SwitchCurrentControlScheme("Keyboard&Mouse", Keyboard.current);
+                        gamepadMouseMode = false;       //turn of mouse mode if swapping control schemes
+                    }
                     break;
 
                 case "Keyboard&Mouse":
@@ -90,21 +94,23 @@ public class InputManager : MonoBehaviour
                     break;
 
                 case "Gamepad":
-                    if (Keyboard.current != null)
-                    { GetComponent<PlayerInput>().SwitchCurrentControlScheme("Keyboard&Mouse", Keyboard.current); }
+                    {
+                        GetComponent<PlayerInput>().SwitchCurrentControlScheme("Keyboard&Mouse", Keyboard.current);
+                        gamepadMouseMode = false;       //turn of mouse mode if swapping control schemes
+                    }
                     break;
             }
         }
     }
 
-    /// <summary>
-    /// Converts string of button name to button based on type of controller
-    /// e.g. "buttonNorth" returns "Triangle" on a Playstation Controller
-    /// </summary>
-    /// <param name="gamepad"></param>
-    /// <param name="button"></param>
-    /// <returns></returns>
-    public static string controllerButtonToString(Gamepad gamepad, string button)
+/// <summary>
+/// Converts string of button name to button based on type of controller
+/// e.g. "buttonNorth" returns "Triangle" on a Playstation Controller
+/// </summary>
+/// <param name="gamepad"></param>
+/// <param name="button"></param>
+/// <returns></returns>
+public static string controllerButtonToString(Gamepad gamepad, string button)
     { //https://forum.unity.com/threads/how-can-i-detect-the-gamepad-model-like-xboxone-ps4-etc.753758/
         if (gamepad is UnityEngine.InputSystem.DualShock.DualShockGamepad)
         {
