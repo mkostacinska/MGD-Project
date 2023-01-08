@@ -11381,6 +11381,33 @@ PrefabInstance:
       propertyPath: tutorialPrefab
       value: 
       objectReference: {fileID: 6610776437263617757, guid: cdad90e5549f6fc47a40c5150b4bc5ac, type: 3}
+    - target: {fileID: 7764819178918749553, guid: cdad90e5549f6fc47a40c5150b4bc5ac, type: 3}
+      propertyPath: m_text
+      value: 'DEFAULT CONTROLS (Keyboard/Controller)
+
+
+        Walk: WASD / Left
+        Joystick
+
+
+        Attack: Left Click / Right Trigger
+
+
+        Pick Up Items:
+        E / PS: Triangle / XBOX:Y
+
+
+        Jump: Space / PS: X / XBOX: A
+
+
+        Change
+        Controls: Tab / Select
+
+
+        Gamepad Cursor Mode: Right Stick Press
+
+'
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: cdad90e5549f6fc47a40c5150b4bc5ac, type: 3}
