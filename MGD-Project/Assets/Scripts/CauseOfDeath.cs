@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+/// <summary>
+/// Ran when Game Over scene runs
+/// Sets the "Cause of death" text
+/// </summary>
 public class CauseOfDeath : MonoBehaviour
 {
     // Start is called before the first frame update
