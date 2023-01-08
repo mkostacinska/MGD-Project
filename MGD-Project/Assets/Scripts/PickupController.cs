@@ -45,7 +45,6 @@ public class PickupController : MonoBehaviour
         if (inputMode == InputManager.getInputManager().inputMode) { return; }  //do nothing if mode hasn't changed
         inputMode = InputManager.getInputManager().inputMode;
 
-        text.SetActive(false);
         string keyText = null;
         //if control scheme is Gamepad: for each binding, if the effective path has <Gamepad> //set keyText
         if (inputMode == "Gamepad")
@@ -65,9 +64,8 @@ public class PickupController : MonoBehaviour
             keyText = actionMap.FindAction("Pickup").bindings[0].effectivePath;
             keyText = InputManager.getKeyFromPath(keyText).ToUpper();
         }
-        print(InputManager.getInputManager().inputMode + keyText);
+        //print(InputManager.getInputManager().inputMode + keyText);
         text.GetComponent<TMP_Text>().text = "Press " + keyText + " to collect"; //change the floating UI text
-        text.SetActive(true);
     }
 
     /// <summary>

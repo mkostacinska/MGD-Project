@@ -29,7 +29,7 @@ public class WeaponInstance : MonoBehaviour
         Material[] materials = transform.GetComponentInChildren<MeshRenderer>().materials;
         foreach (Material m in materials)
         {
-            print(m.name);
+            //print(m.name);
             if (m.name.StartsWith("Crystal"))
             { //StartsWith() is used because "(instance)" is added by unity
                 m.color = element.getColour();
