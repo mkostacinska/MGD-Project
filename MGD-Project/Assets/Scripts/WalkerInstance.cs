@@ -50,9 +50,8 @@ public class WalkerInstance : MonoBehaviour
         //set healthbar to health
         healthBar.Sethealth(thisWalker.getHealth());
 
-        if (thisWalker.getHealth() <= 0)
+        if (thisWalker.getHealth() <= 0 || gameObject.transform.position.y < -30)
         {
-            //MonoBehaviour.print("dead");
             Destroy(gameObject);
         }
     }

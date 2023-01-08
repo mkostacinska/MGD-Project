@@ -65,7 +65,7 @@ public class TurrentInstance : MonoBehaviour
         // set healthbar to health
         healthBar.Sethealth(thisTurret.getHealth());
 
-        if (thisTurret.getHealth() <= 0)
+        if (thisTurret.getHealth() <= 0 || gameObject.transform.position.y < -30)
         {
             Destroy(gameObject);
         }

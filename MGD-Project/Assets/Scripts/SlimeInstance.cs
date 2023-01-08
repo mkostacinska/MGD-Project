@@ -56,9 +56,8 @@ public class SlimeInstance : MonoBehaviour
         //set healthbar to health
         healthBar.Sethealth(thisSlime.getHealth());
 
-        if (thisSlime.getHealth() <= 0)
+        if (thisSlime.getHealth() <= 0 || gameObject.transform.position.y < -30)
         {
-            //MonoBehaviour.print("dead");
             Destroy(gameObject);
         }
     }
