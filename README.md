@@ -58,31 +58,30 @@ Character Direction: Cursor Position / Right Stick Direction
 The controls can be rebinded in the game settings, to reflect the user preferences.
 
 ## Folder Structure 📁:
-* Animations
-* Audio
-* Final Game
-* Prefabs
-	* Systems
-	* UI
-	* Objects
-		* Scenes
-* Graphics
-* Input System
-* Models
-	* Enemies
-		* Plant
-		* Slime
-		* Snail
-* Environment
-	* Player
-	* Weapons
-	* TextMesh Pro
-* Scripts
-	* Combat System
-	* Game System
-	* Helper Classes
-* Inventory System
-	* Player Input
-	* UI
+* [Animations](/MGD-Project/Assets/Animations)
+* [Audio](/MGD-Project/Assets/Audio)
+* [Final Game](/MGD-Project/Assets/Final%20Game)
+	* [Prefabs](/MGD-Project/Assets/Final%20Game/Prefabs)
+		* [Systems](/MGD-Project/Assets/Final%20Game/Prefabs/Systems)
+		* [UI](/MGD-Project/Assets/Final%20Game/Prefabs/UI)
+		* [Objects](/MGD-Project/Assets/Final%20Game/Prefabs/Objects)
+	* [Scenes](/MGD-Project/Assets/Final%20Game/Scenes)
+* [Graphics](/MGD-Project/Assets/Graphics)
+* [Input System](/MGD-Project/Assets/Input%20System)
+* [Models](/MGD-Project/Assets/Models)
+	* [Enemies](/MGD-Project/Assets/Models/Enemies)
+		* [Plant](/MGD-Project/Assets/Models/Enemies/Plant)
+		* [Slime](/MGD-Project/Assets/Models/Enemies/Slime)
+		* [Snail](/MGD-Project/Assets/Models/Enemies/Snail)
+	* [Environment](/MGD-Project/Assets/Models/Environment)
+	* [Player](/MGD-Project/Assets/Models/Player)
+	* [Weapons](/MGD-Project/Assets/Models/Player)
+* [Scripts](/MGD-Project/Assets/Scripts)
+	* [Combat System](/MGD-Project/Assets/Scripts/Combat%20System)
+	* [Game System](/MGD-Project/Assets/Scripts/Game%20System)
+	* [Helper Classes](/MGD-Project/Assets/Scripts/Helper%20Classes)
+	* [Inventory System](/MGD-Project/Assets/Scripts/Inventory%20System)
+	* [Player Input](/MGD-Project/Assets/Scripts/Player%20Input)
+	* [UI](/MGD-Project/Assets/Scripts/UI)
 
 WARNING: There are errors in the editor if you start on a scene other than Main Menu. If you want to run a specific scene, add the [InputManager](/MGD-Project/Assets/Final%20Game/Prefabs/Systems/InputManager.prefab) and [EventSystem](/MGD-Project/Assets/Final%20Game/Prefabs/Systems/EventSystem.prefab) prefabs into the scene. Remove these from every scene other than Main Menu before building.
