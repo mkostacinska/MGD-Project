@@ -32,8 +32,8 @@ The following assets have been used in the final game submission:
 
 ## Gameplay Tutorial :video_game: :
 ### Brief Game Introduction:
-The player is spawned on a sky island filled with enemies. The goal of the game is to collect three key objects
-(yellow cubes spread across the map) in order to unlock the bridge to the final island, as well as defeat all the enemies
+The player is spawned on a sky island filled with enemies. The goal of the game is to collect three keys
+(spread across the map) in order to unlock the bridge to the final island, as well as defeat all the enemies
 across all of the existing islands. 
 
 ### Controls (Keyboard and Mouse / Gamepad): 
